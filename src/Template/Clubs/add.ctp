@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Club $club
+ */
+?>
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('List Clubs'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Visits'), ['controller' => 'Visits', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Visit'), ['controller' => 'Visits', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?></li>
+    </ul>
+</nav>
+<div class="clubs form large-9 medium-8 columns content">
+    <?= $this->Form->create($club) ?>
+    <fieldset>
+        <legend><?= __('Add Club') ?></legend>
+        <?php
+            echo $this->Form->control('name');
+            echo $this->Form->control('address');
+            echo $this->Form->control('phone');
+            echo $this->Form->control('email');
+            echo $this->Form->control('description');
+            echo $this->Form->control('contacts._ids', ['options' => $contacts]);
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>

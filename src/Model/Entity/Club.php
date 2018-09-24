@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property string $description
  *
  * @property \App\Model\Entity\Visit[] $visits
- * @property \App\Model\Entity\Contact[] $contacts
+ * @property \CakeDC\Users\Model\Entity\User[] $users
  */
 class Club extends Entity
 {
@@ -35,6 +35,6 @@ class Club extends Entity
         'email' => true,
         'description' => true,
         'visits' => true,
-        'contacts' => true
+        'users' => true
     ];
 }

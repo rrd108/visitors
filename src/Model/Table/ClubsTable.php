@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Clubs Model
  *
  * @property \App\Model\Table\VisitsTable|\Cake\ORM\Association\HasMany $Visits
- * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\BelongsToMany $Contacts
+ * @property \CakeDC\Users\Model\Table\UsersTable|\Cake\ORM\Association\BelongsToMany $Users
  *
  * @method \App\Model\Entity\Club get($primaryKey, $options = [])
  * @method \App\Model\Entity\Club newEntity($data = null, array $options = [])
@@ -41,10 +41,10 @@ class ClubsTable extends Table
         $this->hasMany('Visits', [
             'foreignKey' => 'club_id'
         ]);
-        $this->belongsToMany('Contacts', [
+        $this->belongsToMany('Users', [
             'foreignKey' => 'club_id',
-            'targetForeignKey' => 'contact_id',
-            'joinTable' => 'clubs_contacts'
+            'targetForeignKey' => 'user_id',
+            'joinTable' => 'clubs_users'
         ]);
     }
 

@@ -35,7 +35,7 @@ class ClubsController extends AppController
     public function view($id = null)
     {
         $club = $this->Clubs->get($id, [
-            'contain' => ['Contacts', 'Visits']
+            'contain' => ['Users', 'Visits']
         ]);
 
         $this->set('club', $club);
@@ -58,8 +58,8 @@ class ClubsController extends AppController
             }
             $this->Flash->error(__('The club could not be saved. Please, try again.'));
         }
-        $contacts = $this->Clubs->Contacts->find('list', ['limit' => 200]);
-        $this->set(compact('club', 'contacts'));
+        $users = $this->Clubs->Users->find('list', ['limit' => 200]);
+        $this->set(compact('club', 'users'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ClubsController extends AppController
     public function edit($id = null)
     {
         $club = $this->Clubs->get($id, [
-            'contain' => ['Contacts']
+            'contain' => ['Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $club = $this->Clubs->patchEntity($club, $this->request->getData());
@@ -83,8 +83,8 @@ class ClubsController extends AppController
             }
             $this->Flash->error(__('The club could not be saved. Please, try again.'));
         }
-        $contacts = $this->Clubs->Contacts->find('list', ['limit' => 200]);
-        $this->set(compact('club', 'contacts'));
+        $users = $this->Clubs->Users->find('list', ['limit' => 200]);
+        $this->set(compact('club', 'users'));
     }
 
     /**

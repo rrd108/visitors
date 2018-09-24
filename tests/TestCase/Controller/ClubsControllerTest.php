@@ -18,8 +18,8 @@ class ClubsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.clubs',
         'app.visits',
-        'app.contacts',
-        'app.clubs_contacts'
+        'app.users',
+        'app.clubs_users'
     ];
 
     /**

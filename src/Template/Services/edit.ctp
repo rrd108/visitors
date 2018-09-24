@@ -28,7 +28,6 @@
             echo $this->Form->control('minutes');
             echo $this->Form->control('full_price');
             echo $this->Form->control('discount_price');
-            echo $this->Form->control('visits._ids', ['options' => $visits]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

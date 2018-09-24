@@ -13,8 +13,8 @@
         <li><?= $this->Html->link(__('New Club'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Visits'), ['controller' => 'Visits', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Visit'), ['controller' => 'Visits', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="clubs view large-9 medium-8 columns content">
@@ -46,26 +46,60 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Contacts') ?></h4>
-        <?php if (!empty($club->contacts)): ?>
+        <h4><?= __('Related Users') ?></h4>
+        <?php if (!empty($club->users)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Address') ?></th>
-                <th scope="col"><?= __('Phone') ?></th>
+                <th scope="col"><?= __('Username') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
+                <th scope="col"><?= __('Password') ?></th>
+                <th scope="col"><?= __('First Name') ?></th>
+                <th scope="col"><?= __('Last Name') ?></th>
+                <th scope="col"><?= __('Phone') ?></th>
+                <th scope="col"><?= __('Address') ?></th>
+                <th scope="col"><?= __('Description') ?></th>
+                <th scope="col"><?= __('Token') ?></th>
+                <th scope="col"><?= __('Token Expires') ?></th>
+                <th scope="col"><?= __('Api Token') ?></th>
+                <th scope="col"><?= __('Activation Date') ?></th>
+                <th scope="col"><?= __('Secret') ?></th>
+                <th scope="col"><?= __('Secret Verified') ?></th>
+                <th scope="col"><?= __('Tos Date') ?></th>
+                <th scope="col"><?= __('Active') ?></th>
+                <th scope="col"><?= __('Is Superuser') ?></th>
+                <th scope="col"><?= __('Role') ?></th>
+                <th scope="col"><?= __('Created') ?></th>
+                <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($club->contacts as $contacts): ?>
+            <?php foreach ($club->users as $users): ?>
             <tr>
-                <td><?= h($contacts->id) ?></td>
-                <td><?= h($contacts->address) ?></td>
-                <td><?= h($contacts->phone) ?></td>
-                <td><?= h($contacts->email) ?></td>
+                <td><?= h($users->id) ?></td>
+                <td><?= h($users->username) ?></td>
+                <td><?= h($users->email) ?></td>
+                <td><?= h($users->password) ?></td>
+                <td><?= h($users->first_name) ?></td>
+                <td><?= h($users->last_name) ?></td>
+                <td><?= h($users->phone) ?></td>
+                <td><?= h($users->address) ?></td>
+                <td><?= h($users->description) ?></td>
+                <td><?= h($users->token) ?></td>
+                <td><?= h($users->token_expires) ?></td>
+                <td><?= h($users->api_token) ?></td>
+                <td><?= h($users->activation_date) ?></td>
+                <td><?= h($users->secret) ?></td>
+                <td><?= h($users->secret_verified) ?></td>
+                <td><?= h($users->tos_date) ?></td>
+                <td><?= h($users->active) ?></td>
+                <td><?= h($users->is_superuser) ?></td>
+                <td><?= h($users->role) ?></td>
+                <td><?= h($users->created) ?></td>
+                <td><?= h($users->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Contacts', 'action' => 'view', $contacts->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Contacts', 'action' => 'edit', $contacts->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Contacts', 'action' => 'delete', $contacts->id], ['confirm' => __('Are you sure you want to delete # {0}?', $contacts->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $users->id], ['confirm' => __('Are you sure you want to delete # {0}?', $users->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

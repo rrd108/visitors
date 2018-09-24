@@ -54,6 +54,7 @@ class VisitsController extends AppController
         $visit = $this->Visits->newEntity();
         if ($this->request->is('post')) {
             $visit = $this->Visits->patchEntity($visit, $this->request->getData());
+            $visit->payed = 0;
             if ($this->Visits->save($visit)) {
                 $this->Flash->success(__('The visit has been saved.'));
 
@@ -62,7 +63,6 @@ class VisitsController extends AppController
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
         $clubs = $this->Visits->Clubs->find('list', ['limit' => 200]);
-        $services = $this->Visits->Services->find('list', ['limit' => 200]);
         $this->set(compact('visit', 'clubs', 'services'));
     }
 

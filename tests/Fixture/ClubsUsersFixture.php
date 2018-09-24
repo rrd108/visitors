@@ -46,7 +46,7 @@ class ClubsUsersFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'user_id' => '0c40c4b6-bd56-446a-b477-5c10c1d73715',
+                'user_id' => '9375fbb6-9b43-4471-a712-edb77032f36b',
                 'club_id' => 1
             ],
         ];

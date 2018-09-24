@@ -20,9 +20,15 @@
         <legend><?= __('Add Visit') ?></legend>
         <?php
             echo $this->Form->control('club_id', ['options' => $clubs]);
-            echo $this->Form->control('date');
-            echo $this->Form->control('payed');
-            echo $this->Form->control('services._ids', ['options' => $services]);
+            echo $this->Form->label('date',__('Date'));
+            echo $this->Form->date('date',[
+	            'minYear' => 2018,
+	            'empty' => [
+		            'year' => false,
+		            'month' => false,
+                    'day' => false
+	            ],
+            ]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

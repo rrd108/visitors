@@ -13,7 +13,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,18 +20,20 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
 	<?= $this->Html->css('foundation.min.css') ?>
+    <?= $this->Html->css('base.css') ?>
 	<?= $this->Html->css('foundation-icons.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 </head>
 <body>
+    <span class="right"><?= $this->User->welcome() ?></span>
+    <span class="right"><?= $this->User->logout() ?></span>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>

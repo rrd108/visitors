@@ -79,7 +79,7 @@ class VisitsController extends AppController
             'contain' => ['Services']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $visit = $this->Visits->patchEntity($visit, $this->request->getData());
+            $visit = $this->Visits->patchEntity($visit,$this->request->getData());
             if ($this->Visits->save($visit)) {
                 $this->Flash->success(__('The visit has been saved.'));
 

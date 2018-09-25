@@ -106,4 +106,15 @@ class ServicesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+	public function listServices(){
+		$services = $this->Services->find('list')->toArray();
+		$result = [];
+
+		foreach($services as $key => $value){
+			array_push($result,["id" => $key, "service" => $value]);
+		}
+		$this->set(compact('result'));
+		$this->set('_serialize', ['result']);
+	}
 }

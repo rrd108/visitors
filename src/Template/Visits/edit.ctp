@@ -35,9 +35,21 @@
 		            'day' => false
 	            ],
             ]);
-            echo $this->Form->control('services._ids', ['options' => $services]);
         ?>
+        <table>
+            <thead>
+            <tr>
+                <th><?= __('Service') ?></th>
+                <th><?= __('Full Price Members') ?></th>
+                <th><?=__('Discount Price Members')?></th>
+                <th>Add more</th>
+            </tr>
+            </thead>
+            <tbody id="services">
+            </tbody>
+        </table>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+<?= $this->Html->script('list-services', ['block' => true]) ?>

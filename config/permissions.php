@@ -13,6 +13,11 @@ return [
 			'action' => ['profile', 'logout'],
 		],
 		[
+			'role' => '*',
+			'controller' => 'Services',
+			'action' => ['index','listServices']
+		],
+		[
 			'role' => 'user',
 			'controller' => 'Visits',
 			'action' => ['index','add','edit'],

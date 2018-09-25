@@ -35,3 +35,5 @@ var getServiceList = function () {
 $(document).ready(function () {
     getServiceList();
 });
+
+$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd'}).val();

@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Visit $visit
  */
 ?>
+<?= $this->Html->css('jquery-ui.css') ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -26,16 +27,9 @@
         <legend><?= __('Edit Visit') ?></legend>
         <?php
             echo $this->Form->control('club_id', ['options' => $clubs]);
-            echo $this->Form->label('date',__('Date'));
-            echo $this->Form->date('date',[
-	            'minYear' => 2018,
-	            'empty' => [
-		            'year' => false,
-		            'month' => false,
-		            'day' => false
-	            ],
-            ]);
+            echo $this->Form->label(__('Date'));
         ?>
+        <input type="text" name="date" id="datepicker">
         <table>
             <thead>
             <tr>
@@ -52,4 +46,6 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+<?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
+<?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
 <?= $this->Html->script('list-services', ['block' => true]) ?>

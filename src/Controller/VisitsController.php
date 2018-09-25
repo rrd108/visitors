@@ -80,6 +80,11 @@ class VisitsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $visit = $this->Visits->patchEntity($visit,$this->request->getData());
+	        $daysDifferent = (time() - strtotime($visit->date)) / (60 * 60 *24);
+	        if($visit->payed == 1 || $daysDifferent <= 7){
+		        $this->Flash->error(__('You can\'t edit this visit yet'));
+		        return $this->redirect(['action' => 'index']);
+	        }
             if ($this->Visits->save($visit)) {
                 $this->Flash->success(__('The visit has been saved.'));
 

@@ -20,7 +20,7 @@ return [
 		[
 			'role' => 'user',
 			'controller' => 'Visits',
-			'action' => ['index','add','edit'],
+			'action' => ['index','add','edit','view'],
 		]
 	]
 ];

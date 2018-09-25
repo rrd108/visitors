@@ -30,7 +30,7 @@
             echo $this->Form->label(__('Date'));
         ?>
         <input type="text" name="date" id="datepicker">
-        <table>
+        <table class="unstriped stack" id="addvisit">
             <thead>
             <tr>
                 <th><?= __('Service') ?></th>
@@ -43,7 +43,7 @@
             </tbody>
         </table>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'),["class" => "button small","id"=>"submit"]) ?>
     <?= $this->Form->end() ?>
 </div>
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>

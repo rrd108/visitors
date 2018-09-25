@@ -24,19 +24,26 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
-	<?= $this->Html->css('foundation.min.css') ?>
-    <?= $this->Html->css('base.css') ?>
-	<?= $this->Html->css('foundation-icons.css') ?>
+	<?= $this->Html->css('foundation.min') ?>
+    <?= $this->Html->css('base') ?>
+	<?= $this->Html->css('foundation-icons') ?>
+	<?= $this->Html->css('style') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 </head>
 <body>
-    <span class="right"><?= $this->User->welcome() ?></span>
-    <span class="right"><?= $this->User->logout() ?></span>
-    <?= $this->Flash->render() ?>
+    <div class="top-bar-right right">
+        <ul class="menu">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li><?= $this->User->welcome() ?></li>
+                <li><?= $this->User->logout() ?></li>
+            </ul>
+        </ul>
+    </div>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
+        <?= $this->Flash->render() ?>
     </div>
     <footer>
     </footer>

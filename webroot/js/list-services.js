@@ -16,9 +16,9 @@ var getServiceList = function () {
                 servicesRow += "<option value='"+id+"'>"+service+"</option>";
             }
             servicesRow += "</select>";
-            servicesRow += "<td><input type='text' name='services["+j+"][_joinData][full_price_members]'></td>";
-            servicesRow += "<td><input type='text' name='services["+j+"][_joinData][discount_price_members]'></td>";
-            servicesRow += "<td><button class='add'>Új szolgáltatás</button></td>";
+            servicesRow += "<td><input type='text' placeholder='Teljes árú tagok' name='services["+j+"][_joinData][full_price_members]'></td>";
+            servicesRow += "<td><input type='text' placeholder='Kedvezményes árú tagok' name='services["+j+"][_joinData][discount_price_members]'></td>";
+            servicesRow += "<td><button class='button add tiny'>Új szolgáltatás</button></td>";
             $("#services").append(servicesRow);
             $(".add").click(function (event) {
                 event.preventDefault();

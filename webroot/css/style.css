@@ -1,0 +1,88 @@
+fieldset {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+button#submit{
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+button.add{
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto;
+    height: 37px;
+}
+
+a, a:focus, a:hover, a:not(.button) {
+    color: #483a23;
+}
+
+.side-nav li.heading{
+    color: #483a23;
+}
+
+.side-nav li a:not(.button){
+    color: #483a23;
+}
+
+.side-nav li a:not(.button):hover{
+    color: #483a23;
+}
+
+.side-nav li a:not(.button):focus{
+    color: #483a23;
+}
+
+
+.button, .button:hover, .button:focus{
+    background-color: #483a23;
+}
+
+.button:hover{
+    background-color: #483a23;
+}
+
+input[type="text"], select {
+    border-radius: 5px;
+}
+
+table#addvisit thead tr th{
+    text-align: center;
+    background-color:  #e1cc9f;
+}
+
+table thead tr th{
+    background-color:  #e1cc9f;
+}
+
+td input[type="text"], td select {
+    margin-bottom: 0;
+}
+
+#actions-sidebar{
+    background-color:  #e1cc9f;
+}
+
+@media (min-width: 640px) {
+    #actions-sidebar {
+        height: 100vh;
+    }
+}
+
+.message{
+    text-align: center;
+    background-color: #e1cc9f;
+    color: #483a23;
+    width: 45%;
+    margin: 15px auto 0;
+}
+
+
+.hidden{
+    display: none;
+}

@@ -1,4 +1,9 @@
 <?php
+use Cake\Utility\Hash;
+use Cake\Network\Request;
+use App\Model\Entity\Visit;
+use App\Model\Table\VisitsTable;
+
 return [
 	'Users.SimpleRbac.permissions' => [
 		[
@@ -20,7 +25,12 @@ return [
 		[
 			'role' => 'user',
 			'controller' => 'Visits',
-			'action' => ['index','add','edit','view'],
+			'action' => ['index','add'],
+		],
+		[
+			'role' => 'user',
+			'controller' => 'Visits',
+			'action' => ['edit','view']
 		]
 	]
 ];

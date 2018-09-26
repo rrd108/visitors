@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Visits Controller
@@ -13,7 +14,24 @@ use App\Controller\AppController;
 class VisitsController extends AppController
 {
 
-    /**
+	/*public function beforeFilter( Event $event ) {
+		parent::beforeFilter($event);
+		$this->Auth->deny();
+		if($this->Auth->user('role') == 'user') {
+			$this->Auth->deny();
+			$pathArray =  explode('/',$this->request->getPath());
+			$currentVisitId = $pathArray[count($pathArray)-1];
+			$currentVisit = $this->Visits->get($currentVisitId);
+			$visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
+			foreach ($visits as $visit){
+				if($currentVisit == $visit){
+					$this->Auth->allow(['edit','view']);
+				}
+			}
+		}
+	}*/
+
+	/**
      * Index method
      *
      * @return \Cake\Http\Response|void
@@ -23,7 +41,9 @@ class VisitsController extends AppController
         $this->paginate = [
             'contain' => ['Clubs']
         ];
-        $visits = $this->paginate($this->Visits);
+        $visits = $this->paginate($this->Visits
+	        ->find('ByUserId',['user_id' => $this->Auth->user('id')])
+        );
 
         $this->set(compact('visits'));
     }
@@ -37,6 +57,23 @@ class VisitsController extends AppController
      */
     public function view($id = null)
     {
+	    if($this->Auth->user('role') == 'user') {
+		    $this->Auth->deny();
+		    $pathArray =  explode('/',$this->request->getPath());
+		    $currentVisitId = $pathArray[count($pathArray)-1];
+		    $currentVisit = $this->Visits->get($currentVisitId);
+		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
+		    $canAccess = false;
+		    foreach ($visits as $visit){
+			    if($currentVisit == $visit){
+				   $canAccess = true;
+			    }
+		    }
+		    if(!$canAccess) {
+			    $this->Flash(__('You are not authorized to access that location.'));
+			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
+		    }
+	    }
         $visit = $this->Visits->get($id, [
             'contain' => ['Clubs', 'Services']
         ]);
@@ -62,7 +99,8 @@ class VisitsController extends AppController
             }
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
-        $clubs = $this->Visits->Clubs->find('list', ['limit' => 200]);
+        $clubs = $this->Visits->Clubs->find('ByUserId',['user_id' => $this->Auth->user('id')])
+                                     ->find('list', ['limit' => 200]);
         $this->set(compact('visit', 'clubs', 'services'));
     }
 
@@ -75,6 +113,23 @@ class VisitsController extends AppController
      */
     public function edit($id = null)
     {
+	    if($this->Auth->user('role') == 'user') {
+		    $this->Auth->deny();
+		    $pathArray =  explode('/',$this->request->getPath());
+		    $currentVisitId = $pathArray[count($pathArray)-1];
+		    $currentVisit = $this->Visits->get($currentVisitId);
+		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
+		    $canAccess = false;
+		    foreach ($visits as $visit){
+			    if($currentVisit == $visit){
+				    $canAccess = true;
+			    }
+		    }
+		    if(!$canAccess) {
+			    $this->Flash(__('You are not authorized to access that location.'));
+			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
+		    }
+	    }
         $visit = $this->Visits->get($id, [
             'contain' => ['Services']
         ]);
@@ -92,9 +147,11 @@ class VisitsController extends AppController
             }
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
-        $clubs = $this->Visits->Clubs->find('list', ['limit' => 200]);
+        $club = $this->Visits->Clubs->get($visit->club_id);
         $services = $this->Visits->Services->find('list', ['limit' => 200]);
-        $this->set(compact('visit', 'clubs', 'services'));
+        $servicesVisits = $this->Visits->ServicesVisits
+	        ->find('ByVisitId',['visit_id' => $visit->id])->contain('Services');
+        $this->set(compact('visit', 'club', 'services','servicesVisits'));
     }
 
     /**
@@ -106,6 +163,23 @@ class VisitsController extends AppController
      */
     public function delete($id = null)
     {
+	    if($this->Auth->user('role') == 'user') {
+		    $this->Auth->deny();
+		    $pathArray =  explode('/',$this->request->getPath());
+		    $currentVisitId = $pathArray[count($pathArray)-1];
+		    $currentVisit = $this->Visits->get($currentVisitId);
+		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
+		    $canAccess = false;
+		    foreach ($visits as $visit){
+			    if($currentVisit == $visit){
+				    $canAccess = true;
+			    }
+		    }
+		    if(!$canAccess) {
+			    $this->Flash(__('You are not authorized to access that location.'));
+			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
+		    }
+	    }
         $this->request->allowMethod(['post', 'delete']);
         $visit = $this->Visits->get($id);
         if ($this->Visits->delete($visit)) {

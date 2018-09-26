@@ -26,10 +26,10 @@
     <fieldset>
         <legend><?= __('Edit Visit') ?></legend>
         <?php
-            echo $this->Form->control('club_id', ['options' => $clubs]);
+            echo $this->Form->control(__('Club'),['value' => $club->name, 'disabled']);
             echo $this->Form->label(__('Date'));
         ?>
-        <input type="text" name="date" id="datepicker">
+        <input type="text" name="date" id="datepicker" value="<?= $visit->date ?>">
         <table class="unstriped stack" id="addvisit">
             <thead>
             <tr>

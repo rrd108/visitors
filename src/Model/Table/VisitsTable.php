@@ -51,6 +51,10 @@ class VisitsTable extends Table
             'targetForeignKey' => 'service_id',
             'joinTable' => 'services_visits'
         ]);
+
+        $this->hasMany('ServicesVisits',[
+        	'foreignKey' => 'service_id'
+        ]);
     }
 
     /**
@@ -84,5 +88,10 @@ class VisitsTable extends Table
         $rules->add($rules->existsIn(['club_id'], 'Clubs'));
 
         return $rules;
+    }
+
+    public function findByUserId(Query $query, array $options){
+    	return $query->innerJoinWith('Clubs.ClubsUsers')
+		        ->where(['user_id' => $options['user_id']]);
     }
 }

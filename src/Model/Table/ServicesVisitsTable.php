@@ -84,4 +84,8 @@ class ServicesVisitsTable extends Table
 
         return $rules;
     }
+
+	public function findByVisitId(Query $query, array $options){
+		return $query->where(['visit_id' => $options['visit_id']]);
+	}
 }

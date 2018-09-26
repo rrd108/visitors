@@ -46,6 +46,9 @@ class ClubsTable extends Table
             'targetForeignKey' => 'user_id',
             'joinTable' => 'clubs_users'
         ]);
+        $this->hasMany('ClubsUsers',[
+        	'foreignKey' => 'club_id'
+        ]);
     }
 
     /**
@@ -103,4 +106,9 @@ class ClubsTable extends Table
 
         return $rules;
     }
+
+    public function findByUserId(Query $query, array $options){
+        return $query->innerJoinWith('ClubsUsers')
+                     ->where(['user_id' => $options['user_id']]);
+	}
 }

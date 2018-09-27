@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use App\Model\Entity\Visit;
 
 /**
  * Visits Controller
@@ -57,27 +58,10 @@ class VisitsController extends AppController
      */
     public function view($id = null)
     {
-	    if($this->Auth->user('role') == 'user') {
-		    $this->Auth->deny();
-		    $pathArray =  explode('/',$this->request->getPath());
-		    $currentVisitId = $pathArray[count($pathArray)-1];
-		    $currentVisit = $this->Visits->get($currentVisitId);
-		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
-		    $canAccess = false;
-		    foreach ($visits as $visit){
-			    if($currentVisit == $visit){
-				   $canAccess = true;
-			    }
-		    }
-		    if(!$canAccess) {
-			    $this->Flash(__('You are not authorized to access that location.'));
-			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
-		    }
-	    }
         $visit = $this->Visits->get($id, [
             'contain' => ['Clubs', 'Services']
         ]);
-
+		$this->checkAccess($visit);
         $this->set('visit', $visit);
     }
 
@@ -113,33 +97,17 @@ class VisitsController extends AppController
      */
     public function edit($id = null)
     {
-	    if($this->Auth->user('role') == 'user') {
-		    $this->Auth->deny();
-		    $pathArray =  explode('/',$this->request->getPath());
-		    $currentVisitId = $pathArray[count($pathArray)-1];
-		    $currentVisit = $this->Visits->get($currentVisitId);
-		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
-		    $canAccess = false;
-		    foreach ($visits as $visit){
-			    if($currentVisit == $visit){
-				    $canAccess = true;
-			    }
-		    }
-		    if(!$canAccess) {
-			    $this->Flash(__('You are not authorized to access that location.'));
-			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
-		    }
+	    $visit = $this->Visits->get($id, [
+		    'contain' => ['Services']
+	    ]);
+	    $daysDifferent = (time() - strtotime($visit->date)) / (60 * 60 *24);
+	    if($visit->payed == 1 || $daysDifferent <= 7){
+		    $this->Flash->error(__('You can\'t edit this visit yet'));
+		    return $this->redirect(['action' => 'index']);
 	    }
-        $visit = $this->Visits->get($id, [
-            'contain' => ['Services']
-        ]);
+	    $this->checkAccess($visit);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $visit = $this->Visits->patchEntity($visit,$this->request->getData());
-	        $daysDifferent = (time() - strtotime($visit->date)) / (60 * 60 *24);
-	        if($visit->payed == 1 || $daysDifferent <= 7){
-		        $this->Flash->error(__('You can\'t edit this visit yet'));
-		        return $this->redirect(['action' => 'index']);
-	        }
             if ($this->Visits->save($visit)) {
                 $this->Flash->success(__('The visit has been saved.'));
 
@@ -163,25 +131,9 @@ class VisitsController extends AppController
      */
     public function delete($id = null)
     {
-	    if($this->Auth->user('role') == 'user') {
-		    $this->Auth->deny();
-		    $pathArray =  explode('/',$this->request->getPath());
-		    $currentVisitId = $pathArray[count($pathArray)-1];
-		    $currentVisit = $this->Visits->get($currentVisitId);
-		    $visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
-		    $canAccess = false;
-		    foreach ($visits as $visit){
-			    if($currentVisit == $visit){
-				    $canAccess = true;
-			    }
-		    }
-		    if(!$canAccess) {
-			    $this->Flash(__('You are not authorized to access that location.'));
-			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
-		    }
-	    }
         $this->request->allowMethod(['post', 'delete']);
         $visit = $this->Visits->get($id);
+        $this->checkAccess($visit);
         if ($this->Visits->delete($visit)) {
             $this->Flash->success(__('The visit has been deleted.'));
         } else {
@@ -189,5 +141,21 @@ class VisitsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    private function checkAccess(Visit $visit){
+	    if($this->Auth->user('role') == 'user') {
+		    $userVisits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
+		    $canAccess = false;
+		    foreach ($userVisits as $userVisit){
+			    if($visit->id == $userVisit->id){
+				    $canAccess = true;
+			    }
+		    }
+		    if(!$canAccess) {
+			    $this->Flash->error(__('You are not authorized to access that location.'));
+			    $this->redirect( $this->redirect( [ 'action' => 'index' ] ) );
+		    }
+	    }
     }
 }

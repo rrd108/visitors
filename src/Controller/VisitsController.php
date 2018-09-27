@@ -84,12 +84,12 @@ class VisitsController extends AppController
 	    $visit = $this->Visits->get($id, [
 		    'contain' => ['Services']
 	    ]);
-	    $daysDifferent = (time() - strtotime($visit->date)) / (60 * 60 *24);
+	    $this->checkAccess($visit);
+	    $daysDifferent = (strtotime($visit->date) - time()) / (60 * 60 *24);
 	    if($visit->payed == 1 || $daysDifferent <= 7){
 		    $this->Flash->error(__('You can\'t edit this visit yet'));
 		    return $this->redirect(['action' => 'index']);
 	    }
-	    $this->checkAccess($visit);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $visit = $this->Visits->patchEntity($visit,$this->request->getData());
             if ($this->Visits->save($visit)) {

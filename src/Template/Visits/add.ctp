@@ -5,6 +5,7 @@
  */
 ?>
 <?= $this->Html->css('jquery-ui.css') ?>
+<?= $this->Html->css('jquery-ui-timepicker-addon.min.css') ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -42,4 +43,5 @@
 </div>
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
+<?= $this->Html->script('vendor/jquery-ui-timepicker-addon.min', ['block' => true]) ?>
 <?= $this->Html->script('list-services', ['block' => true]) ?>

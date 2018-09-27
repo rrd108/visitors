@@ -40,6 +40,14 @@
             </tr>
             </thead>
             <tbody id="services">
+            <?php foreach ($servicesVisits as $servicesVisit): ?>
+                <tr>
+                    <td><input type="text" value="<?= $servicesVisit->service->service ?>" disabled></td>
+                    <td><input type="text" value="<?= $servicesVisit->full_price_members ?>"></td>
+                    <td><input type="text" value="<?= $servicesVisit->discount_price_members ?>"></td>
+                    <td>add more</td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </fieldset>

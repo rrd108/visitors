@@ -15,22 +15,6 @@ use App\Model\Entity\Visit;
 class VisitsController extends AppController
 {
 
-	/*public function beforeFilter( Event $event ) {
-		parent::beforeFilter($event);
-		$this->Auth->deny();
-		if($this->Auth->user('role') == 'user') {
-			$this->Auth->deny();
-			$pathArray =  explode('/',$this->request->getPath());
-			$currentVisitId = $pathArray[count($pathArray)-1];
-			$currentVisit = $this->Visits->get($currentVisitId);
-			$visits = $this->Visits->find( 'byUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] );
-			foreach ($visits as $visit){
-				if($currentVisit == $visit){
-					$this->Auth->allow(['edit','view']);
-				}
-			}
-		}
-	}*/
 
 	/**
      * Index method

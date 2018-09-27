@@ -35,6 +35,6 @@ use Cake\Core\Configure;
         }
         ?>
     </fieldset>
-    <?= $this->Form->button(__d('CakeDC/Users', 'Submit')) ?>
+    <?= $this->Form->button(__d('CakeDC/Users', 'Submit'),['is' => 'submit', 'class' => 'button small']) ?>
     <?= $this->Form->end() ?>
 </div>

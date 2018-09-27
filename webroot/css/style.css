@@ -11,10 +11,11 @@ button#submit{
     border-radius: 5px;
 }
 
-button.add{
-    display: block;
+button.add.tiny{
     border-radius: 5px;
-    margin: 0 auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-bottom: 0;
     height: 37px;
 }
 
@@ -43,11 +44,7 @@ a, a:focus, a:hover, a:not(.button) {
     background-color: #483a23;
 }
 
-.button:hover{
-    background-color: #483a23;
-}
-
-input[type="text"], select {
+input[type="text"], input[type="number"], input[type='email'], input[type='password'], select {
     border-radius: 5px;
 }
 
@@ -58,9 +55,10 @@ table#addvisit thead tr th{
 
 table thead tr th{
     background-color:  #e1cc9f;
+    text-align: center;
 }
 
-td input[type="text"], td select {
+td input[type="text"], td input[type="number"], td select {
     margin-bottom: 0;
 }
 
@@ -80,6 +78,7 @@ td input[type="text"], td select {
     color: #483a23;
     width: 45%;
     margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 

@@ -43,6 +43,6 @@ use Cake\Core\Configure;
 		?>
 	</fieldset>
 	<?= implode(' ', $this->User->socialLoginList()); ?>
-	<?= $this->Form->button(__d('CakeDC/Users', 'Login')); ?>
+	<?= $this->Form->button(__d('CakeDC/Users', 'Login'),['id'=> 'submit', 'class' => 'button small']); ?>
 	<?= $this->Form->end() ?>
 </div>

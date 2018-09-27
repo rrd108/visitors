@@ -28,17 +28,17 @@
         <table>
             <thead>
             <tr>
-                <th><?= __('Service') ?></th>
-                <th><?= __('Full Price Members') ?></th>
-                <th><?=__('Discount Price Members')?></th>
-                <th>Add more</th>
+                <th width="25%"><?= __('Service') ?></th>
+                <th width="25%"><?= __('Full Price Members') ?></th>
+                <th width="25%"><?=__('Discount Price Members')?></th>
+                <th width="15%">Add more</th>
             </tr>
             </thead>
             <tbody id="services">
             </tbody>
         </table>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'),['id' => 'submit', 'class' => 'button small']) ?>
     <?= $this->Form->end() ?>
 </div>
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>

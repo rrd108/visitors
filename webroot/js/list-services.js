@@ -9,7 +9,7 @@ var getServiceList = function () {
         method: 'post',
         success: function (result) {
             var services = result.result;
-            var servicesRow = "<tr><td><select name='services["+j+"][id]'>";
+            var servicesRow = "<tr data-id="+j+"><td><select name='services["+j+"][id]'>";
             for(var i=0; i<services.length; i++){
                 var id = services[i]["id"];
                 var service = services[i]["service"];
@@ -18,11 +18,19 @@ var getServiceList = function () {
             servicesRow += "</select>";
             servicesRow += "<td><input type='number' placeholder='Teljes árú tagok' name='services["+j+"][_joinData][full_price_members]'></td>";
             servicesRow += "<td><input type='number' placeholder='Kedvezményes árú tagok' name='services["+j+"][_joinData][discount_price_members]'></td>";
-            servicesRow += "<td><button class='button add tiny'>Új szolgáltatás</button></td>";
+            servicesRow += "<td><i class='add fi-plus'><i data-id='"+j+"' class='remove fi-x'></i></td>";
             $("#services").append(servicesRow);
             $(".add").click(function (event) {
                 event.preventDefault();
                 getServiceList();
+            });
+            $(".remove").each(function (index) {
+                $(this).click(function () {
+                    var id = $(this).data('id');
+                    var removedTr = $("tbody").find("tr[data-id='"+id+"']");
+                    console.log(removedTr);
+                    removedTr.remove();
+                });
             });
             j++;
             },

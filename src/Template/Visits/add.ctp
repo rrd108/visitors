@@ -28,13 +28,30 @@
         <table>
             <thead>
             <tr>
-                <th width="25%"><?= __('Service') ?></th>
-                <th width="25%"><?= __('Full Price Members') ?></th>
-                <th width="25%"><?=__('Discount Price Members')?></th>
-                <th width="15%">Add more</th>
+                <th><?= __('Service') ?></th>
+                <th><?= __('Full Price Members') ?></th>
+                <th><?=__('Discount Price Members')?></th>
             </tr>
             </thead>
             <tbody id="services">
+                <?php foreach ($services as $service): ?>
+                    <tr>
+                       <?= $this->Form->hidden('services.'.$service->id.'.id',['value' => $service->id]) ?>
+                        <td><?= $service->service ?></td>
+                        <td>
+	                        <?= $this->Form->control(
+		                        'services.'.$service->id.'._joinData.full_price_members',
+		                            ['label' => false, 'default' => 0]
+	                        ) ?>
+                        </td>
+                        <td>
+	                        <?= $this->Form->control(
+	                                'services.'.$service->id.'._joinData.discount_price_members',
+                                    ['label' => false, 'default' => 0]
+                            ) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </fieldset>

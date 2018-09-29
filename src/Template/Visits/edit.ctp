@@ -36,18 +36,35 @@
                 <th><?= __('Service') ?></th>
                 <th><?= __('Full Price Members') ?></th>
                 <th><?=__('Discount Price Members')?></th>
-                <th>Add more</th>
             </tr>
             </thead>
             <tbody id="services">
-            <?php foreach ($servicesVisits as $servicesVisit): ?>
+	        <?php foreach ($services as $service): ?>
                 <tr>
-                    <td><input type="text" value="<?= $servicesVisit->service->service ?>" disabled></td>
-                    <td><input type="text" value="<?= $servicesVisit->full_price_members ?>"></td>
-                    <td><input type="text" value="<?= $servicesVisit->discount_price_members ?>"></td>
-                    <td>add more</td>
+			        <?= $this->Form->hidden('services.'.$service->id.'.id',['value' => $service->id]) ?>
+                    <td><?= $service->service ?></td>
+                    <td>
+				        <?= $this->Form->control(
+					        'services.'.$service->id.'._joinData.full_price_members',
+					        [
+					                'label' => false, 'default' => 0,
+                                    'value' => ($service->servicesVisit != null) ?
+                                        $service->servicesVisit->full_price_members : 0
+                            ]
+				        ) ?>
+                    </td>
+                    <td>
+				        <?= $this->Form->control(
+					        'services.'.$service->id.'._joinData.discount_price_members',
+					        [
+					                'label' => false, 'default' => 0,
+					                'value' => ($service->servicesVisit != null) ?
+						                $service->servicesVisit->discount_price_members : 0
+                            ]
+				        ) ?>
+                    </td>
                 </tr>
-            <?php endforeach; ?>
+	        <?php endforeach; ?>
             </tbody>
         </table>
     </fieldset>

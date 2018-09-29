@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use App\Model\Entity\Visit;
+use Cake\ORM\Query;
 
 /**
  * Visits Controller
@@ -104,18 +105,36 @@ class VisitsController extends AppController
 	    }
         if ($this->request->is(['patch', 'post', 'put'])) {
             $visit = $this->Visits->patchEntity($visit,$this->request->getData());
-            if ($this->Visits->save($visit)) {
-                $this->Flash->success(__('The visit has been saved.'));
+            $visit->payed = 0;
+	        $notEmptyServices = [];
+	        $hasService = false;
+	        foreach ($visit->services as $service){
+		        if($service->_joinData->full_price_members != 0 || $service->_joinData->discount_price_members !=0){
+			        $hasService = true;
+			        array_push($notEmptyServices,$service);
+		        }
+	        }
+	        $visit->services = $notEmptyServices;
+	        if($hasService) {
+		        if ( $this->Visits->save( $visit ) ) {
+			        $this->Flash->success( __( 'The visit has been saved.' ) );
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The visit could not be saved. Please, try again.'));
+			        return $this->redirect( [ 'action' => 'index' ] );
+		        }
+	        }
+	        $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
         $club = $this->Visits->Clubs->get($visit->club_id);
-        $services = $this->Visits->Services->find('list', ['limit' => 200]);
-        $servicesVisits = $this->Visits->ServicesVisits
-	        ->find('ByVisitId',['visit_id' => $visit->id])->contain('Services');
-        $this->set(compact('visit', 'club', 'services','servicesVisits'));
+        $allServices = $this->Visits->Services->find('all');
+        $services = [];
+        foreach($allServices as $service){
+           $servicesVisits = $this->Visits->ServicesVisits->find('all')->where(['visit_id' => $visit->id, 'service_id' => $service->id])->toArray();
+           if($servicesVisits != []){
+           	$service->servicesVisit = $servicesVisits[0];
+           }
+           array_push($services,$service);
+        }
+        $this->set(compact('visit', 'club', 'services'));
     }
 
     /**

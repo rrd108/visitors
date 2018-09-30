@@ -41,12 +41,11 @@
             </ul>
         </ul>
     </div>
-    <div class="container clearfix">
+    <main class="container clearfix row">
         <?= $this->fetch('content') ?>
         <?= $this->Flash->render() ?>
-    </div>
-    <footer>
-    </footer>
+    </main>
+    <footer></footer>
     <?= $this->Html->script('vendor/jquery.js') ?>
     <?= $this->Html->script('vendor/what-input.js') ?>
     <?= $this->Html->script('vendor/foundation.js') ?>

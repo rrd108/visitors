@@ -1,3 +1,7 @@
+.row {
+    max-width: initial;
+}
+
 fieldset {
     border: none;
     margin-bottom: 0;
@@ -84,4 +88,25 @@ td input[type="text"], td input[type="number"], td select {
 
 .hidden{
     display: none;
+}
+
+#services-list {
+    list-style-type: none;
+}
+
+#services-list li {
+    color: #483a23;
+    padding: 1em;
+}
+
+#services-list li div {
+    background: #e1cc9f;
+    padding: 1em;
+}
+
+#services-list li h3{
+    color: #e1cc9f;
+    background: #483a23;
+    margin: 0;
+    padding: 1em;
 }

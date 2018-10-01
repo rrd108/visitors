@@ -1,4 +1,5 @@
-<?= $this->Html->css('jquery-ui.css') ?>
+<?= $this->Html->css('jquery-ui') ?>
+<?= $this->Html->css('jquery-ui-timepicker-addon.min') ?>
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
 <?= $this->Html->script('vendor/jquery-ui-timepicker-addon.min', ['block' => true]) ?>

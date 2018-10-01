@@ -1,4 +1,5 @@
 $("#datepicker").datetimepicker({
+    controlType: 'select',
     timeFormat: "HH:mm:ss",
     dateFormat: "yy-mm-dd",
     timeText: 'Idő',
@@ -6,5 +7,10 @@ $("#datepicker").datetimepicker({
     minuteText: 'Perc',
     secondText: 'Másodperc',
     currentText: 'Most',
-    closeText: 'Ok'
+    closeText: 'Ok',
+    hourMin: 10,
+    hourMax: 18,
+    second: false,
+    showMillisec: false,
+    showMicrosec: false
 }).val();

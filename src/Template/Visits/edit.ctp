@@ -5,6 +5,10 @@
  */
 ?>
 <?= $this->Html->css('jquery-ui.css') ?>
+<?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
+<?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
+<?= $this->Html->script('vendor/jquery-ui-timepicker-addon.min', ['block' => true]) ?>
+<?= $this->Html->script('list-services', ['block' => true]) ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -29,7 +33,7 @@
             echo $this->Form->control(__('Club'),['value' => $club->name, 'disabled']);
             echo $this->Form->label(__('Date'));
         ?>
-        <input type="text" name="date" id="datepicker" value="<?= $visit->date ?>">
+        <input type="text" name="date" id="datepicker" value="<?= $visit->date->format("Y-m-d H:i:s") ?>">
         <table class="unstriped stack" id="addvisit">
             <thead>
             <tr>
@@ -71,6 +75,3 @@
     <?= $this->Form->button(__('Submit'),["class" => "button small","id"=>"submit"]) ?>
     <?= $this->Form->end() ?>
 </div>
-<?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
-<?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
-<?= $this->Html->script('list-services', ['block' => true]) ?>

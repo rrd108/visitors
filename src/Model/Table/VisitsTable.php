@@ -70,7 +70,7 @@ class VisitsTable extends Table
 
         $validator
             ->dateTime('date')
-            ->requirePresence('date', 'create')
+            ->requirePresence('date')
             ->notEmpty('date');
 
         return $validator;

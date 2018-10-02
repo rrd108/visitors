@@ -44,7 +44,7 @@ class VisitsController extends AppController
     public function view($id = null)
     {
         $visit = $this->Visits->get($id, [
-            'contain' => ['Clubs', 'Services']
+            'contain' => ['Clubs', 'ServicesVisits','ServicesVisits.Services']
         ]);
 		$this->checkAccess($visit);
         $this->set('visit', $visit);
@@ -61,7 +61,7 @@ class VisitsController extends AppController
         if ($this->request->is('post')) {
             $visit = $this->Visits->patchEntity($visit, $this->request->getData());
             $visit->payed = 0;
-            $notEmptyServices = [];
+            /*$notEmptyServices = [];
             $hasService = false;
             foreach ($visit->services as $service){
             	if($service->_joinData->full_price_members != 0 || $service->_joinData->discount_price_members !=0){
@@ -69,14 +69,14 @@ class VisitsController extends AppController
             		array_push($notEmptyServices,$service);
 	            }
             }
-            $visit->services = $notEmptyServices;
-            if($hasService) {
+            $visit->services = $notEmptyServices;*/
+            //if($hasService) {
 	            if ( $this->Visits->save( $visit ) ) {
 		            $this->Flash->success( __( 'The visit has been saved.' ) );
 
 		            return $this->redirect( [ 'action' => 'index' ] );
 	            }
-            }
+            //}
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
         $clubs = $this->Visits->Clubs->find('ByUserId',['user_id' => $this->Auth->user('id')])

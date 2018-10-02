@@ -18,27 +18,23 @@
     </ul>
 </nav>
 <div class="visits view large-9 medium-8 columns content">
-    <h3><?= h($visit->id) ?></h3>
+
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Club') ?></th>
             <td><?= $visit->has('club') ? $this->Html->link($visit->club->name, ['controller' => 'Clubs', 'action' => 'view', $visit->club->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($visit->id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Date') ?></th>
-            <td><?= h($visit->date) ?></td>
+            <td><?= h($visit->date->format('Y-m-d H:i:s')) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($visit->created) ?></td>
+            <td><?= h($visit->created->format('Y-m-d H:i:s')) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($visit->modified) ?></td>
+            <td><?= h($visit->modified->format('Y-m-d H:i:s')) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Payed') ?></th>
@@ -47,33 +43,34 @@
     </table>
     <div class="related">
         <h4><?= __('Related Services') ?></h4>
-        <?php if (!empty($visit->services)): ?>
+        <?php if (!empty($visit->services_visits)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Service') ?></th>
                 <th scope="col"><?= __('Description') ?></th>
                 <th scope="col"><?= __('Minutes') ?></th>
                 <th scope="col"><?= __('Full Price') ?></th>
+                <th scope="col"><?= __('Full Price Members') ?></th>
                 <th scope="col"><?= __('Discount Price') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= __('Discount Price Members') ?></th>
             </tr>
-            <?php foreach ($visit->services as $services): ?>
+            <?php $full_price = 0 ?>
+            <?php foreach ($visit->services_visits as $servicesVisit): ?>
             <tr>
-                <td><?= h($services->id) ?></td>
-                <td><?= h($services->service) ?></td>
-                <td><?= h($services->description) ?></td>
-                <td><?= h($services->minutes) ?></td>
-                <td><?= h($services->full_price) ?></td>
-                <td><?= h($services->discount_price) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Services', 'action' => 'view', $services->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Services', 'action' => 'edit', $services->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Services', 'action' => 'delete', $services->id], ['confirm' => __('Are you sure you want to delete # {0}?', $services->id)]) ?>
-                </td>
+                <td><?= h($servicesVisit->service->service) ?></td>
+                <td><?= h($servicesVisit->service->description) ?></td>
+                <td><?= h($servicesVisit->service->minutes) ?></td>
+                <td><?= h($servicesVisit->service->full_price) ?></td>
+                <td><?= h($servicesVisit->full_price_members) ?></td>
+                <td><?= h($servicesVisit->service->discount_price) ?></td>
+                <td><?= h($servicesVisit->discount_price_members) ?></td>
             </tr>
+            <?php $full_price+= $servicesVisit->service->full_price * $servicesVisit->full_price_members
+                + $servicesVisit->service->discount_price * $servicesVisit->discount_price_members;
+            ?>
             <?php endforeach; ?>
         </table>
+            <b><?= __('Sum: ').$full_price.' Ft'?></b>
         <?php endif; ?>
     </div>
 </div>

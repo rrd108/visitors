@@ -53,7 +53,7 @@ class VisitsTable extends Table
         ]);
 
         $this->hasMany('ServicesVisits',[
-        	'foreignKey' => 'service_id'
+        	'foreignKey' => 'visit_id'
         ]);
     }
 

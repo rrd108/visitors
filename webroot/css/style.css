@@ -9,7 +9,7 @@ fieldset {
 }
 
 
-button#submit{
+button#send{
     display: block;
     margin: 0 auto 10px;
     border-radius: 5px;

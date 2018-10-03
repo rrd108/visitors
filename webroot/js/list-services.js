@@ -42,6 +42,19 @@ $(function() {
                var discountPriceSpan = $("span.discount-price[data-id='" + selectedId + "']");
                discountPriceSpan.append("<input type='hidden' value='" + discountPriceMembers + "' name='services[" + selectedId + "][_joinData][discount_price_members]' class='discount-price-hidden'>");
                $(this).css("background-color","red");
+           } else {
+               $(".service-data").each(function () {
+                   var dataId = $(this).data('id');
+                   selectedId = 0;
+                   if(dataId !== 1){
+                       var inputs = $(this).find("input");
+                       inputs.each(function () {
+                           if(!$(this).hasClass('service-id')){
+                               $(this).remove();
+                           }
+                       });
+                   }
+               });
            }
        });
     });

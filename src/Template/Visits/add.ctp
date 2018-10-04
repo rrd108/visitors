@@ -20,7 +20,7 @@
             <?php endif; ?>
             <li class="column large-3 small-12">
                 <h3><?= $service->service ?></h3>
-                <div data-id="<?= $service->id ?>" class="service-data">
+                <div data-id="<?= $service->id ?>" class="service-data" data-type-id="<?= $service->type ?>">
                     <?= $this->Form->hidden('services.'.$service->id.'.id',
                         ['value' => $service->id, 'class' => 'service-id']
                     ) ?>
@@ -47,7 +47,8 @@
                             <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                         </span>
                         <br>
-                        <button type="button" class="button select-service" data-id="<?= $service->id ?>">
+                        <button type="button" class="button select-service" data-id="<?= $service->id ?>"
+                        data-type-id="<?= $service->type ?>">
                             <?= __('Select') ?>
                         </button>
                     <?php endif; ?>

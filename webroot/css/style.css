@@ -15,6 +15,10 @@ button#send{
     border-radius: 5px;
 }
 
+button.selected, .button:hover.selected, .button:focus.selected{
+    background-color: red;
+}
+
 button.add.tiny{
     border-radius: 5px;
     padding-left: 0.75rem;

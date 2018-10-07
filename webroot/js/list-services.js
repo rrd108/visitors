@@ -11,7 +11,7 @@ $(function () {
         closeText: 'Ok',
         hourMin: 10,
         hourMax: 18,
-        second: false,
+        showSecond: false,
         showMillisec: false,
         showMicrosec: false
     }).val();

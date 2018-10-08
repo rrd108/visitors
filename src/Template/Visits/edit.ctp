@@ -22,7 +22,11 @@
 		echo $this->Form->control( __( 'Club' ), [ 'value' => $club->name, 'disabled' ] );
 		echo $this->Form->label( __( 'Date' ) );
 		?>
-        <input type="text" name="date" id="datepicker" value="<?= h( $visit->date->format( "Y-m-d H:i:s" ) ) ?>">
+        <input type="text"
+               name="date"
+               id="datepicker"
+               disabled="disabled"
+               value="<?= h( $visit->date->format( "Y-m-d H:i:s" ) ) ?>">
         <ul id="services-list">
 			<?php foreach ( $services as $i => $service ): ?>
 				<?php if ( ( $i % 4 ) == 0 ) : ?>

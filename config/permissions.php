@@ -31,6 +31,11 @@ return [
 			'role' => 'user',
 			'controller' => 'Visits',
 			'action' => ['edit','view']
+		],
+		[
+			'role' => '*',
+			'controller' => 'ServicesDays',
+			'action' => ['listServicesDays']
 		]
 	]
 ];

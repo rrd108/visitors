@@ -1,20 +1,44 @@
 $(function () {
-    $("#datepicker").datetimepicker({
-        controlType: 'select',
-        timeFormat: "HH:mm:ss",
-        dateFormat: "yy-mm-dd",
-        timeText: 'Idő',
-        hourText: 'Óra',
-        minuteText: 'Perc',
-        secondText: 'Másodperc',
-        currentText: 'Most',
-        closeText: 'Ok',
-        hourMin: 10,
-        hourMax: 18,
-        showSecond: false,
-        showMillisec: false,
-        showMicrosec: false
-    }).val();
+    var eventDates = {};
+    var host = $(location).attr('origin');
+    var baseUrl = $($('script')[1]).attr('src').replace(/\/js\/.*/, '');
+    var url = host + baseUrl + '/servicesDays/listServicesDays/.json';
+    $.ajax({
+        method: 'get',
+        url: url,
+        success: function(result){
+           var servicesDays = result.servicesDays;
+           for(var key in servicesDays){
+               if(servicesDays.hasOwnProperty(key)){
+                   eventDates[ new Date(servicesDays[key])] = new Date(servicesDays[key]);
+               }
+               $("#datepicker").datetimepicker({
+                   beforeShowDay: function(date){
+                       var highlight = eventDates[date];
+                       if (highlight) {
+                           return [true, "event"];
+                       } else {
+                           return [true, '', ''];
+                       }
+                   },
+                   controlType: 'select',
+                   timeFormat: "HH:mm:ss",
+                   dateFormat: "yy-mm-dd",
+                   timeText: 'Idő',
+                   hourText: 'Óra',
+                   minuteText: 'Perc',
+                   secondText: 'Másodperc',
+                   currentText: 'Most',
+                   closeText: 'Ok',
+                   hourMin: 10,
+                   hourMax: 18,
+                   showSecond: false,
+                   showMillisec: false,
+                   showMicrosec: false
+               }).val();
+           }
+        }
+    });
 });
 if(typeof  selectedIds == 'undefined'){
     var selectedIds = {};

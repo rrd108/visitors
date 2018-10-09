@@ -59,7 +59,14 @@ class VisitsController extends AppController
     {
         $visit = $this->Visits->newEntity();
         if ($this->request->is('post')) {
+        	$this->loadModel('ServicesDays');
             $visit = $this->Visits->patchEntity($visit, $this->request->getData());
+            $servicesDays = $this->ServicesDays->find('list');
+            foreach ($servicesDays as $servicesDay){
+            	if($visit->date == $servicesDay){
+		            $this->Flash->error(__('The visit could not be saved. Please, try again.'));
+	            }
+            }
             $visit->payed = 0;
 	            if ( $this->Visits->save( $visit ) ) {
 		            $this->Flash->success( __( 'The visit has been saved.' ) );

@@ -114,9 +114,3 @@ td input[type="text"], td input[type="number"], td select {
     margin: 0;
     padding: 1em;
 }
-
-.event a {
-    background-color: #42B373 !important;
-    background-image :none !important;
-    color: #ffffff !important;
-}

@@ -16,7 +16,7 @@ $(function () {
                    beforeShowDay: function(date){
                        var highlight = eventDates[date];
                        if (highlight) {
-                           return [true, "event"];
+                           return [false, ''];
                        } else {
                            return [true, '', ''];
                        }

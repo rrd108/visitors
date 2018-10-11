@@ -27,9 +27,16 @@ class VisitsController extends AppController
         $this->paginate = [
             'contain' => ['Clubs']
         ];
-        $visits = $this->paginate($this->Visits
-	        ->find('ByUserId',['user_id' => $this->Auth->user('id')])
-        );
+        if($this->Auth->user('role') === 'user') {
+	        $visits = $this->paginate( $this->Visits
+		        ->find( 'ByUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] )
+	        );
+        }
+	    if($this->Auth->user('role') === 'superuser') {
+		    $visits = $this->paginate( $this->Visits
+			    ->find( 'ByUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] )
+		    );
+	    }
 
         $this->set(compact('visits'));
     }

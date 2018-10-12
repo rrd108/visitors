@@ -61,9 +61,12 @@ class VisitsController extends AppController
         if ($this->request->is('post')) {
         	$this->loadModel('ServicesDays');
             $visit = $this->Visits->patchEntity($visit, $this->request->getData());
-            $servicesDays = $this->ServicesDays->find('list');
             $visit->payed = 0;
 	            if ( $this->Visits->save( $visit ) ) {
+		            $clubsUser = $this->Visits->Clubs->ClubsUsers->newEntity();
+		            $clubsUser->club_id = $visit->club_id;
+		            $clubsUser->user_id = $this->Auth->user('id');
+		            $this->Visits->Clubs->ClubsUsers->save($clubsUser);
 		            $this->Flash->success( __( 'The visit has been saved.' ) );
 
 		            return $this->redirect( [ 'action' => 'index' ] );

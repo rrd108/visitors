@@ -1,10 +1,8 @@
 <?php
 namespace App\Controller;
 
-use App\Controller\AppController;
-use Cake\Event\Event;
 use App\Model\Entity\Visit;
-use Cake\ORM\Query;
+use Cake\Mailer\Email;
 
 /**
  * Visits Controller
@@ -73,6 +71,15 @@ class VisitsController extends AppController
             $visit->payed = 0;
 	            if ( $this->Visits->save( $visit ) ) {
 		            $this->Flash->success( __( 'The visit has been saved.' ) );
+		            if(!$clubs->count()){
+			            $email = new Email();
+			            $email->setEmailFormat('html');
+			            $email->setTo($this->Auth->user('email'));
+			            $email->setSubject(__('Add datas for your club') );
+			            $email->setTemplate('clubdata');
+			            $email->setViewVars(['club_id' => $visit->club->id]);
+			            $email->send();
+		            }
 
 		            return $this->redirect( [ 'action' => 'index' ] );
 	            }

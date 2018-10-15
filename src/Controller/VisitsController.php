@@ -58,23 +58,26 @@ class VisitsController extends AppController
     public function add()
     {
         $visit = $this->Visits->newEntity();
+	    $clubs = $this->Visits->Clubs->find('ByUserId',['user_id' => $this->Auth->user('id')])
+	                                 ->find('list', ['limit' => 200]);
         if ($this->request->is('post')) {
         	$this->loadModel('ServicesDays');
-            $visit = $this->Visits->patchEntity($visit, $this->request->getData());
+	        $visit = $this->Visits->patchEntity( $visit, $this->request->getData() );
+        	if(!$clubs->count()) {
+		        $clubsUser = $this->Visits->Clubs->ClubsUsers->newEntity();
+		        $this->Visits->Clubs->save( $visit->club );
+		        $clubsUser->club_id = $visit->club->id;
+		        $clubsUser->user_id = $this->Auth->user( 'id' );
+		        $this->Visits->Clubs->ClubsUsers->save( $clubsUser );
+	        }
             $visit->payed = 0;
 	            if ( $this->Visits->save( $visit ) ) {
-		            $clubsUser = $this->Visits->Clubs->ClubsUsers->newEntity();
-		            $clubsUser->club_id = $visit->club_id;
-		            $clubsUser->user_id = $this->Auth->user('id');
-		            $this->Visits->Clubs->ClubsUsers->save($clubsUser);
 		            $this->Flash->success( __( 'The visit has been saved.' ) );
 
 		            return $this->redirect( [ 'action' => 'index' ] );
 	            }
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
-        $clubs = $this->Visits->Clubs->find('ByUserId',['user_id' => $this->Auth->user('id')])
-                                     ->find('list', ['limit' => 200]);
         $services = $this->Visits->Services->find('all');
         $this->set(compact('visit', 'clubs', 'services'));
     }

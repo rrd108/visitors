@@ -10,7 +10,7 @@
     <fieldset>
         <legend><?= __('Add Visit') ?></legend>
         <?php
-            if($clubs->toArray()) {
+            if($clubs->count()) {
 	            echo $this->Form->control('club_id', ['options' => $clubs]);
             } else {
                 echo $this->Form->control('club.name',['label' => __('Club')]);

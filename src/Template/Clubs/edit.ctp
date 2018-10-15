@@ -30,9 +30,8 @@
             echo $this->Form->control('phone');
             echo $this->Form->control('email');
             echo $this->Form->control('description');
-            echo $this->Form->control('users._ids', ['options' => $users]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'),['id' => 'send', 'class' => 'button small']) ?>
     <?= $this->Form->end() ?>
 </div>

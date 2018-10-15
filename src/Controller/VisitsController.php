@@ -34,7 +34,7 @@ class VisitsController extends AppController
         }
 	    if($this->Auth->user('role') === 'superuser') {
 		    $visits = $this->paginate( $this->Visits
-			    ->find( 'ByUserId', [ 'user_id' => $this->Auth->user( 'id' ) ] )
+			    ->find( 'all' )
 		    );
 	    }
 

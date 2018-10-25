@@ -10,7 +10,11 @@
     <fieldset>
         <legend><?= __('Add Visit') ?></legend>
         <?php
-            echo $this->Form->control('club_id', ['options' => $clubs]);
+            if($clubs->count()) {
+	            echo $this->Form->control('club_id', ['options' => $clubs]);
+            } else {
+                echo $this->Form->control('club.name',['label' => __('Club')]);
+            }
             echo $this->Form->label('date',__('Date'));
         ?>
         <input type="text" name="date" id="datepicker" autocomplete="off">

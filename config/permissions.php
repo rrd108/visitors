@@ -33,6 +33,12 @@ return [
 			'action' => ['edit','view']
 		],
 		[
+			'role' => 'user',
+			'controller' => 'Clubs',
+			'action' => ['edit','view'],
+			'allowed' => new \CakeDC\Auth\Rbac\Rules\Owner(['table' => 'clubs_users','id'=> 'club_id'])
+		],
+		[
 			'role' => '*',
 			'controller' => 'ServicesDays',
 			'action' => ['listServicesDays']

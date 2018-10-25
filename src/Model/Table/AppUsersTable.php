@@ -2,13 +2,11 @@
 
 
 namespace App\Model\Table;
+use CakeDC\Users\Model\Table\UsersTable as CakeUsersTable;
 use Cake\Validation\Validator;
-
-use CakeDC\Users\Model\Table\UsersTable;
-
 use Cake\Core\Configure;
 
-class AppUsersTable extends UsersTable{
+class AppUsersTable extends CakeUsersTable{
 
 	public function initialize(array $config)
 	{
@@ -23,6 +21,7 @@ class AppUsersTable extends UsersTable{
 		$username = Configure::read('Auth.authenticate.Form.fields.username');
 		if ($username === 'email') {
 			$validator->remove('username');
+			$validator->allowEmpty('username');
 		}
 		return $validator;
 	}

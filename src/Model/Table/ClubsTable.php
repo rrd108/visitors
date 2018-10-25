@@ -71,18 +71,15 @@ class ClubsTable extends Table
         $validator
             ->scalar('address')
             ->maxLength('address', 255)
-            ->requirePresence('address', 'create')
             ->notEmpty('address');
 
         $validator
             ->scalar('phone')
             ->maxLength('phone', 255)
-            ->requirePresence('phone', 'create')
             ->notEmpty('phone');
 
         $validator
             ->email('email')
-            ->requirePresence('email', 'create')
             ->notEmpty('email');
 
         $validator

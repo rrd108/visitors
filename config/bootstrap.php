@@ -215,7 +215,6 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
-Configure::write('Users.config', ['users']);
-Configure::write('Users.Username.registration', false);
+Configure::write('Users.config',['users']);
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 Configure::write('Auth.authenticate.Form.fields.username', 'email');

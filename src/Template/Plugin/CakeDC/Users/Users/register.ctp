@@ -16,7 +16,6 @@ use Cake\Core\Configure;
     <fieldset>
         <legend><?= __d('CakeDC/Users', 'Add User') ?></legend>
         <?php
-        echo $this->Form->control('username', ['label' => __d('CakeDC/Users', 'Username')]);
         echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
         echo $this->Form->control('password', ['label' => __d('CakeDC/Users', 'Password')]);
         echo $this->Form->control('password_confirm', [

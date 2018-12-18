@@ -13,7 +13,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,37 +20,35 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+	<?= $this->Html->css('foundation.min') ?>
+    <?= $this->Html->css('base') ?>
+	<?= $this->Html->css('foundation-icons') ?>
+	<?= $this->Html->css('style') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
+    <div class="top-bar-right right">
+        <ul class="menu">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li><?= $this->User->welcome() ?></li>
+                <li><?= $this->User->logout() ?></li>
             </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
+        </ul>
     </div>
-    <footer>
-    </footer>
+    <main class="container clearfix row">
+        <?= $this->fetch('content') ?>
+        <?= $this->Flash->render() ?>
+    </main>
+    <footer></footer>
+    <?= $this->Html->script('vendor/jquery.js') ?>
+    <?= $this->Html->script('vendor/what-input.js') ?>
+    <?= $this->Html->script('vendor/foundation.js') ?>
+    <?= $this->fetch('script') ?>
 </body>
 </html>

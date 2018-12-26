@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a36751a8004d428c2fa13df667d9b203",
+    "content-hash": "f4187d2c6d11b166ab771e545c38e727",
     "packages": [
         {
             "name": "aura/intl",
@@ -794,6 +794,73 @@
                 "phinx"
             ],
             "time": "2018-08-12T17:22:43+00:00"
+        },
+        {
+            "name": "rrd108/cakephp-datalist",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rrd108/cakephp-datalist.git",
+                "reference": "087821b5d9ddbfb5e14eab1edcabf4a00927c742"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rrd108/cakephp-datalist/zipball/087821b5d9ddbfb5e14eab1edcabf4a00927c742",
+                "reference": "087821b5d9ddbfb5e14eab1edcabf4a00927c742",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.14|^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Datalist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Datalist plugin for CakePHP 3",
+            "homepage": "https://github.com/rrd108/cakephp-datalist",
+            "time": "2018-11-23T18:21:47+00:00"
+        },
+        {
+            "name": "rrd108/cakephp-menulink",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rrd108/cakephp-menulink.git",
+                "reference": "633bac8cefb317ad3c25bdd360d3c31c821ea741"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rrd108/cakephp-menulink/zipball/633bac8cefb317ad3c25bdd360d3c31c821ea741",
+                "reference": "633bac8cefb317ad3c25bdd360d3c31c821ea741",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7|^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "MenuLink\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "MenuLink plugin for CakePHP",
+            "time": "2018-12-26T15:24:30+00:00"
         },
         {
             "name": "symfony/config",
@@ -2315,16 +2382,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.1.0",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0"
+                "reference": "8aae5b59b83bb4d0dbf07b0a835f2680a658f610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/d0230c5c77a7e3cfa69446febf340978540958c0",
-                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/8aae5b59b83bb4d0dbf07b0a835f2680a658f610",
+                "reference": "8aae5b59b83bb4d0dbf07b0a835f2680a658f610",
                 "shasum": ""
             },
             "require": {
@@ -2362,7 +2429,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-10-10T09:24:14+00:00"
+            "time": "2018-12-26T11:32:39+00:00"
         },
         {
             "name": "phar-io/manifest",

@@ -8,26 +8,23 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
+    <?= $this->Html->css("https://fonts.googleapis.com/css?family=Quicksand") ?>
 	<?= $this->Html->css(['foundation.min', 'foundation-icons', 'visitors']) ?>
-    <?= $this->Html->script(['vendor/jquery.js', 'vendor/what-input.js', 'vendor/foundation.js']) ?>
 
-    <?= $this->fetch('script') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 </head>
 <body>
-    <div class="top-bar-right right">
-        <ul class="menu">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li><?= $this->User->welcome() ?></li>
-                <li><?= $this->User->logout() ?></li>
-            </ul>
-        </ul>
-    </div>
+    <header><?= $this->element('header') ?></header>
+
     <main class="container clearfix row">
         <?= $this->fetch('content') ?>
         <?= $this->Flash->render() ?>
     </main>
     <footer></footer>
+    <?= $this->Html->script(['vendor/jquery.js', 'vendor/what-input.js',
+        'vendor/foundation.js', 'visitors']) ?>
+
+    <?= $this->fetch('script') ?>
 </body>
 </html>

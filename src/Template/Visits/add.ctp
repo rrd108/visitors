@@ -20,10 +20,10 @@
         <input type="text" name="date" id="datepicker" autocomplete="off">
         <ul id="services-list">
         <?php foreach ($services as $i => $service): ?>
-            <?php if (($i % 4) == 0) : ?>
+            <?php if (($i % 3) == 0) : ?>
                 <div class="row">
             <?php endif; ?>
-            <li class="column large-3 small-12">
+            <li class="column large-4 small-12'?>">
                 <h3><?= $service->service ?></h3>
                 <div data-id="<?= $service->id ?>" class="service-data" data-type-id="<?= $service->type ?>">
                     <?= $this->Form->hidden('services.'.$service->id.'.id',
@@ -60,7 +60,7 @@
                     <?php endif; ?>
                 </div>
             </li>
-            <?php if (($i % 4) == 3) : ?>
+            <?php if (($i % 3) == 2) : ?>
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>

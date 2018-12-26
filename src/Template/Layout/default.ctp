@@ -17,9 +17,9 @@
 <body>
     <header><?= $this->element('header') ?></header>
 
+    <?= $this->Flash->render() ?>
     <main class="container clearfix row">
         <?= $this->fetch('content') ?>
-        <?= $this->Flash->render() ?>
     </main>
     <footer></footer>
     <?= $this->Html->script(['vendor/jquery.js', 'vendor/what-input.js',

@@ -29,6 +29,7 @@
                     <?= $this->Form->hidden('services.'.$service->id.'.id',
                         ['value' => $service->id, 'class' => 'service-id']
                     ) ?>
+                    <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                     <p><?= $service->description ?></p>
                     <span><?= $service->minutes . ' ' . __('minutes') ?></span>
                     <?php if($service->type == 1): ?>

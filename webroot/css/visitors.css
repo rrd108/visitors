@@ -30,9 +30,9 @@ a.active {
 .login {
     margin-top: 5em;
     width: 25em;
-    border: thin solid #aaa;
+    border: thin solid #483a23;
     padding: 2em;
-    box-shadow: 5px 10px 8px #aaa;
+    box-shadow: 5px 10px 8px #483a23;
 }
 .login img {
     height: 5em;

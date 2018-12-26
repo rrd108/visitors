@@ -217,3 +217,4 @@ Configure::write('Users.config',['users']);
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 //Application::addPlugin('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 Configure::write('Auth.authenticate.Form.fields.username', 'email');
+Application::addPlugin('MenuLink');

@@ -29,9 +29,9 @@ require __DIR__ . '/paths.php';
  */
 require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
+use App\Application;
 use Cake\Cache\Cache;
 use Cake\Console\ConsoleErrorHandler;
-use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
 use Cake\Core\Plugin;
@@ -41,6 +41,7 @@ use Cake\Error\ErrorHandler;
 use Cake\Http\ServerRequest;
 use Cake\Log\Log;
 use Cake\Mailer\Email;
+use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 
@@ -48,6 +49,10 @@ use Cake\Utility\Security;
  * Uncomment block of code below if you want to use `.env` file during development.
  * You should copy `config/.env.default to `config/.env` and set/modify the
  * variables as required.
+ *
+ * It is HIGHLY discouraged to use a .env file in production, due to security risks
+ * and decreased performance on each request. The purpose of the .env file is to emulate
+ * the presence of the environment variables like they would be present in production.
  */
 // if (!env('APP_NAME') && file_exists(CONFIG . '.env')) {
 //     $dotenv = new \josegonzalez\Dotenv\Loader([CONFIG . '.env']);
@@ -145,7 +150,7 @@ if (!Configure::read('App.fullBaseUrl')) {
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
-Email::setConfigTransport(Configure::consume('EmailTransport'));
+TransportFactory::setConfig(Configure::consume('EmailTransport'));
 Email::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
 Security::setSalt(Configure::consume('Security.salt'));
@@ -208,13 +213,7 @@ Type::build('timestamp')
  *
  */
 
-/*
- * Only try to load DebugKit in development mode
- * Debug Kit should not be installed on a production system
- */
-if (Configure::read('debug')) {
-    Plugin::load('DebugKit', ['bootstrap' => true]);
-}
 Configure::write('Users.config',['users']);
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+//Application::addPlugin('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 Configure::write('Auth.authenticate.Form.fields.username', 'email');

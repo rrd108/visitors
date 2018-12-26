@@ -11,10 +11,11 @@
 use Cake\Core\Configure;
 
 ?>
-<div class="users form large-10 medium-9 columns">
+<div class="users login form">
     <?= $this->Form->create($user); ?>
     <fieldset>
-        <legend><?= __d('CakeDC/Users', 'Add User') ?></legend>
+        <legend><?= __('Register') ?></legend>
+        <div class="row align-center"><?= $this->Html->image('logo.png') ?></div>
         <?php
         echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
         echo $this->Form->control('password', ['label' => __d('CakeDC/Users', 'Password')]);
@@ -25,7 +26,7 @@ use Cake\Core\Configure;
         echo $this->Form->control('first_name', ['label' => __d('CakeDC/Users', 'First name')]);
         echo $this->Form->control('last_name', ['label' => __d('CakeDC/Users', 'Last name')]);
         echo $this->Form->control('phone', ['label' => __('Phone')]);
-        echo $this->Form->control('address', ['label' => __('Address')]);
+        //echo $this->Form->control('address', ['label' => __('Address')]);
         if (Configure::read('Users.Tos.required')) {
             echo $this->Form->control('tos', ['type' => 'checkbox', 'label' => __d('CakeDC/Users', 'Accept TOS conditions?'), 'required' => true]);
         }

@@ -38,6 +38,13 @@ a.active {
     height: 5em;
 }
 
+.error-message {
+    background-color: #fcd6d6;
+}
+.form-error {
+    display: block;
+}
+
 main.row {
     max-width: max-content;
 }

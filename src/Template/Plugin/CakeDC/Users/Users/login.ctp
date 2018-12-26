@@ -9,8 +9,13 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 use Cake\Core\Configure;
+
+$this->assign('title', __('Login'));
 ?>
-<div class="users form">
+<div class="users login form">
+    <div class="row align-center">
+        <?= $this->Html->image('logo.png') ?>
+    </div>
 	<?= $this->Flash->render('auth') ?>
 	<?= $this->Form->create() ?>
 	<fieldset>

@@ -1,5 +1,45 @@
-.row {
-    max-width: initial;
+*, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6  {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.top-bar-section ul {
+    list-style-type: none;
+}
+.top-bar-section li {
+    float: left;
+    margin: 0 0.3em;
+}
+
+.top-bar ul, .top-bar {
+    background-color: #fff;
+}
+
+.top-bar{
+    margin-bottom: 1.5em;
+}
+
+.top-bar-left img {
+    height: 1.6em;
+}
+
+a.active {
+    background-color: #2c83b6;
+    color: #fff;
+}
+
+.login {
+    margin-top: 5em;
+    width: 25em;
+    border: thin solid #aaa;
+    padding: 2em;
+    box-shadow: 5px 10px 8px #aaa;
+}
+.login img {
+    height: 5em;
+}
+
+main.row {
+    max-width: max-content;
 }
 
 fieldset {

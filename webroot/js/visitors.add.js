@@ -1,16 +1,17 @@
 $(function () {
+    // set days non-selectable when we are not open or full
     var eventDates = {};
     var host = $(location).attr('origin');
     var baseUrl = $($('script')[1]).attr('src').replace(/\/js\/.*/, '');
-    var url = host + baseUrl + '/servicesDays/listServicesDays.json';
+    var url = host + baseUrl + '/servicesDays/listNonServicesDays.json';
     $.ajax({
         method: 'get',
         url: url,
         success: function(result){
-           var servicesDays = result.servicesDays;
-           for(var key in servicesDays){
-               if(servicesDays.hasOwnProperty(key)){
-                   eventDates[ new Date(servicesDays[key])] = new Date(servicesDays[key]);
+           var nonServicesDays = result.nonServicesDays;
+           for(var key in nonServicesDays){
+               if(nonServicesDays.hasOwnProperty(key)){
+                   eventDates[ new Date(nonServicesDays[key])] = new Date(nonServicesDays[key]);
                }
                $("#datepicker").datetimepicker({
                    beforeShowDay: function(date){

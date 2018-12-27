@@ -194,8 +194,11 @@ td input[type="text"], td input[type="number"], td select {
 }
 */
 
-ul.service {
-    list-style-type: none;
+dl.service {
     margin: 0 0 1em 0;
     color: #483a23;
+}
+dl.service dt {
+    text-align: right;
+    margin: 0 1em 0 0;
 }

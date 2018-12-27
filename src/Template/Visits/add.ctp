@@ -43,10 +43,10 @@
                     <p>A programok és az étkezés menüből választhat egyet-egyet.</p>
 
                     <h4>Megrendelés</h4>
-                    <ul class="service">
-                        <li>Teljes áru vendég: 5 fő * 2 590 Ft = 14 600 Ft</li>
-                        <li>Teljes áru vendég: 5 fő * 2 590 Ft = 14 600 Ft</li>
-                    </ul>
+                    <dl class="service">
+                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
+                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
+                    </dl>
 
                     <?= $this->Form->button(
                         'Megrendelem',

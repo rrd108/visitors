@@ -67,10 +67,6 @@ button#send{
     font-weight: bold;
 }
 
-button.selected, .button:hover.selected, .button:focus.selected{
-    background-color: red;
-}
-
 button.add.tiny{
     border-radius: 5px;
     padding-left: 0.75rem;
@@ -164,6 +160,10 @@ td input[type="text"], td input[type="number"], td select {
     background: #e1cc9f;
 }
 
+.service.selected {
+    border: thick solid #5da423;
+}
+
 .service-data {
     color: #483a23;
     padding: 1em;
@@ -175,4 +175,27 @@ td input[type="text"], td input[type="number"], td select {
     font-weight: bold;
     margin: 0;
     padding: .5em;
+}
+
+.faded {
+    background-color: #bababa;
+}
+.faded h3, .faded .button {
+    background-color: #ababab;
+    color: #fff;
+}
+.faded img {
+    filter: grayscale(100%);
+}
+
+/*
+.faded .info {
+    display: none;
+}
+*/
+
+ul.service {
+    list-style-type: none;
+    margin: 0 0 1em 0;
+    color: #483a23;
 }

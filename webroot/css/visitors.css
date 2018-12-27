@@ -121,12 +121,6 @@ td input[type="text"], td input[type="number"], td select {
     background-color:  #e1cc9f;
 }
 
-@media (min-width: 640px) {
-    #actions-sidebar {
-        height: 100vh;
-    }
-}
-
 .message{
     text-align: center;
     background-color: #e1cc9f;
@@ -136,28 +130,38 @@ td input[type="text"], td input[type="number"], td select {
     border-radius: 2px;
 }
 
-
-.hidden{
-    display: none;
+.visits .main-service {
+    color: #e1cc9f;
+    background: #483a23;
 }
 
-#services-list {
-    list-style-type: none;
+.visits .main-service h3 {
+    background-color: #e1cc9f;
+    color: #483a23;
 }
 
-#services-list li {
+.visits .main-service-data {
+    color: #e1cc9f;
+    padding: 1em;
+}
+.visits .main-service-data label {
+    color: #e1cc9f;
+}
+
+.service {
+    margin-bottom: 5%;
+    height: 95%;
+    background: #e1cc9f;
+}
+
+.service-data {
     color: #483a23;
     padding: 1em;
 }
 
-#services-list li div {
-    background: #e1cc9f;
-    padding: 1em;
-}
-
-#services-list li h3{
+.visits h3{
     color: #e1cc9f;
     background: #483a23;
     margin: 0;
-    padding: 1em;
+    padding: .5em;
 }

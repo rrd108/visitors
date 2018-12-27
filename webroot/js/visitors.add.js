@@ -2,7 +2,7 @@ $(function () {
     var eventDates = {};
     var host = $(location).attr('origin');
     var baseUrl = $($('script')[1]).attr('src').replace(/\/js\/.*/, '');
-    var url = host + baseUrl + '/servicesDays/listServicesDays/.json';
+    var url = host + baseUrl + '/servicesDays/listServicesDays.json';
     $.ajax({
         method: 'get',
         url: url,

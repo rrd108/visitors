@@ -105,13 +105,13 @@ class ServicesDaysController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function listServicesDays(){
-    	$servicesDays =  $this->ServicesDays->find('list')->toArray();
-    	foreach ($servicesDays as &$servicesDay){
-		    $servicesDay = date_format($servicesDay,"m/d/Y");
-	    }
-    	$this->set(compact('servicesDays'));
-    	$this->set('_serialize', ['servicesDays']);
-
+    public function listServicesDays()
+    {
+        $servicesDays =  $this->ServicesDays->find('list')->toArray();
+        foreach ($servicesDays as &$servicesDay) {
+            $servicesDay = date_format($servicesDay, "m/d/Y");
+        }
+        $this->set(compact('servicesDays'));
+        $this->set('_serialize', ['servicesDays']);
     }
 }

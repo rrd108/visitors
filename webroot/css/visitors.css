@@ -2,6 +2,10 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+body {
+    color: #483a23;
+}
+
 .top-bar-section ul {
     list-style-type: none;
 }
@@ -57,9 +61,10 @@ fieldset {
 
 
 button#send{
-    display: block;
-    margin: 0 auto 10px;
     border-radius: 5px;
+    background: #e1cc9f;
+    color: #483a23;
+    font-weight: bold;
 }
 
 button.selected, .button:hover.selected, .button:focus.selected{
@@ -130,21 +135,26 @@ td input[type="text"], td input[type="number"], td select {
     border-radius: 2px;
 }
 
-.visits .main-service {
+.visits h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.visits .bg {
+    background-color: #eee;
+}
+
+.visits .service-main {
     color: #e1cc9f;
     background: #483a23;
 }
 
-.visits .main-service h3 {
-    background-color: #e1cc9f;
-    color: #483a23;
-}
 
-.visits .main-service-data {
+.visits .service-main .service-data {
     color: #e1cc9f;
     padding: 1em;
 }
-.visits .main-service-data label {
+.visits .service-main .service-data label {
     color: #e1cc9f;
 }
 
@@ -159,9 +169,10 @@ td input[type="text"], td input[type="number"], td select {
     padding: 1em;
 }
 
-.visits h3{
+.visits h3 {
     color: #e1cc9f;
     background: #483a23;
+    font-weight: bold;
     margin: 0;
     padding: .5em;
 }

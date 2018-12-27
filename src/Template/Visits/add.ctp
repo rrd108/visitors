@@ -9,14 +9,11 @@
 <div class="visits form large-12 columns content">
     <?= $this->Form->create($visit) ?>
     <div class="row">
-        <div class="column large-3">
-            <div class="main-service">
-                <?php $service = $services->filter(function ($service, $key) {
-                    return $service->type == 1;
-                })->first(); ?>
-                <h3><?= $service->service ?></h3>
-
-                <div class="main-service-data">
+        <div class="column large-3 small-12">
+            <?php $service = $services[1][0]; ?>
+            <h2><?= $service->service ?></h2>
+            <div class="service-main">
+                <div class="service-data">
                     <?php
                     if($clubs->count()) {
                         echo $this->Form->control('club_id', ['options' => $clubs]);
@@ -42,13 +39,18 @@
                         ['label' => __('Discount price') . ' ' . $service->full_price . ' Ft',
                             'placeholder' => __('person')]
                     ) ?>
+                    <?= $this->Form->button(
+                        'Megrendelem',
+                        ['id' => 'send', 'class' => 'button']
+                    ) ?>
                 </div>
             </div>
         </div>
-        <div class="column large-9">
+        <div class="column large-6 bg small-12">
+            <h2>Különleges programok</h2>
             <div class="row">
-            <?php foreach ($services->skip(1) as $i => $service): ?>
-                <div class="column large-4">
+            <?php foreach ($services[2] as $i => $service): ?>
+                <div class="column large-6 small-12">
                     <div class="service">
                         <h3><?= $service->service ?></h3>
                         <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
@@ -66,9 +68,9 @@
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                             </span>
                             <br>
-                            <button type="button" class="button select-service" data-id="<?= $service->id ?>"
-                                    data-type-id="<?= $service->type ?>">
-                                <?= __('Select') ?>
+                            <button type="button" class="button select-service fi-check"
+                                    data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                                Kérem
                             </button>
                         </div>
                     </div>
@@ -76,7 +78,36 @@
             <?php endforeach; ?>
             </div>
         </div>
+        <div class="column large-3 small-12">
+            <h2>Étkezés</h2>
+            <?php foreach ($services[3] as $i => $service): ?>
+                <div class="column">
+                    <div class="service">
+                        <h3><?= $service->service ?></h3>
+                        <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <p><?= $service->description ?></p>
+                            <span><?= $service->minutes . ' ' . __('minutes') ?></span>
+                            <span class="full-price" data-id="<?= $service->id ?>">
+                                <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                            </span>
+                            <br>
+                            <span class="discount-price" data-id="<?= $service->id ?>">
+                                <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                            </span>
+                            <br>
+                            <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                    data-type-id="<?= $service->type ?>">
+                                Kérem
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-    <?= $this->Form->button(__('Submit'),['id' => 'send', 'class' => 'button small']) ?>
     <?= $this->Form->end() ?>
 </div>

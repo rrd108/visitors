@@ -93,7 +93,7 @@ class VisitsController extends AppController
             }
             $this->Flash->error(__('The visit could not be saved. Please, try again.'));
         }
-        $services = $this->Visits->Services->find();
+        $services = $this->Visits->Services->find()->groupBy('type')->toArray();
         $this->set(compact('visit', 'clubs', 'services'));
     }
 

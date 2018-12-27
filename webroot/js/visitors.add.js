@@ -48,7 +48,7 @@ $(function () {
         $(this).addClass('success');
         $(this).closest('.service').removeClass('faded').addClass('selected');
 
-        $(this).closest('.row').prepend($(this).closest('.column'));
+        $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
     });
 
     /*

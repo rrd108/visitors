@@ -47,6 +47,7 @@
                                 [
                                     'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
                                     'placeholder' => __('person'),
+                                    'required' => false,
                                     'data-minutes' => $service->minutes,
                                     'data-price-full' => $service->full_price,
                                     'data-service' => $service->service
@@ -57,6 +58,7 @@
                                 [
                                     'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
                                     'placeholder' => __('person'),
+                                    'required' => false,
                                     'data-minutes' => $service->minutes,
                                     'data-price-discount' => $service->discount_price,
                                     'data-service' => $service->service

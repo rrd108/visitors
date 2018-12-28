@@ -90,7 +90,7 @@
                                 <?= $this->Html->image($service->id) ?>
                             </div>
                             <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p><?= $service->minutes . ' ' . __('min') ?></p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,12 @@
                 <?php foreach ($services[4] as $i => $service): ?>
                     <div class="column small-12">
                         <div class="service">
-                            <h3><?= $service->service ?></h3>
+                            <h3>
+                            <span class="row align-justify">
+                                <span class="column large-10"><?= $service->service ?></span>
+                                <span class="column large-2 min"><?= $service->minutes . ' ' . __('min') ?></span>
+                            </span>
+                            </h3>
                             <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
                                 <?= $this->Form->hidden('services.'.$service->id.'.id',
                                     ['value' => $service->id, 'class' => 'service-id']
@@ -110,7 +115,7 @@
                                     <?= $this->Html->image($service->id) ?>
                                 </div>
                                 <p><?= $service->description ?></p>
-                                <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                                <p><?= $service->minutes . ' ' . __('min') ?></p>
                                 <p data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' '
                                         . $this->Number->format($service->full_price) . ' Ft' ?>
@@ -140,7 +145,12 @@
             <?php foreach ($services[2] as $i => $service): ?>
                 <div class="column large-6 small-12">
                     <div class="service">
-                        <h3><?= $service->service ?></h3>
+                        <h3>
+                            <span class="row align-justify">
+                                <span class="column large-10"><?= $service->service ?></span>
+                                <span class="column large-2 min"><?= $service->minutes . ' ' . __('min') ?></span>
+                            </span>
+                        </h3>
                         <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
@@ -150,7 +160,6 @@
                             </div>
                             <div class="info">
                                 <p><?= $service->description ?></p>
-                                <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                                 <p data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' '
                                         . $this->Number->format($service->full_price) . ' Ft' ?>
@@ -180,7 +189,12 @@
             <?php foreach ($services[3] as $i => $service): ?>
                 <div class="column small-12">
                     <div class="service">
-                        <h3><?= $service->service ?></h3>
+                        <h3>
+                            <span class="row align-justify">
+                                <span class="column large-10"><?= $service->service ?></span>
+                                <span class="column large-2 min"><?= $service->minutes . ' ' . __('min') ?></span>
+                            </span>
+                        </h3>
                         <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
@@ -189,7 +203,7 @@
                                 <?= $this->Html->image($service->id) ?>
                             </div>
                             <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p><?= $service->minutes . ' ' . __('min') ?></p>
                             <p data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' '
                                     . $this->Number->format($service->full_price) . ' Ft' ?>

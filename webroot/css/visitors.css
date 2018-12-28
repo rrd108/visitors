@@ -169,13 +169,44 @@ td input[type="text"], td input[type="number"], td select {
     border: thick solid #fff;
 }
 
+.visits h2 {
+    margin: .7em 0 .3em 0;
+}
+
 .visits h3 {
     color: #e1cc9f;
     background: #483a23;
     font-weight: bold;
     margin: 0;
     padding: .5em;
+    font-size: 1.3rem;
 }
+
+.min {
+    font-size: .7rem;
+    text-align: right;
+    background-color: #e1cc9f;
+    color: #483a23;
+
+    position: relative;
+    left: -11px;
+    filter: drop-shadow(0 6px 3px rgba(0, 0, 0, 0.1));
+    border-right: 2px solid #e1cc9f;
+    height: 30px;
+}
+
+.min:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    border: 15px solid #e1cc9f;
+    right: -16px;
+    border-left-width: 0;
+    border-right-color: transparent;
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.04));
+}
+
 
 .visits button {
     width: 100%;
@@ -188,6 +219,7 @@ button.success {
 .faded {
     background-color: #bababa;
 }
+
 .faded h3, .faded .button {
     background-color: #ababab;
     color: #fff;

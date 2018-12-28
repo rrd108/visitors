@@ -10,15 +10,12 @@
                 <?php if ($this->request->getSession()->read('Auth.User')) : ?>
                     <ul class="dropdown menu" data-dropdown-menu>
                         <li>
-                            <?= $this->Html->image('logo.png') ?>
-                        </li>
-                        <li>
                             <?= $this->MenuLink->menuLink(
-                                '<i class="fi-home"> ' . __('Home') . '</i>',
+                                $this->Html->image('logo.png'),
                                 [
                                     'plugin' => false,
-                                    'controller' => 'CompaniesGrants',
-                                    'action' => 'index'
+                                    'controller' => 'visits',
+                                    'action' => 'add'
                                 ],
                                 [
                                     'escape' => false
@@ -36,8 +33,8 @@
                                 ) ?>
                                 <ul class="nested vertical menu">
                                     <li><?= $this->MenuLink->menuLink(
-                                            '<i class="fi-torso-business"> ' . __('Companies') . '</i>',
-                                            ['plugin' => false, 'controller' => 'companies', 'action' => 'index'],
+                                            '<i class="fi-asl"> ' . __('Services') . '</i>',
+                                            ['plugin' => false, 'controller' => 'services', 'action' => 'index'],
                                             ['escape' => false]
                                         ) ?></li>
                                 </ul>

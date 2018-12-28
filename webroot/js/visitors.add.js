@@ -70,7 +70,7 @@ $(function () {
     });
 
     // price and time calculation
-    $('*[data-service]').on('click blur', function () {
+    var calculatePriceAndTime = function () {
         var summary = '';
         var totalAmount = 0;
         var totalMinutes = 0;
@@ -116,9 +116,11 @@ $(function () {
 
         if (totalAmount) {
             $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
-                + number_format(totalMinutes / 60, 1) + ' óra');
+                + number_format(totalMinutes / 60, 1) + ' óra').hide().fadeIn();
         }
-    });
+    };
+    $('input[data-service]').on('blur', calculatePriceAndTime);
+    $('button[data-service]').on('click', calculatePriceAndTime);
 
     $("#order").submit(function (event) {
         event.preventDefault();

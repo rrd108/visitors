@@ -163,6 +163,11 @@ td input[type="text"], td input[type="number"], td select {
     padding: 1em;
 }
 
+.service-data img {
+    width: 85%;
+    height: 85%;
+}
+
 .visits h3 {
     color: #e1cc9f;
     background: #483a23;

@@ -41,7 +41,9 @@
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
-                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id) ?>
+                            </div>
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                             <?= $this->Form->control(
@@ -71,6 +73,7 @@
                 </div>
             </div>
         </div>
+
         <div class="column large-6 bg small-12">
             <h2>Különleges programok</h2>
             <div class="row">
@@ -82,14 +85,15 @@
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
-                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id) ?>
+                            </div>
                             <div class="info">
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                                <p class="full-price" data-id="<?= $service->id ?>">
+                                <p data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                                </p>
-                                <p class="discount-price" data-id="<?= $service->id ?>">
+                                    /
                                     <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                                 </p>
                                 <button type="button" class="button select-service fi-check"
@@ -119,13 +123,14 @@
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
-                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id) ?>
+                            </div>
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                            <p class="full-price" data-id="<?= $service->id ?>">
+                            <p data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                            </p>
-                            <p class="discount-price" data-id="<?= $service->id ?>">
+                                /
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                             </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
@@ -151,13 +156,14 @@
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
-                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id) ?>
+                            </div>
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                            <p class="full-price" data-id="<?= $service->id ?>">
+                            <p data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                            </p>
-                            <p class="discount-price" data-id="<?= $service->id ?>">
+                                 /
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                             </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"

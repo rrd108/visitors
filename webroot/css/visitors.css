@@ -154,7 +154,7 @@ td input[type="text"], td input[type="number"], td select {
     background: #e1cc9f;
 }
 
-.service.selected {
+.service.selected, .service-main.selected {
     border: thick solid #5da423;
 }
 
@@ -166,6 +166,7 @@ td input[type="text"], td input[type="number"], td select {
 .service-data img {
     width: 85%;
     height: 85%;
+    border: thick solid #fff;
 }
 
 .visits h3 {

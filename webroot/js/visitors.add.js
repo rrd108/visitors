@@ -85,6 +85,7 @@ $(function () {
                     + '<dt>' + number_format(itemValue, 0) + ' Ft</dt>';
                 // here the time does not doubled if we have full AND discount members together
                 totalMinutes = totalMinutes ? totalMinutes : totalMinutes + $(this).data('minutes');
+                $('.service-main').addClass('selected');
             }
 
             // handling buttons

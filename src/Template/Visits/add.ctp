@@ -12,7 +12,10 @@
     <?= $this->Form->create($visit, ['id' => 'order']) ?>
     <?= $this->Form->button(
         'Megrendelem',
-        ['class' => 'button success']
+        [
+            'class' => 'button success',
+            'title' => 'Kattints a megrendeléshez'
+        ]
     ) ?>
     <div class="row">
         <div class="column large-3 small-12">

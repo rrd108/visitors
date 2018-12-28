@@ -43,8 +43,14 @@ $(function () {
 
     // on selecting a service gray out all others with the same type
     $('button').click(function () {
+        if ($(this).data('type-id') == 4) {
+            $(this).toggleClass('success');
+            $(this).closest('.service').toggleClass('selected');
+            return;
+        }
+
         $(this).addClass('success');
-        if ($(this).data('type-id') != 4) { //type 4 is allowing hvae more than one
+        if ($(this).data('type-id') != 4) { //type 4 is allowing have more than one
             var buttonsThisType = $('button[data-type-id="' + $(this).data('type-id') + '"]');
             buttonsThisType.closest('.service').addClass('faded').removeClass('selected');
             $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);

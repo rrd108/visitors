@@ -1,3 +1,5 @@
+<?php $this->assign('title', __('Book visit')); ?>
+
 <?= $this->Html->css('jquery-ui') ?>
 <?= $this->Html->css('jquery-ui-timepicker-addon.min') ?>
 <?= $this->Html->script('vendor/jquery.browser.min', ['block' => true]) ?>

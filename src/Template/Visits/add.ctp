@@ -39,7 +39,10 @@
                                 echo $this->Form->control('club.name',['label' => __('Club')]);
                             }
                             ?>
-                            <?= $this->Form->control('date', ['id' => 'datepicker', 'type' => 'text', 'autocomplete' => 'off']) ?>
+                            <?= $this->Form->control('date',
+                                ['id' => 'datepicker', 'type' => 'text',
+                                    'label' => __('Date of visit'),
+                                    'autocomplete' => 'off']) ?>
 
                             <div class="input-group">
                             <?= $this->Form->control(

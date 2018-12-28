@@ -18,6 +18,7 @@
         <legend><?= __('Add Service') ?></legend>
         <?php
             echo $this->Form->control('service');
+            echo $this->Form->control('type');
             echo $this->Form->control('description');
             echo $this->Form->control('minutes');
             echo $this->Form->control('full_price');

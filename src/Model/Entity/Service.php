@@ -33,6 +33,7 @@ class Service extends Entity
         'minutes' => true,
         'full_price' => true,
         'discount_price' => true,
+        'type' => true,
         'visits' => true
     ];
 }

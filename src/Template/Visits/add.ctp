@@ -14,6 +14,16 @@
             <h2><?= $service->service ?></h2>
             <div class="service-main">
                 <div class="service-data">
+                    <h4>Megrendelés</h4>
+                    <dl class="service" id="summary">
+                        <dt class="b">Összesen: 0 Ft</dt>
+                    </dl>
+
+                    <?= $this->Form->button(
+                        'Megrendelem',
+                        ['id' => 'send', 'class' => 'button']
+                    ) ?>
+
                     <?php
                     if($clubs->count()) {
                         echo $this->Form->control('club_id', ['options' => $clubs]);
@@ -28,29 +38,26 @@
                     ) ?>
                     <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                     <p><?= $service->description ?></p>
-                    <span><?= $service->minutes . ' ' . __('minutes') ?></span>
+                    <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                     <?= $this->Form->control(
                         'services.'.$service->id.'._joinData.full_price_members',
-                        ['label' => __('Full price') . ' ' . $service->full_price . ' Ft',
-                            'placeholder' => __('person')]
+                        [
+                            'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
+                            'placeholder' => __('person'),
+                            'data-minutes' => $service->minutes,
+                            'data-price-full' => $service->full_price,
+                            'data-service' => $service->service
+                        ]
                     ) ?>
                     <?= $this->Form->control(
                         'services.'.$service->id.'._joinData.discount_price_members',
-                        ['label' => __('Discount price') . ' ' . $service->full_price . ' Ft',
-                            'placeholder' => __('person')]
-                    ) ?>
-
-                    <p>A programok és az étkezés menüből választhat egyet-egyet.</p>
-
-                    <h4>Megrendelés</h4>
-                    <dl class="service">
-                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
-                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
-                    </dl>
-
-                    <?= $this->Form->button(
-                        'Megrendelem',
-                        ['id' => 'send', 'class' => 'button']
+                        [
+                            'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
+                            'placeholder' => __('person'),
+                            'data-minutes' => $service->minutes,
+                            'data-price-discount' => $service->discount_price,
+                            'data-service' => $service->service
+                        ]
                     ) ?>
                 </div>
             </div>
@@ -70,16 +77,19 @@
                             <div class="info">
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                                <span class="full-price" data-id="<?= $service->id ?>">
+                                <p class="full-price" data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                                </span>
-                                <br>
-                                <span class="discount-price" data-id="<?= $service->id ?>">
+                                </p>
+                                <p class="discount-price" data-id="<?= $service->id ?>">
                                     <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                                </span>
-                                <br>
+                                </p>
                                 <button type="button" class="button select-service fi-check"
-                                        data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                                    data-id="<?= $service->id ?>"
+                                    data-minutes="<?= $service->minutes ?>"
+                                    data-type-id="<?= $service->type ?>"
+                                    data-price-full="<?= $service->full_price ?>"
+                                    data-price-discount="<?= $service->discount_price ?>"
+                                    data-service="<?= $service->service ?>">
                                     Kérem
                                 </button>
                             </div>
@@ -102,17 +112,51 @@
                             ) ?>
                             <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                             <p><?= $service->description ?></p>
-                            <span><?= $service->minutes . ' ' . __('minutes') ?></span>
-                            <span class="full-price" data-id="<?= $service->id ?>">
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p class="full-price" data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                            </span>
-                            <br>
-                            <span class="discount-price" data-id="<?= $service->id ?>">
+                            </p>
+                            <p class="discount-price" data-id="<?= $service->id ?>">
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                            </span>
-                            <br>
+                            </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                    data-type-id="<?= $service->type ?>">
+                                data-type-id="<?= $service->type ?>"
+                                data-minutes="<?= $service->minutes ?>"
+                                data-price-full="<?= $service->full_price ?>"
+                                data-price-discount="<?= $service->discount_price ?>"
+                                data-service="<?= $service->service ?>">
+                                Kérem
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            </div>
+            <h2>Szolgáltatások</h2>
+            <div class="row">
+            <?php foreach ($services[4] as $i => $service): ?>
+                <div class="column small-12">
+                    <div class="service">
+                        <h3><?= $service->service ?></h3>
+                        <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <p><?= $service->description ?></p>
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p class="full-price" data-id="<?= $service->id ?>">
+                                <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                            </p>
+                            <p class="discount-price" data-id="<?= $service->id ?>">
+                                <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                            </p>
+                            <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                data-type-id="<?= $service->type ?>"
+                                data-minutes="<?= $service->minutes ?>"
+                                data-price-full="<?= $service->full_price ?>"
+                                data-price-discount="<?= $service->discount_price ?>"
+                                data-service="<?= $service->service ?>">
                                 Kérem
                             </button>
                         </div>

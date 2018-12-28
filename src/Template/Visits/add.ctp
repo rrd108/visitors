@@ -87,7 +87,7 @@
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
                             <div class="row align-center">
-                                <?= $this->Html->image($service->id) ?>
+                                <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('min') ?></p>
@@ -112,7 +112,7 @@
                                     ['value' => $service->id, 'class' => 'service-id']
                                 ) ?>
                                 <div class="row align-center">
-                                    <?= $this->Html->image($service->id) ?>
+                                    <?= $this->Html->image($service->id . '.jpg') ?>
                                 </div>
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('min') ?></p>
@@ -156,7 +156,7 @@
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
                             <div class="row align-center">
-                                <?= $this->Html->image($service->id) ?>
+                                <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <div class="info">
                                 <p><?= $service->description ?></p>
@@ -200,7 +200,7 @@
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
                             <div class="row align-center">
-                                <?= $this->Html->image($service->id) ?>
+                                <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('min') ?></p>

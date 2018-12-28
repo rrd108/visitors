@@ -194,6 +194,7 @@ button.success {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    color: #fff;
 }
 
 #cart {

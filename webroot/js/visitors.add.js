@@ -22,8 +22,9 @@ $(function () {
                            return [true, '', ''];
                        }
                    },
+                   minDate: new Date(),
                    controlType: 'select',
-                   timeFormat: "HH:mm:ss",
+                   timeFormat: "HH:mm",
                    dateFormat: "yy-mm-dd",
                    timeText: 'Idő',
                    hourText: 'Óra',

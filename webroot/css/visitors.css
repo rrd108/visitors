@@ -27,8 +27,6 @@ body {
 }
 
 a.active {
-    background-color: #2c83b6;
-    color: #fff;
 }
 
 .login {
@@ -175,6 +173,10 @@ td input[type="text"], td input[type="number"], td select {
     font-weight: bold;
     margin: 0;
     padding: .5em;
+}
+
+button.success {
+    cursor: not-allowed;
 }
 
 .faded {

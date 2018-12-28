@@ -38,7 +38,7 @@
                     ) ?>
                     <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                     <p><?= $service->description ?></p>
-                    <span><?= $service->minutes . ' ' . __('minutes') ?></span>
+                    <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                     <?= $this->Form->control(
                         'services.'.$service->id.'._joinData.full_price_members',
                         [
@@ -77,14 +77,12 @@
                             <div class="info">
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                                <span class="full-price" data-id="<?= $service->id ?>">
+                                <p class="full-price" data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                                </span>
-                                <br>
-                                <span class="discount-price" data-id="<?= $service->id ?>">
+                                </p>
+                                <p class="discount-price" data-id="<?= $service->id ?>">
                                     <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                                </span>
-                                <br>
+                                </p>
                                 <button type="button" class="button select-service fi-check"
                                     data-id="<?= $service->id ?>"
                                     data-minutes="<?= $service->minutes ?>"
@@ -114,15 +112,13 @@
                             ) ?>
                             <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                             <p><?= $service->description ?></p>
-                            <span><?= $service->minutes . ' ' . __('minutes') ?></span>
-                            <span class="full-price" data-id="<?= $service->id ?>">
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p class="full-price" data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                            </span>
-                            <br>
-                            <span class="discount-price" data-id="<?= $service->id ?>">
+                            </p>
+                            <p class="discount-price" data-id="<?= $service->id ?>">
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                            </span>
-                            <br>
+                            </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                 data-type-id="<?= $service->type ?>"
                                 data-minutes="<?= $service->minutes ?>"
@@ -148,15 +144,13 @@
                             ) ?>
                             <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
                             <p><?= $service->description ?></p>
-                            <span><?= $service->minutes . ' ' . __('minutes') ?></span>
-                            <span class="full-price" data-id="<?= $service->id ?>">
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <p class="full-price" data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                            </span>
-                            <br>
-                            <span class="discount-price" data-id="<?= $service->id ?>">
+                            </p>
+                            <p class="discount-price" data-id="<?= $service->id ?>">
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                            </span>
-                            <br>
+                            </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                 data-type-id="<?= $service->type ?>"
                                 data-minutes="<?= $service->minutes ?>"

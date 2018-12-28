@@ -179,6 +179,10 @@ td input[type="text"], td input[type="number"], td select {
     padding: .5em;
 }
 
+.visits button {
+    width: 100%;
+}
+
 button.success {
     cursor: not-allowed;
 }

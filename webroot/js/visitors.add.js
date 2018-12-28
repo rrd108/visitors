@@ -63,7 +63,23 @@ $(function () {
         }
     });
 
-    // TODO price and time calculation
+    // price and time calculation
+    $('*[data-price]').blur(function () {
+        var fullMembers = $('#services-1-joindata-full-price-members');
+        var discountMembers = $('#services-1-joindata-discount-price-members');
+        var summary = '';
+        if (fullMembers.val()) {
+            summary += '<dd>Teljes áru vendég: ' + fullMembers.val() + ' fő * '
+                + number_format(fullMembers.data('price'), 0) + ' Ft</dd>'
+                + '<dt>' + number_format(fullMembers.val() * fullMembers.data('price'), 0) + ' Ft</dt>';
+        }
+        if (discountMembers.val()) {
+            summary += '<dd>Kedvezményes áru vendég: ' + discountMembers.val() + ' fő * '
+                + number_format(discountMembers.data('price'), 0) + ' Ft</dd>'
+                + '<dt>' + number_format(discountMembers.val() * discountMembers.data('price'), 0) + ' Ft</dt>';
+        }
+        $('#summary').html(summary);
+    });
 
     $("#send").click(function (event) {
         event.preventDefault();
@@ -101,3 +117,11 @@ $(function () {
         form.submit();
     });
 });
+
+function number_format( number, decimals, dec_point, thousands_sep ) {
+    var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
+    var d = dec_point == undefined ? "," : dec_point;
+    var t = thousands_sep == undefined ? "." : thousands_sep, s = n < 0 ? "-" : "";
+    var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+}

@@ -31,22 +31,25 @@
                     <span><?= $service->minutes . ' ' . __('minutes') ?></span>
                     <?= $this->Form->control(
                         'services.'.$service->id.'._joinData.full_price_members',
-                        ['label' => __('Full price') . ' ' . $service->full_price . ' Ft',
-                            'placeholder' => __('person')]
+                        [
+                            'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
+                            'placeholder' => __('person'),
+                            'data-price' => $service->full_price
+                        ]
                     ) ?>
                     <?= $this->Form->control(
                         'services.'.$service->id.'._joinData.discount_price_members',
-                        ['label' => __('Discount price') . ' ' . $service->full_price . ' Ft',
-                            'placeholder' => __('person')]
+                        [
+                            'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
+                            'placeholder' => __('person'),
+                            'data-price' => $service->discount_price
+                        ]
                     ) ?>
 
                     <p>A programok és az étkezés menüből választhat egyet-egyet.</p>
 
                     <h4>Megrendelés</h4>
-                    <dl class="service">
-                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
-                        <dd>Teljes áru vendég: 5 fő * 2 590 Ft</dd><dt>14 600 Ft</dt>
-                    </dl>
+                    <dl class="service" id="summary"></dl>
 
                     <?= $this->Form->button(
                         'Megrendelem',
@@ -79,7 +82,9 @@
                                 </span>
                                 <br>
                                 <button type="button" class="button select-service fi-check"
-                                        data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                                    data-id="<?= $service->id ?>"
+                                    data-type-id="<?= $service->type ?>"
+                                    data-price="1">
                                     Kérem
                                 </button>
                             </div>
@@ -112,7 +117,8 @@
                             </span>
                             <br>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                    data-type-id="<?= $service->type ?>">
+                                data-type-id="<?= $service->type ?>"
+                                data-price="1">
                                 Kérem
                             </button>
                         </div>
@@ -142,7 +148,8 @@
                             </span>
                             <br>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                    data-type-id="<?= $service->type ?>">
+                                data-type-id="<?= $service->type ?>"
+                                data-price="1">
                                 Kérem
                             </button>
                         </div>

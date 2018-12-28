@@ -14,6 +14,16 @@
             <h2><?= $service->service ?></h2>
             <div class="service-main">
                 <div class="service-data">
+                    <h4>Megrendelés</h4>
+                    <dl class="service" id="summary">
+                        <dt class="b">Összesen: 0 Ft</dt>
+                    </dl>
+
+                    <?= $this->Form->button(
+                        'Megrendelem',
+                        ['id' => 'send', 'class' => 'button']
+                    ) ?>
+
                     <?php
                     if($clubs->count()) {
                         echo $this->Form->control('club_id', ['options' => $clubs]);
@@ -34,7 +44,9 @@
                         [
                             'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
                             'placeholder' => __('person'),
-                            'data-price' => $service->full_price
+                            'data-minutes' => $service->minutes,
+                            'data-price-full' => $service->full_price,
+                            'data-service' => $service->service
                         ]
                     ) ?>
                     <?= $this->Form->control(
@@ -42,18 +54,10 @@
                         [
                             'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
                             'placeholder' => __('person'),
-                            'data-price' => $service->discount_price
+                            'data-minutes' => $service->minutes,
+                            'data-price-discount' => $service->discount_price,
+                            'data-service' => $service->service
                         ]
-                    ) ?>
-
-                    <p>A programok és az étkezés menüből választhat egyet-egyet.</p>
-
-                    <h4>Megrendelés</h4>
-                    <dl class="service" id="summary"></dl>
-
-                    <?= $this->Form->button(
-                        'Megrendelem',
-                        ['id' => 'send', 'class' => 'button']
                     ) ?>
                 </div>
             </div>
@@ -83,8 +87,11 @@
                                 <br>
                                 <button type="button" class="button select-service fi-check"
                                     data-id="<?= $service->id ?>"
+                                    data-minutes="<?= $service->minutes ?>"
                                     data-type-id="<?= $service->type ?>"
-                                    data-price="1">
+                                    data-price-full="<?= $service->full_price ?>"
+                                    data-price-discount="<?= $service->discount_price ?>"
+                                    data-service="<?= $service->service ?>">
                                     Kérem
                                 </button>
                             </div>
@@ -118,7 +125,10 @@
                             <br>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                 data-type-id="<?= $service->type ?>"
-                                data-price="1">
+                                data-minutes="<?= $service->minutes ?>"
+                                data-price-full="<?= $service->full_price ?>"
+                                data-price-discount="<?= $service->discount_price ?>"
+                                data-service="<?= $service->service ?>">
                                 Kérem
                             </button>
                         </div>
@@ -149,7 +159,10 @@
                             <br>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                 data-type-id="<?= $service->type ?>"
-                                data-price="1">
+                                data-minutes="<?= $service->minutes ?>"
+                                data-price-full="<?= $service->full_price ?>"
+                                data-price-discount="<?= $service->discount_price ?>"
+                                data-service="<?= $service->service ?>">
                                 Kérem
                             </button>
                         </div>

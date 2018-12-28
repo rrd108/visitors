@@ -46,6 +46,7 @@ $(function () {
         if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
             $(this).toggleClass('success');
             $(this).closest('.service').toggleClass('selected');
+            $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
             return;
         }
 
@@ -64,20 +65,48 @@ $(function () {
     });
 
     // price and time calculation
-    $('*[data-price]').blur(function () {
-        var fullMembers = $('#services-1-joindata-full-price-members');
-        var discountMembers = $('#services-1-joindata-discount-price-members');
+    $('*[data-service]').on('click blur', function () {
         var summary = '';
-        if (fullMembers.val()) {
-            summary += '<dd>Teljes áru vendég: ' + fullMembers.val() + ' fő * '
-                + number_format(fullMembers.data('price'), 0) + ' Ft</dd>'
-                + '<dt>' + number_format(fullMembers.val() * fullMembers.data('price'), 0) + ' Ft</dt>';
+        var totalAmount = 0;
+        var totalMinutes = 0;
+        $('*[data-service]').each(function () {
+            // handling inputs
+            if ($(this).val()) {
+                var itemPrice = $(this).data('price-full') ? $(this).data('price-full') : $(this).data('price-discount');
+                var itemValue = $(this).val() * itemPrice;
+                totalAmount += itemValue;
+                summary += '<dd>' + $(this).data('service') + ': ' + $(this).val() + ' fő * '
+                    + number_format(itemPrice, 0) + ' Ft</dd>'
+                    + '<dt>' + number_format(itemValue, 0) + ' Ft</dt>';
+                // here the time does not doubled if we have full AND discount members together
+                totalMinutes = totalMinutes ? totalMinutes : totalMinutes + $(this).data('minutes');
+            }
+
+            // handling buttons
+            if ($(this).hasClass('success')) {
+                var priceFull = $(this).data('price-full');
+                var priceDiscount = $(this).data('price-discount');
+                var membersFull = $('#services-1-joindata-full-price-members').val();
+                if (membersFull) {
+                    summary += '<dd>' + $(this).data('service') + ': ' + membersFull + ' fő * '
+                        + number_format(priceFull, 0) + ' Ft</dd>'
+                        + '<dt>' + number_format(priceFull * membersFull, 0) + ' Ft</dt>';
+                }
+                var membersDiscount = $('#services-1-joindata-discount-price-members').val();
+                if (membersDiscount) {
+                    summary += '<dd>' + $(this).data('service') + ': ' + membersDiscount + ' fő * '
+                        + number_format(priceDiscount, 0) + ' Ft</dd>'
+                        + '<dt>' + number_format(priceDiscount * membersDiscount, 0) + ' Ft</dt>';
+                }
+                totalMinutes += $(this).data('minutes');
+            }
+        });
+        if (totalAmount > 0) {
+            summary += '<dt class="b">Összesen: ' + number_format(totalAmount, 0) + ' Ft</dt>';
         }
-        if (discountMembers.val()) {
-            summary += '<dd>Kedvezményes áru vendég: ' + discountMembers.val() + ' fő * '
-                + number_format(discountMembers.data('price'), 0) + ' Ft</dd>'
-                + '<dt>' + number_format(discountMembers.val() * discountMembers.data('price'), 0) + ' Ft</dt>';
-        }
+
+        summary += '<dd>A programhoz szükséges idő</dd><dt>' + number_format(totalMinutes/60, 1) + ' óra</dt>';
+
         $('#summary').html(summary);
     });
 

@@ -115,7 +115,6 @@
                                     <?= $this->Html->image($service->id . '.jpg') ?>
                                 </div>
                                 <p><?= $service->description ?></p>
-                                <p><?= $service->minutes . ' ' . __('min') ?></p>
                                 <p data-id="<?= $service->id ?>">
                                     <?= __('Full price') . ' '
                                         . $this->Number->format($service->full_price) . ' Ft' ?>
@@ -203,7 +202,6 @@
                                 <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('min') ?></p>
                             <p data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' '
                                     . $this->Number->format($service->full_price) . ' Ft' ?>

@@ -38,14 +38,6 @@
                             ?>
                             <?= $this->Form->control('date', ['id' => 'datepicker', 'type' => 'text', 'autocomplete' => 'off']) ?>
 
-                            <?= $this->Form->hidden('services.'.$service->id.'.id',
-                                ['value' => $service->id, 'class' => 'service-id']
-                            ) ?>
-                            <div class="row align-center">
-                                <?= $this->Html->image($service->id) ?>
-                            </div>
-                            <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                             <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.full_price_members',
                                 [
@@ -68,6 +60,15 @@
                                     'data-service' => $service->service
                                 ]
                             ) ?>
+
+                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id) ?>
+                            </div>
+                            <p><?= $service->description ?></p>
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                         </div>
                     </div>
                 </div>

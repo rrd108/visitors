@@ -8,37 +8,36 @@ $(function () {
         method: 'get',
         url: url,
         success: function(result){
-           var nonServicesDays = result.nonServicesDays;
-           for(var key in nonServicesDays){
-               if(nonServicesDays.hasOwnProperty(key)){
-                   eventDates[ new Date(nonServicesDays[key])] = new Date(nonServicesDays[key]);
-               }
-               $("#datepicker").datetimepicker({
-                   beforeShowDay: function(date){
-                       var highlight = eventDates[date];
-                       if (highlight) {
-                           return [false, ''];
-                       } else {
-                           return [true, '', ''];
-                       }
-                   },
-                   minDate: new Date(),
-                   controlType: 'select',
-                   timeFormat: "HH:mm",
-                   dateFormat: "yy-mm-dd",
-                   timeText: 'Idő',
-                   hourText: 'Óra',
-                   minuteText: 'Perc',
-                   secondText: 'Másodperc',
-                   currentText: 'Ma',
-                   closeText: 'Ok',
-                   hourMin: 10,
-                   hourMax: 18,
-                   showSecond: false,
-                   showMillisec: false,
-                   showMicrosec: false
-               }).val();
-           }
+            var nonServicesDays = result.nonServicesDays;
+            for(var key in nonServicesDays){
+                if(nonServicesDays.hasOwnProperty(key)){
+                    eventDates[ new Date(nonServicesDays[key])] = new Date(nonServicesDays[key]);
+                }
+            }
+            $("#datepicker").datetimepicker({
+                beforeShowDay: function(date){
+                    if (eventDates[date]) {
+                        return [false, ''];
+                    } else {
+                        return [true, '', ''];
+                    }
+                },
+                minDate: new Date(),
+                controlType: 'select',
+                timeFormat: "HH:mm",
+                dateFormat: "yy-mm-dd",
+                timeText: 'Idő',
+                hourText: 'Óra',
+                minuteText: 'Perc',
+                secondText: 'Másodperc',
+                currentText: 'Ma',
+                closeText: 'Ok',
+                hourMin: 10,
+                hourMax: 17,
+                showSecond: false,
+                showMillisec: false,
+                showMicrosec: false
+            });
         }
     });
 

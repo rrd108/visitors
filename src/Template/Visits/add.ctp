@@ -7,58 +7,63 @@
 <?= $this->Html->script('visitors.add', ['block' => true]) ?>
 
 <div class="visits form large-12 columns content">
-    <?= $this->Form->create($visit) ?>
+    <?= $this->Form->create($visit, ['id' => 'order']) ?>
+    <?= $this->Form->button(
+        'Megrendelem',
+        ['class' => 'button success']
+    ) ?>
     <div class="row">
         <div class="column large-3 small-12">
-            <?php $service = $services[1][0]; ?>
-            <h2><?= $service->service ?></h2>
-            <div class="service-main">
-                <div class="service-data">
-                    <h4>Megrendelés</h4>
-                    <dl class="service" id="summary">
+            <div class="row">
+                <div id="cart" class="column small-12">
+                    <h4>Megrendelés összesítő</h4>
+                    <dl class="column small-12" id="summary">
                         <dt class="b">Összesen: 0 Ft</dt>
                     </dl>
+                </div>
 
-                    <?= $this->Form->button(
-                        'Megrendelem',
-                        ['id' => 'send', 'class' => 'button']
-                    ) ?>
+                <div class="column small-12">
+                    <?php $service = $services[1][0]; ?>
+                    <h2><?= $service->service ?></h2>
+                    <div class="service-main">
+                        <div class="service-data">
+                            <?php
+                            if($clubs->count()) {
+                                echo $this->Form->control('club_id', ['options' => $clubs]);
+                            } else {
+                                echo $this->Form->control('club.name',['label' => __('Club')]);
+                            }
+                            ?>
+                            <?= $this->Form->control('date', ['id' => 'datepicker', 'type' => 'text', 'autocomplete' => 'off']) ?>
 
-                    <?php
-                    if($clubs->count()) {
-                        echo $this->Form->control('club_id', ['options' => $clubs]);
-                    } else {
-                        echo $this->Form->control('club.name',['label' => __('Club')]);
-                    }
-                    ?>
-                    <?= $this->Form->control('date', ['id' => 'datepicker', 'type' => 'text', 'autocomplete' => 'off']) ?>
-
-                    <?= $this->Form->hidden('services.'.$service->id.'.id',
-                        ['value' => $service->id, 'class' => 'service-id']
-                    ) ?>
-                    <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
-                    <p><?= $service->description ?></p>
-                    <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                    <?= $this->Form->control(
-                        'services.'.$service->id.'._joinData.full_price_members',
-                        [
-                            'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
-                            'placeholder' => __('person'),
-                            'data-minutes' => $service->minutes,
-                            'data-price-full' => $service->full_price,
-                            'data-service' => $service->service
-                        ]
-                    ) ?>
-                    <?= $this->Form->control(
-                        'services.'.$service->id.'._joinData.discount_price_members',
-                        [
-                            'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
-                            'placeholder' => __('person'),
-                            'data-minutes' => $service->minutes,
-                            'data-price-discount' => $service->discount_price,
-                            'data-service' => $service->service
-                        ]
-                    ) ?>
+                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <?= $this->Html->image($service->id, ['class' => 'align-center']) ?>
+                            <p><?= $service->description ?></p>
+                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                            <?= $this->Form->control(
+                                'services.'.$service->id.'._joinData.full_price_members',
+                                [
+                                    'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
+                                    'placeholder' => __('person'),
+                                    'data-minutes' => $service->minutes,
+                                    'data-price-full' => $service->full_price,
+                                    'data-service' => $service->service
+                                ]
+                            ) ?>
+                            <?= $this->Form->control(
+                                'services.'.$service->id.'._joinData.discount_price_members',
+                                [
+                                    'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
+                                    'placeholder' => __('person'),
+                                    'data-minutes' => $service->minutes,
+                                    'data-price-discount' => $service->discount_price,
+                                    'data-service' => $service->service
+                                ]
+                            ) ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

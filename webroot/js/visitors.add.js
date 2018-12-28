@@ -41,6 +41,11 @@ $(function () {
         }
     });
 
+    //show cart
+    $('#order button[type="submit"]')
+        .mouseenter(function() {$('#cart').slideDown()})
+        .mouseleave(function () {$('#cart').slideUp()});
+
     // on selecting a service gray out all others with the same type
     $('button').click(function () {
         if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
@@ -88,12 +93,14 @@ $(function () {
                 var priceDiscount = $(this).data('price-discount');
                 var membersFull = $('#services-1-joindata-full-price-members').val();
                 if (membersFull) {
+                    totalAmount += priceFull * membersFull;
                     summary += '<dd>' + $(this).data('service') + ': ' + membersFull + ' fő * '
                         + number_format(priceFull, 0) + ' Ft</dd>'
                         + '<dt>' + number_format(priceFull * membersFull, 0) + ' Ft</dt>';
                 }
                 var membersDiscount = $('#services-1-joindata-discount-price-members').val();
                 if (membersDiscount) {
+                    totalAmount += priceDiscount * membersDiscount;
                     summary += '<dd>' + $(this).data('service') + ': ' + membersDiscount + ' fő * '
                         + number_format(priceDiscount, 0) + ' Ft</dd>'
                         + '<dt>' + number_format(priceDiscount * membersDiscount, 0) + ' Ft</dt>';
@@ -101,49 +108,20 @@ $(function () {
                 totalMinutes += $(this).data('minutes');
             }
         });
-        if (totalAmount > 0) {
-            summary += '<dt class="b">Összesen: ' + number_format(totalAmount, 0) + ' Ft</dt>';
-        }
 
+        summary += '<dt class="b">Összesen: ' + number_format(totalAmount, 0) + ' Ft</dt>';
         summary += '<dd>A programhoz szükséges idő</dd><dt>' + number_format(totalMinutes/60, 1) + ' óra</dt>';
 
         $('#summary').html(summary);
+
+        if (totalAmount) {
+            $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
+                + number_format(totalMinutes / 60, 1) + ' óra');
+        }
     });
 
-    $("#send").click(function (event) {
+    $("#order").submit(function (event) {
         event.preventDefault();
-        $(".service-data").each(function () {
-            for (var key in selectedIds) {
-                var dataId = $(this).data('id');
-                var typeId = $(this).data('type-id');
-                if (selectedIds.hasOwnProperty(typeId)) {
-                    if (dataId !== selectedIds[key] && typeId == key && dataId !== 1) {
-                        var inputs = $(this).find("input");
-                        inputs.each(function () {
-                            $(this).remove();
-                        });
-                    }
-                } else {
-                    if (dataId !== 1 && typeId != key) {
-                        inputs = $(this).find("input");
-                        inputs.each(function () {
-                            $(this).remove();
-                        });
-                    }
-                }
-            }
-            if(Object.getOwnPropertyNames(selectedIds).length === 0){
-                dataId = $(this).data('id');
-                if (dataId !== 1) {
-                    inputs = $(this).find("input");
-                    inputs.each(function () {
-                        $(this).remove();
-                    });
-                }
-            }
-        });
-        var form = $("form");
-        form.submit();
     });
 });
 

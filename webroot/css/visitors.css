@@ -61,14 +61,6 @@ fieldset {
     padding-bottom: 0;
 }
 
-
-button#send{
-    border-radius: 5px;
-    background: #e1cc9f;
-    color: #483a23;
-    font-weight: bold;
-}
-
 button.add.tiny{
     border-radius: 5px;
     padding-left: 0.75rem;
@@ -198,12 +190,25 @@ button.success {
     filter: grayscale(100%);
 }
 
-dl.service {
+#order button[type="submit"] {
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cart {
+    display: none;
+    background-color: #5da423;
+    color: #fff;
+}
+#cart h4 {
+    font-weight: bold;
+}
+#summary {
     margin: 0 0 1em 0;
-    color: #483a23;
     padding: 0.3em;
 }
-dl.service dt {
+#summary dt {
     text-align: right;
     margin: 0 1em 0 0;
 }

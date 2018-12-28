@@ -37,6 +37,11 @@
                                             ['plugin' => false, 'controller' => 'services', 'action' => 'index'],
                                             ['escape' => false]
                                         ) ?></li>
+                                    <li><?= $this->MenuLink->menuLink(
+                                            '<i class="fi-foot"> ' . __('Service days') . '</i>',
+                                            ['plugin' => false, 'controller' => 'services-days', 'action' => 'index'],
+                                            ['escape' => false]
+                                        ) ?></li>
                                 </ul>
                             </li>
                         <?php endif; ?>

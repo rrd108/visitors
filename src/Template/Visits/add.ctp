@@ -72,6 +72,41 @@
                     </div>
                 </div>
             </div>
+
+            <h2>Szolgáltatások</h2>
+            <div class="row">
+                <?php foreach ($services[4] as $i => $service): ?>
+                    <div class="column small-12">
+                        <div class="service">
+                            <h3><?= $service->service ?></h3>
+                            <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                                <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                    ['value' => $service->id, 'class' => 'service-id']
+                                ) ?>
+                                <div class="row align-center">
+                                    <?= $this->Html->image($service->id) ?>
+                                </div>
+                                <p><?= $service->description ?></p>
+                                <p><?= $service->minutes . ' ' . __('minutes') ?></p>
+                                <p data-id="<?= $service->id ?>">
+                                    <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                                    /
+                                    <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                                </p>
+                                <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                        data-type-id="<?= $service->type ?>"
+                                        data-minutes="<?= $service->minutes ?>"
+                                        data-price-full="<?= $service->full_price ?>"
+                                        data-price-discount="<?= $service->discount_price ?>"
+                                        data-service="<?= $service->service ?>">
+                                    Kérem
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
         </div>
 
         <div class="column large-6 bg small-12">
@@ -131,39 +166,6 @@
                             <p data-id="<?= $service->id ?>">
                                 <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
                                 /
-                                <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
-                            </p>
-                            <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                data-type-id="<?= $service->type ?>"
-                                data-minutes="<?= $service->minutes ?>"
-                                data-price-full="<?= $service->full_price ?>"
-                                data-price-discount="<?= $service->discount_price ?>"
-                                data-service="<?= $service->service ?>">
-                                Kérem
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-            </div>
-            <h2>Szolgáltatások</h2>
-            <div class="row">
-            <?php foreach ($services[4] as $i => $service): ?>
-                <div class="column small-12">
-                    <div class="service">
-                        <h3><?= $service->service ?></h3>
-                        <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                            <?= $this->Form->hidden('services.'.$service->id.'.id',
-                                ['value' => $service->id, 'class' => 'service-id']
-                            ) ?>
-                            <div class="row align-center">
-                                <?= $this->Html->image($service->id) ?>
-                            </div>
-                            <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('minutes') ?></p>
-                            <p data-id="<?= $service->id ?>">
-                                <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
-                                 /
                                 <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
                             </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"

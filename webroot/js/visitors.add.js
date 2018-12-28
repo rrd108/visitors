@@ -114,9 +114,9 @@ $(function () {
 
         $('#summary').html(summary);
 
-        if (totalAmount) {
+        if (totalAmount || $('#order button[type="submit"]').text().length != 11) {
             $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
-                + number_format(totalMinutes / 60, 1) + ' óra').hide().fadeIn();
+                + '(' + number_format(totalMinutes / 60, 1) + ' óra)').hide().fadeIn();
         }
     };
     $('input[data-service]').on('blur', calculatePriceAndTime);

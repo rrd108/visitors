@@ -21,7 +21,7 @@
         <div class="column large-3 small-12">
             <div class="row">
                 <div id="cart" class="column small-12">
-                    <h4>Megrendelés összesítő</h4>
+                    <h4>Látogatás összesítő</h4>
                     <dl class="column small-12" id="summary">
                         <dt class="b">Összesen: 0 Ft</dt>
                     </dl>
@@ -41,28 +41,44 @@
                             ?>
                             <?= $this->Form->control('date', ['id' => 'datepicker', 'type' => 'text', 'autocomplete' => 'off']) ?>
 
+                            <div class="input-group">
                             <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.full_price_members',
                                 [
-                                    'label' => __('Full price') . ' ' . $service->full_price . ' Ft',
+                                    'label' =>
+                                        [
+                                            'text' => __('Full price') . ' '
+                                                . $this->Number->format($service->full_price) . ' Ft/fő',
+                                            'class' => 'column large-8'
+                                        ],
                                     'placeholder' => __('person'),
                                     'required' => false,
+                                    'templates' => ['inputContainer' => '{{content}}'],
                                     'data-minutes' => $service->minutes,
                                     'data-price-full' => $service->full_price,
                                     'data-service' => $service->service
                                 ]
                             ) ?>
+                            </div>
+                            <div class="input-group">
                             <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.discount_price_members',
                                 [
-                                    'label' => __('Discount price') . ' ' . $service->discount_price . ' Ft',
+                                    'label' =>
+                                        [
+                                            'text' => __('Discount price') . ' '
+                                                . $this->Number->format($service->discount_price) . ' Ft/fő',
+                                            'class' => 'column large-8'
+                                        ],
                                     'placeholder' => __('person'),
                                     'required' => false,
+                                    'templates' => ['inputContainer' => '{{content}}'],
                                     'data-minutes' => $service->minutes,
                                     'data-price-discount' => $service->discount_price,
                                     'data-service' => $service->service
                                 ]
                             ) ?>
+                            </div>
 
                             <?= $this->Form->hidden('services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
@@ -93,9 +109,11 @@
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                                 <p data-id="<?= $service->id ?>">
-                                    <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                                    <?= __('Full price') . ' '
+                                        . $this->Number->format($service->full_price) . ' Ft' ?>
                                     /
-                                    <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                                    <?= __('Discount price') . ' '
+                                        . $this->Number->format($service->discount_price) . ' Ft' ?>
                                 </p>
                                 <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                         data-type-id="<?= $service->type ?>"
@@ -131,9 +149,11 @@
                                 <p><?= $service->description ?></p>
                                 <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                                 <p data-id="<?= $service->id ?>">
-                                    <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                                    <?= __('Full price') . ' '
+                                        . $this->Number->format($service->full_price) . ' Ft' ?>
                                     /
-                                    <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                                    <?= __('Discount price') . ' '
+                                        . $this->Number->format($service->discount_price) . ' Ft' ?>
                                 </p>
                                 <button type="button" class="button select-service fi-check"
                                     data-id="<?= $service->id ?>"
@@ -168,9 +188,11 @@
                             <p><?= $service->description ?></p>
                             <p><?= $service->minutes . ' ' . __('minutes') ?></p>
                             <p data-id="<?= $service->id ?>">
-                                <?= __('Full price') . ' ' . $service->full_price . ' Ft' ?>
+                                <?= __('Full price') . ' '
+                                    . $this->Number->format($service->full_price) . ' Ft' ?>
                                 /
-                                <?= __('Discount price') . ' ' . $service->discount_price . ' Ft' ?>
+                                <?= __('Discount price') . ' '
+                                    . $this->Number->format($service->discount_price) . ' Ft' ?>
                             </p>
                             <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
                                 data-type-id="<?= $service->type ?>"

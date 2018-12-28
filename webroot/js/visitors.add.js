@@ -49,14 +49,15 @@ $(function () {
             return;
         }
 
-        var services = $('button[data-type-id="' + $(this).data('type-id') + '"]').closest('.service');
+        var typeButtons = $('button[data-type-id="' + $(this).data('type-id') + '"]');
+        var services = typeButtons.closest('.service');
         if (!$(this).hasClass('success')) {
             $(this).addClass('success');
-            services.addClass('faded');
+            services.addClass('faded').removeClass('selected');
             $(this).closest('.service').removeClass('faded').addClass('selected');
             $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
         } else {
-            $(this).removeClass('success');
+            typeButtons.removeClass('success');
             services.removeClass('faded');
             $(this).closest('.service').removeClass('selected');
         }

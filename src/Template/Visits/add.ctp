@@ -13,14 +13,14 @@
     <?= $this->Form->button(
         'Megrendelem',
         [
-            'class' => 'button success',
+            'class' => 'button success cart',
             'title' => 'Kattints a megrendeléshez'
         ]
     ) ?>
     <div class="row">
         <div class="column large-3 small-12">
             <div class="row">
-                <div id="cart" class="column small-12">
+                <div id="cart" class="column small-12 cart">
                     <h4>Látogatás összesítő</h4>
                     <dl class="column small-12" id="summary">
                         <dt class="b">Összesen: 0 Ft</dt>

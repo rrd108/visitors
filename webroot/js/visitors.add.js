@@ -42,9 +42,19 @@ $(function () {
     });
 
     //show cart
-    $('#order button[type="submit"]')
-        .mouseenter(function() {$('#cart').slideDown()})
-        .mouseleave(function () {$('#cart').delay(2250).slideUp()});
+    var time;
+    $('.cart')
+        .mouseenter(function () {
+            clearTimeout(time);
+            $('#cart').slideDown()
+        })
+        .mouseleave(function () {
+            clearTimeout(time);
+            time = setTimeout('showCart()', 2250);
+        });
+    showCart = function () {
+        $('#cart').slideUp();
+    }
 
     // on selecting a service gray out all others with the same type
     $('button').click(function () {

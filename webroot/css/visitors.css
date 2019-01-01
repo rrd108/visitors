@@ -235,6 +235,11 @@ button.success {
     color: #fff;
 }
 
+.cart i {
+    color: #5da423;
+    font-size: 300%;
+}
+
 #cart {
     display: none;
     background-color: #5da423;

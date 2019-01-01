@@ -20,6 +20,9 @@
     <div class="row">
         <div class="column large-3 small-12">
             <div class="row">
+                <div class="column small-12 cart text-center">
+                    <i class="fi-shopping-cart"></i>
+                </div>
                 <div id="cart" class="column small-12 cart">
                     <h4>Látogatás összesítő</h4>
                     <dl class="column small-12" id="summary">

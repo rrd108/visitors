@@ -44,7 +44,7 @@ $(function () {
     //show cart
     $('#order button[type="submit"]')
         .mouseenter(function() {$('#cart').slideDown()})
-        .mouseleave(function () {$('#cart').slideUp()});
+        .mouseleave(function () {$('#cart').delay(2250).slideUp()});
 
     // on selecting a service gray out all others with the same type
     $('button').click(function () {

@@ -131,7 +131,7 @@
                                         data-price-full="<?= $service->full_price ?>"
                                         data-price-discount="<?= $service->discount_price ?>"
                                         data-service="<?= $service->service ?>">
-                                    Kérem
+                                    <?= __('Add to cart') ?>
                                 </button>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                     data-price-full="<?= $service->full_price ?>"
                                     data-price-discount="<?= $service->discount_price ?>"
                                     data-service="<?= $service->service ?>">
-                                    Kérem
+                                    <?= __('Add to cart') ?>
                                 </button>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                                 data-price-full="<?= $service->full_price ?>"
                                 data-price-discount="<?= $service->discount_price ?>"
                                 data-service="<?= $service->service ?>">
-                                Kérem
+                                <?= __('Add to cart') ?>
                             </button>
                         </div>
                     </div>

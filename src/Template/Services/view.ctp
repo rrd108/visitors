@@ -43,6 +43,10 @@
         <h4><?= __('Description') ?></h4>
         <?= $this->Text->autoParagraph(h($service->description)); ?>
     </div>
+    <div class="row">
+        <h4><?= __('Long Description') ?></h4>
+        <?= $this->Text->autoParagraph(h($service->description_long)); ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Visits') ?></h4>
         <?php if (!empty($service->visits)): ?>

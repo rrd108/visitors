@@ -25,6 +25,7 @@
         <?php
             echo $this->Form->control('service');
             echo $this->Form->control('description');
+            echo $this->Form->control('description_long');
             echo $this->Form->control('minutes');
             echo $this->Form->control('full_price');
             echo $this->Form->control('discount_price');

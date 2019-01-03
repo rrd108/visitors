@@ -30,6 +30,7 @@ class Service extends Entity
     protected $_accessible = [
         'service' => true,
         'description' => true,
+        'description_long' => true,
         'minutes' => true,
         'full_price' => true,
         'discount_price' => true,

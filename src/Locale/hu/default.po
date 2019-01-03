@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2019-01-03 13:01+0000\n"
-"PO-Revision-Date: 2019-01-03 14:02+0100\n"
+"POT-Creation-Date: 2019-01-03 14:48+0100\n"
+"PO-Revision-Date: 2019-01-03 17:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hu_HU\n"
@@ -19,628 +19,711 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Controller/ClubsController.php:55;80
+#: src/Controller/ClubsController.php:55 src/Controller/ClubsController.php:80
 msgid "The club has been saved."
 msgstr ""
 
-#: Controller/ClubsController.php:59;84
+#: src/Controller/ClubsController.php:59 src/Controller/ClubsController.php:84
 msgid "The club could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ClubsController.php:102
+#: src/Controller/ClubsController.php:102
 msgid "The club has been deleted."
 msgstr ""
 
-#: Controller/ClubsController.php:104
+#: src/Controller/ClubsController.php:104
 msgid "The club could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ClubsUsersController.php:58;84
+#: src/Controller/ClubsUsersController.php:58
+#: src/Controller/ClubsUsersController.php:84
 msgid "The clubs user has been saved."
 msgstr ""
 
-#: Controller/ClubsUsersController.php:62;88
+#: src/Controller/ClubsUsersController.php:62
+#: src/Controller/ClubsUsersController.php:88
 msgid "The clubs user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ClubsUsersController.php:107
+#: src/Controller/ClubsUsersController.php:107
 msgid "The clubs user has been deleted."
 msgstr ""
 
-#: Controller/ClubsUsersController.php:109
+#: src/Controller/ClubsUsersController.php:109
 msgid "The clubs user could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ServicesController.php:55;80
+#: src/Controller/ServicesController.php:55
+#: src/Controller/ServicesController.php:80
 msgid "The service has been saved."
 msgstr ""
 
-#: Controller/ServicesController.php:59;84
+#: src/Controller/ServicesController.php:59
+#: src/Controller/ServicesController.php:84
 msgid "The service could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ServicesController.php:102
+#: src/Controller/ServicesController.php:102
 msgid "The service has been deleted."
 msgstr ""
 
-#: Controller/ServicesController.php:104
+#: src/Controller/ServicesController.php:104
 msgid "The service could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ServicesDaysController.php:55;79
+#: src/Controller/ServicesDaysController.php:55
+#: src/Controller/ServicesDaysController.php:79
 msgid "The services day has been saved."
 msgstr ""
 
-#: Controller/ServicesDaysController.php:59;83
+#: src/Controller/ServicesDaysController.php:59
+#: src/Controller/ServicesDaysController.php:83
 msgid "The services day could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ServicesDaysController.php:100
+#: src/Controller/ServicesDaysController.php:100
 msgid "The services day has been deleted."
 msgstr ""
 
-#: Controller/ServicesDaysController.php:102
+#: src/Controller/ServicesDaysController.php:102
 msgid "The services day could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ServicesVisitsController.php:58;84
+#: src/Controller/ServicesVisitsController.php:58
+#: src/Controller/ServicesVisitsController.php:84
 msgid "The services visit has been saved."
 msgstr ""
 
-#: Controller/ServicesVisitsController.php:62;88
+#: src/Controller/ServicesVisitsController.php:62
+#: src/Controller/ServicesVisitsController.php:88
 msgid "The services visit could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ServicesVisitsController.php:107
+#: src/Controller/ServicesVisitsController.php:107
 msgid "The services visit has been deleted."
 msgstr ""
 
-#: Controller/ServicesVisitsController.php:109
+#: src/Controller/ServicesVisitsController.php:109
 msgid "The services visit could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/VisitsController.php:81;122
+#: src/Controller/VisitsController.php:81
+#: src/Controller/VisitsController.php:122
 msgid "The visit has been saved."
 msgstr ""
 
-#: Controller/VisitsController.php:86 Template/Email/html/clubdata.ctp:1
+#: src/Controller/VisitsController.php:86
+#: src/Template/Email/html/clubdata.ctp:1
 msgid "Add datas for your club"
 msgstr ""
 
-#: Controller/VisitsController.php:94;126
+#: src/Controller/VisitsController.php:94
+#: src/Controller/VisitsController.php:126
 msgid "The visit could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/VisitsController.php:115
+#: src/Controller/VisitsController.php:115
 msgid "You can't edit this visit yet"
 msgstr ""
 
-#: Controller/VisitsController.php:154
+#: src/Controller/VisitsController.php:154
 msgid "The visit has been deleted."
 msgstr ""
 
-#: Controller/VisitsController.php:156
+#: src/Controller/VisitsController.php:156
 msgid "The visit could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/VisitsController.php:172
+#: src/Controller/VisitsController.php:172
 msgid "You are not authorized to access that location."
 msgstr ""
 
-#: Template/Clubs/add.ctp:9 Template/Clubs/edit.ctp:9
-#: Template/Clubs/index.ctp:9;28 Template/Clubs/view.ctp:9;74;120
-#: Template/ClubsUsers/add.ctp:9 Template/ClubsUsers/edit.ctp:9
-#: Template/ClubsUsers/index.ctp:9;25 Template/ClubsUsers/view.ctp:9
-#: Template/Services/add.ctp:9 Template/Services/edit.ctp:9
-#: Template/Services/index.ctp:9;25 Template/Services/view.ctp:9;57
-#: Template/ServicesDays/add.ctp:9 Template/ServicesDays/edit.ctp:9
-#: Template/ServicesDays/index.ctp:9;20 Template/ServicesDays/view.ctp:9
-#: Template/ServicesVisits/add.ctp:9 Template/ServicesVisits/edit.ctp:9
-#: Template/ServicesVisits/index.ctp:9;27 Template/ServicesVisits/view.ctp:9
-#: Template/Visits/index.ctp:9;28 Template/Visits/view.ctp:9
-msgid "Actions"
-msgstr ""
-
-#: Template/Clubs/add.ctp:10 Template/Clubs/edit.ctp:16
-#: Template/Clubs/view.ctp:12 Template/ClubsUsers/add.ctp:13
-#: Template/ClubsUsers/edit.ctp:19 Template/ClubsUsers/index.ctp:13
-#: Template/ClubsUsers/view.ctp:16 Template/Visits/index.ctp:11
-#: Template/Visits/view.ctp:14
-msgid "List Clubs"
-msgstr ""
-
-#: Template/Clubs/add.ctp:11 Template/Clubs/edit.ctp:17
-#: Template/Clubs/index.ctp:11 Template/Clubs/view.ctp:14
-#: Template/Services/add.ctp:11 Template/Services/edit.ctp:17
-#: Template/Services/index.ctp:11 Template/Services/view.ctp:14
-#: Template/ServicesVisits/add.ctp:13 Template/ServicesVisits/edit.ctp:19
-#: Template/ServicesVisits/index.ctp:13 Template/ServicesVisits/view.ctp:16
-#: Template/Visits/view.ctp:12
-msgid "List Visits"
-msgstr ""
-
-#: Template/Clubs/add.ctp:12 Template/Clubs/edit.ctp:18
-#: Template/Clubs/index.ctp:12 Template/Clubs/view.ctp:15
-#: Template/Services/add.ctp:12 Template/Services/edit.ctp:18
-#: Template/Services/index.ctp:12 Template/Services/view.ctp:15
-#: Template/ServicesVisits/add.ctp:14 Template/ServicesVisits/edit.ctp:20
-#: Template/ServicesVisits/index.ctp:14 Template/ServicesVisits/view.ctp:17
-#: Template/Visits/index.ctp:10 Template/Visits/view.ctp:13
-msgid "New Visit"
-msgstr ""
-
-#: Template/Clubs/add.ctp:13 Template/Clubs/edit.ctp:19
-#: Template/Clubs/index.ctp:13 Template/Clubs/view.ctp:16
-#: Template/ClubsUsers/add.ctp:11 Template/ClubsUsers/edit.ctp:17
-#: Template/ClubsUsers/index.ctp:11 Template/ClubsUsers/view.ctp:14
-msgid "List Users"
-msgstr ""
-
-#: Template/Clubs/add.ctp:14 Template/Clubs/edit.ctp:20
-#: Template/Clubs/index.ctp:14 Template/Clubs/view.ctp:17
-#: Template/ClubsUsers/add.ctp:12 Template/ClubsUsers/edit.ctp:18
-#: Template/ClubsUsers/index.ctp:12 Template/ClubsUsers/view.ctp:15
-msgid "New User"
-msgstr ""
-
-#: Template/Clubs/add.ctp:20
-msgid "Add Club"
-msgstr ""
-
-#: Template/Clubs/add.ctp:30 Template/Clubs/edit.ctp:35
-#: Template/ClubsUsers/add.ctp:26 Template/ClubsUsers/edit.ctp:32
-#: Template/Services/add.ctp:28 Template/Services/edit.ctp:33
-#: Template/ServicesDays/add.ctp:21 Template/ServicesDays/edit.ctp:27
-#: Template/ServicesVisits/add.ctp:28 Template/ServicesVisits/edit.ctp:34
-#: Template/Visits/edit.ctp:103
-msgid "Submit"
-msgstr ""
-
-#: Template/Clubs/edit.ctp:11 Template/Clubs/index.ctp:43
-#: Template/Clubs/view.ctp:102;133 Template/ClubsUsers/edit.ctp:11
-#: Template/ClubsUsers/index.ctp:37 Template/Services/edit.ctp:11
-#: Template/Services/index.ctp:39 Template/Services/view.ctp:70
-#: Template/ServicesDays/edit.ctp:11 Template/ServicesDays/index.ctp:31
-#: Template/ServicesVisits/edit.ctp:11 Template/ServicesVisits/index.ctp:41
-#: Template/Visits/index.ctp:43
-msgid "Delete"
-msgstr ""
-
-#: Template/Clubs/edit.ctp:13 Template/Clubs/index.ctp:43
-#: Template/Clubs/view.ctp:11;102;133 Template/ClubsUsers/edit.ctp:13
-#: Template/ClubsUsers/index.ctp:37 Template/ClubsUsers/view.ctp:11
-#: Template/Services/edit.ctp:13 Template/Services/index.ctp:39
-#: Template/Services/view.ctp:11;70 Template/ServicesDays/edit.ctp:13
-#: Template/ServicesDays/index.ctp:31 Template/ServicesDays/view.ctp:11
-#: Template/ServicesVisits/edit.ctp:13 Template/ServicesVisits/index.ctp:41
-#: Template/ServicesVisits/view.ctp:11 Template/Visits/index.ctp:43
-#: Template/Visits/view.ctp:11
-msgid "Are you sure you want to delete # {0}?"
-msgstr ""
-
-#: Template/Clubs/edit.ctp:26 Template/Clubs/view.ctp:10
-#: Template/Email/html/clubdata.ctp:2
-msgid "Edit Club"
-msgstr ""
-
-#: Template/Clubs/index.ctp:10 Template/Clubs/view.ctp:13
-#: Template/ClubsUsers/add.ctp:14 Template/ClubsUsers/edit.ctp:20
-#: Template/ClubsUsers/index.ctp:14 Template/ClubsUsers/view.ctp:17
-#: Template/Visits/index.ctp:12 Template/Visits/view.ctp:15
-msgid "New Club"
-msgstr ""
-
-#: Template/Clubs/index.ctp:18
-msgid "Clubs"
-msgstr ""
-
-#: Template/Clubs/index.ctp:41 Template/Clubs/view.ctp:100;131
-#: Template/ClubsUsers/index.ctp:35 Template/Services/index.ctp:37
-#: Template/Services/view.ctp:68 Template/ServicesDays/index.ctp:29
-#: Template/ServicesVisits/index.ctp:39 Template/Visits/index.ctp:41
+#: vendor/cakephp/cakephp/src/View/Helper/PaginatorHelper.php:1258
+#: src/Template/Clubs/index.ctp:41 src/Template/Clubs/view.ctp:100
+#: src/Template/Clubs/view.ctp:131 src/Template/ClubsUsers/index.ctp:35
+#: src/Template/Services/index.ctp:37 src/Template/Services/view.ctp:72
+#: src/Template/ServicesDays/index.ctp:29
+#: src/Template/ServicesVisits/index.ctp:39 src/Template/Visits/index.ctp:41
 msgid "View"
 msgstr ""
 
-#: Template/Clubs/index.ctp:42 Template/Clubs/view.ctp:101;132
-#: Template/ClubsUsers/index.ctp:36 Template/Services/index.ctp:38
-#: Template/Services/view.ctp:69 Template/ServicesDays/index.ctp:30
-#: Template/ServicesVisits/index.ctp:40 Template/Visits/index.ctp:42
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:151
+msgid "Searches and precompiles all twig templates it finds."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:159
+msgid "Searches and precompiles all twig templates for a specific plugin."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:167
+msgid "Precompile a specific file."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:171
+msgid "TwigView templates precompiler"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:9 src/Template/Clubs/edit.ctp:9
+#: src/Template/Clubs/index.ctp:9 src/Template/Clubs/index.ctp:28
+#: src/Template/Clubs/view.ctp:9 src/Template/Clubs/view.ctp:74
+#: src/Template/Clubs/view.ctp:120 src/Template/ClubsUsers/add.ctp:9
+#: src/Template/ClubsUsers/edit.ctp:9 src/Template/ClubsUsers/index.ctp:9
+#: src/Template/ClubsUsers/index.ctp:25 src/Template/ClubsUsers/view.ctp:9
+#: src/Template/Services/add.ctp:9 src/Template/Services/edit.ctp:9
+#: src/Template/Services/index.ctp:9 src/Template/Services/index.ctp:25
+#: src/Template/Services/view.ctp:9 src/Template/Services/view.ctp:61
+#: src/Template/ServicesDays/add.ctp:9 src/Template/ServicesDays/edit.ctp:9
+#: src/Template/ServicesDays/index.ctp:9 src/Template/ServicesDays/index.ctp:20
+#: src/Template/ServicesDays/view.ctp:9 src/Template/ServicesVisits/add.ctp:9
+#: src/Template/ServicesVisits/edit.ctp:9
+#: src/Template/ServicesVisits/index.ctp:9
+#: src/Template/ServicesVisits/index.ctp:27
+#: src/Template/ServicesVisits/view.ctp:9 src/Template/Visits/index.ctp:9
+#: src/Template/Visits/index.ctp:28 src/Template/Visits/view.ctp:9
+msgid "Actions"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:10 src/Template/Clubs/edit.ctp:16
+#: src/Template/Clubs/view.ctp:12 src/Template/ClubsUsers/add.ctp:13
+#: src/Template/ClubsUsers/edit.ctp:19 src/Template/ClubsUsers/index.ctp:13
+#: src/Template/ClubsUsers/view.ctp:16 src/Template/Visits/index.ctp:11
+#: src/Template/Visits/view.ctp:14
+msgid "List Clubs"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:11 src/Template/Clubs/edit.ctp:17
+#: src/Template/Clubs/index.ctp:11 src/Template/Clubs/view.ctp:14
+#: src/Template/Services/add.ctp:11 src/Template/Services/edit.ctp:17
+#: src/Template/Services/index.ctp:11 src/Template/Services/view.ctp:14
+#: src/Template/ServicesVisits/add.ctp:13
+#: src/Template/ServicesVisits/edit.ctp:19
+#: src/Template/ServicesVisits/index.ctp:13
+#: src/Template/ServicesVisits/view.ctp:16 src/Template/Visits/view.ctp:12
+msgid "List Visits"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:12 src/Template/Clubs/edit.ctp:18
+#: src/Template/Clubs/index.ctp:12 src/Template/Clubs/view.ctp:15
+#: src/Template/Services/add.ctp:12 src/Template/Services/edit.ctp:18
+#: src/Template/Services/index.ctp:12 src/Template/Services/view.ctp:15
+#: src/Template/ServicesVisits/add.ctp:14
+#: src/Template/ServicesVisits/edit.ctp:20
+#: src/Template/ServicesVisits/index.ctp:14
+#: src/Template/ServicesVisits/view.ctp:17 src/Template/Visits/index.ctp:10
+#: src/Template/Visits/view.ctp:13
+msgid "New Visit"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:13 src/Template/Clubs/edit.ctp:19
+#: src/Template/Clubs/index.ctp:13 src/Template/Clubs/view.ctp:16
+#: src/Template/ClubsUsers/add.ctp:11 src/Template/ClubsUsers/edit.ctp:17
+#: src/Template/ClubsUsers/index.ctp:11 src/Template/ClubsUsers/view.ctp:14
+msgid "List Users"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:14 src/Template/Clubs/edit.ctp:20
+#: src/Template/Clubs/index.ctp:14 src/Template/Clubs/view.ctp:17
+#: src/Template/ClubsUsers/add.ctp:12 src/Template/ClubsUsers/edit.ctp:18
+#: src/Template/ClubsUsers/index.ctp:12 src/Template/ClubsUsers/view.ctp:15
+msgid "New User"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:20
+msgid "Add Club"
+msgstr ""
+
+#: src/Template/Clubs/add.ctp:30 src/Template/Clubs/edit.ctp:35
+#: src/Template/ClubsUsers/add.ctp:26 src/Template/ClubsUsers/edit.ctp:32
+#: src/Template/Services/add.ctp:29 src/Template/Services/edit.ctp:34
+#: src/Template/ServicesDays/add.ctp:21 src/Template/ServicesDays/edit.ctp:27
+#: src/Template/ServicesVisits/add.ctp:28
+#: src/Template/ServicesVisits/edit.ctp:34 src/Template/Visits/edit.ctp:103
+msgid "Submit"
+msgstr ""
+
+#: src/Template/Clubs/edit.ctp:11 src/Template/Clubs/index.ctp:43
+#: src/Template/Clubs/view.ctp:102 src/Template/Clubs/view.ctp:133
+#: src/Template/ClubsUsers/edit.ctp:11 src/Template/ClubsUsers/index.ctp:37
+#: src/Template/Services/edit.ctp:11 src/Template/Services/index.ctp:39
+#: src/Template/Services/view.ctp:74 src/Template/ServicesDays/edit.ctp:11
+#: src/Template/ServicesDays/index.ctp:31
+#: src/Template/ServicesVisits/edit.ctp:11
+#: src/Template/ServicesVisits/index.ctp:41 src/Template/Visits/index.ctp:43
+msgid "Delete"
+msgstr ""
+
+#: src/Template/Clubs/edit.ctp:13 src/Template/Clubs/index.ctp:43
+#: src/Template/Clubs/view.ctp:11 src/Template/Clubs/view.ctp:102
+#: src/Template/Clubs/view.ctp:133 src/Template/ClubsUsers/edit.ctp:13
+#: src/Template/ClubsUsers/index.ctp:37 src/Template/ClubsUsers/view.ctp:11
+#: src/Template/Services/edit.ctp:13 src/Template/Services/index.ctp:39
+#: src/Template/Services/view.ctp:11 src/Template/Services/view.ctp:74
+#: src/Template/ServicesDays/edit.ctp:13 src/Template/ServicesDays/index.ctp:31
+#: src/Template/ServicesDays/view.ctp:11
+#: src/Template/ServicesVisits/edit.ctp:13
+#: src/Template/ServicesVisits/index.ctp:41
+#: src/Template/ServicesVisits/view.ctp:11 src/Template/Visits/index.ctp:43
+#: src/Template/Visits/view.ctp:11
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: src/Template/Clubs/edit.ctp:26 src/Template/Clubs/view.ctp:10
+#: src/Template/Email/html/clubdata.ctp:2
+msgid "Edit Club"
+msgstr ""
+
+#: src/Template/Clubs/index.ctp:10 src/Template/Clubs/view.ctp:13
+#: src/Template/ClubsUsers/add.ctp:14 src/Template/ClubsUsers/edit.ctp:20
+#: src/Template/ClubsUsers/index.ctp:14 src/Template/ClubsUsers/view.ctp:17
+#: src/Template/Visits/index.ctp:12 src/Template/Visits/view.ctp:15
+msgid "New Club"
+msgstr ""
+
+#: src/Template/Clubs/index.ctp:18
+msgid "Clubs"
+msgstr ""
+
+#: src/Template/Clubs/index.ctp:42 src/Template/Clubs/view.ctp:101
+#: src/Template/Clubs/view.ctp:132 src/Template/ClubsUsers/index.ctp:36
+#: src/Template/Services/index.ctp:38 src/Template/Services/view.ctp:73
+#: src/Template/ServicesDays/index.ctp:30
+#: src/Template/ServicesVisits/index.ctp:40 src/Template/Visits/index.ctp:42
 msgid "Edit"
 msgstr ""
 
-#: Template/Clubs/index.ctp:51 Template/ClubsUsers/index.ctp:45
-#: Template/Services/index.ctp:47 Template/ServicesDays/index.ctp:39
-#: Template/ServicesVisits/index.ctp:49 Template/Visits/index.ctp:51
+#: src/Template/Clubs/index.ctp:51 src/Template/ClubsUsers/index.ctp:45
+#: src/Template/Services/index.ctp:47 src/Template/ServicesDays/index.ctp:39
+#: src/Template/ServicesVisits/index.ctp:49 src/Template/Visits/index.ctp:51
 msgid "first"
 msgstr ""
 
-#: Template/Clubs/index.ctp:52 Template/ClubsUsers/index.ctp:46
-#: Template/Services/index.ctp:48 Template/ServicesDays/index.ctp:40
-#: Template/ServicesVisits/index.ctp:50 Template/Visits/index.ctp:52
+#: src/Template/Clubs/index.ctp:52 src/Template/ClubsUsers/index.ctp:46
+#: src/Template/Services/index.ctp:48 src/Template/ServicesDays/index.ctp:40
+#: src/Template/ServicesVisits/index.ctp:50 src/Template/Visits/index.ctp:52
 msgid "previous"
 msgstr ""
 
-#: Template/Clubs/index.ctp:54 Template/ClubsUsers/index.ctp:48
-#: Template/Services/index.ctp:50 Template/ServicesDays/index.ctp:42
-#: Template/ServicesVisits/index.ctp:52 Template/Visits/index.ctp:54
+#: src/Template/Clubs/index.ctp:54 src/Template/ClubsUsers/index.ctp:48
+#: src/Template/Services/index.ctp:50 src/Template/ServicesDays/index.ctp:42
+#: src/Template/ServicesVisits/index.ctp:52 src/Template/Visits/index.ctp:54
 msgid "next"
 msgstr ""
 
-#: Template/Clubs/index.ctp:55 Template/ClubsUsers/index.ctp:49
-#: Template/Services/index.ctp:51 Template/ServicesDays/index.ctp:43
-#: Template/ServicesVisits/index.ctp:53 Template/Visits/index.ctp:55
+#: src/Template/Clubs/index.ctp:55 src/Template/ClubsUsers/index.ctp:49
+#: src/Template/Services/index.ctp:51 src/Template/ServicesDays/index.ctp:43
+#: src/Template/ServicesVisits/index.ctp:53 src/Template/Visits/index.ctp:55
 msgid "last"
 msgstr ""
 
-#: Template/Clubs/index.ctp:57 Template/ClubsUsers/index.ctp:51
-#: Template/Services/index.ctp:53 Template/ServicesDays/index.ctp:45
-#: Template/ServicesVisits/index.ctp:55 Template/Visits/index.ctp:57
+#: src/Template/Clubs/index.ctp:57 src/Template/ClubsUsers/index.ctp:51
+#: src/Template/Services/index.ctp:53 src/Template/ServicesDays/index.ctp:45
+#: src/Template/ServicesVisits/index.ctp:55 src/Template/Visits/index.ctp:57
 msgid ""
 "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
 "total"
 msgstr ""
 
-#: Template/Clubs/view.ctp:11
+#: src/Template/Clubs/view.ctp:11
 msgid "Delete Club"
 msgstr ""
 
-#: Template/Clubs/view.ctp:24
+#: src/Template/Clubs/view.ctp:24
 msgid "Name"
 msgstr ""
 
-#: Template/Clubs/view.ctp:28;60
+#: src/Template/Clubs/view.ctp:28 src/Template/Clubs/view.ctp:60
 msgid "Address"
 msgstr ""
 
-#: Template/Clubs/view.ctp:32;59
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:28
+#: src/Template/Clubs/view.ctp:32 src/Template/Clubs/view.ctp:59
+#: src/Template/Plugin/CakeDC/Users/Users/register.ctp:28
 msgid "Phone"
 msgstr ""
 
-#: Template/Clubs/view.ctp:36;55
+#: src/Template/Clubs/view.ctp:36 src/Template/Clubs/view.ctp:55
 msgid "Email"
 msgstr ""
 
-#: Template/Clubs/view.ctp:40;61 Template/Services/view.ctp:43
-#: Template/Visits/view.ctp:50
+#: src/Template/Clubs/view.ctp:40 src/Template/Clubs/view.ctp:61
+#: src/Template/Services/view.ctp:43 src/Template/Visits/view.ctp:50
 msgid "Description"
 msgstr ""
 
-#: Template/Clubs/view.ctp:44;53;114 Template/ClubsUsers/view.ctp:32
-#: Template/Services/view.ctp:26;51 Template/ServicesDays/view.ctp:20
-#: Template/ServicesVisits/view.ctp:32
+#: src/Template/Clubs/view.ctp:44 src/Template/Clubs/view.ctp:53
+#: src/Template/Clubs/view.ctp:114 src/Template/ClubsUsers/view.ctp:32
+#: src/Template/Services/view.ctp:26 src/Template/Services/view.ctp:55
+#: src/Template/ServicesDays/view.ctp:20
+#: src/Template/ServicesVisits/view.ctp:32
 msgid "Id"
 msgstr ""
 
-#: Template/Clubs/view.ctp:49
+#: src/Template/Clubs/view.ctp:49
 msgid "Related Users"
 msgstr ""
 
-#: Template/Clubs/view.ctp:54
+#: src/Template/Clubs/view.ctp:54
 msgid "Username"
 msgstr ""
 
-#: Template/Clubs/view.ctp:56
+#: src/Template/Clubs/view.ctp:56
 msgid "Password"
 msgstr ""
 
-#: Template/Clubs/view.ctp:57
+#: src/Template/Clubs/view.ctp:57
 msgid "First Name"
 msgstr ""
 
-#: Template/Clubs/view.ctp:58
+#: src/Template/Clubs/view.ctp:58
 msgid "Last Name"
 msgstr ""
 
-#: Template/Clubs/view.ctp:62
+#: src/Template/Clubs/view.ctp:62
 msgid "Token"
 msgstr ""
 
-#: Template/Clubs/view.ctp:63
+#: src/Template/Clubs/view.ctp:63
 msgid "Token Expires"
 msgstr ""
 
-#: Template/Clubs/view.ctp:64
+#: src/Template/Clubs/view.ctp:64
 msgid "Api Token"
 msgstr ""
 
-#: Template/Clubs/view.ctp:65
+#: src/Template/Clubs/view.ctp:65
 msgid "Activation Date"
 msgstr ""
 
-#: Template/Clubs/view.ctp:66
+#: src/Template/Clubs/view.ctp:66
 msgid "Secret"
 msgstr ""
 
-#: Template/Clubs/view.ctp:67
+#: src/Template/Clubs/view.ctp:67
 msgid "Secret Verified"
 msgstr ""
 
-#: Template/Clubs/view.ctp:68
+#: src/Template/Clubs/view.ctp:68
 msgid "Tos Date"
 msgstr ""
 
-#: Template/Clubs/view.ctp:69
+#: src/Template/Clubs/view.ctp:69
 msgid "Active"
 msgstr ""
 
-#: Template/Clubs/view.ctp:70
+#: src/Template/Clubs/view.ctp:70
 msgid "Is Superuser"
 msgstr ""
 
-#: Template/Clubs/view.ctp:71
+#: src/Template/Clubs/view.ctp:71
 msgid "Role"
 msgstr ""
 
-#: Template/Clubs/view.ctp:72;118 Template/Services/view.ctp:55
-#: Template/Visits/view.ctp:32
+#: src/Template/Clubs/view.ctp:72 src/Template/Clubs/view.ctp:118
+#: src/Template/Services/view.ctp:59 src/Template/Visits/view.ctp:32
 msgid "Created"
 msgstr ""
 
-#: Template/Clubs/view.ctp:73;119 Template/Services/view.ctp:56
-#: Template/Visits/view.ctp:36
+#: src/Template/Clubs/view.ctp:73 src/Template/Clubs/view.ctp:119
+#: src/Template/Services/view.ctp:60 src/Template/Visits/view.ctp:36
 msgid "Modified"
 msgstr ""
 
-#: Template/Clubs/view.ctp:110 Template/Services/view.ctp:47
+#: src/Template/Clubs/view.ctp:110 src/Template/Services/view.ctp:51
 msgid "Related Visits"
 msgstr ""
 
-#: Template/Clubs/view.ctp:115 Template/Services/view.ctp:52
+#: src/Template/Clubs/view.ctp:115 src/Template/Services/view.ctp:56
 msgid "Club Id"
 msgstr ""
 
-#: Template/Clubs/view.ctp:116 Template/Services/view.ctp:53
-#: Template/ServicesDays/view.ctp:24 Template/Visits/edit.ctp:23
-#: Template/Visits/view.ctp:28
+#: src/Template/Clubs/view.ctp:116 src/Template/Services/view.ctp:57
+#: src/Template/ServicesDays/view.ctp:24 src/Template/Visits/edit.ctp:23
+#: src/Template/Visits/view.ctp:28
 msgid "Date"
 msgstr ""
 
-#: Template/Clubs/view.ctp:117 Template/Services/view.ctp:54
-#: Template/Visits/view.ctp:40
+#: src/Template/Clubs/view.ctp:117 src/Template/Services/view.ctp:58
+#: src/Template/Visits/view.ctp:40
 msgid "Payed"
 msgstr ""
 
-#: Template/ClubsUsers/add.ctp:10 Template/ClubsUsers/edit.ctp:16
-#: Template/ClubsUsers/view.ctp:12
+#: src/Template/ClubsUsers/add.ctp:10 src/Template/ClubsUsers/edit.ctp:16
+#: src/Template/ClubsUsers/view.ctp:12
 msgid "List Clubs Users"
 msgstr ""
 
-#: Template/ClubsUsers/add.ctp:20
+#: src/Template/ClubsUsers/add.ctp:20
 msgid "Add Clubs User"
 msgstr ""
 
-#: Template/ClubsUsers/edit.ctp:26 Template/ClubsUsers/view.ctp:10
+#: src/Template/ClubsUsers/edit.ctp:26 src/Template/ClubsUsers/view.ctp:10
 msgid "Edit Clubs User"
 msgstr ""
 
-#: Template/ClubsUsers/index.ctp:10 Template/ClubsUsers/view.ctp:13
+#: src/Template/ClubsUsers/index.ctp:10 src/Template/ClubsUsers/view.ctp:13
 msgid "New Clubs User"
 msgstr ""
 
-#: Template/ClubsUsers/index.ctp:18
+#: src/Template/ClubsUsers/index.ctp:18
 msgid "Clubs Users"
 msgstr ""
 
-#: Template/ClubsUsers/view.ctp:11
+#: src/Template/ClubsUsers/view.ctp:11
 msgid "Delete Clubs User"
 msgstr ""
 
-#: Template/ClubsUsers/view.ctp:24
+#: src/Template/ClubsUsers/view.ctp:24
 msgid "User"
 msgstr ""
 
-#: Template/ClubsUsers/view.ctp:28 Template/Visits/add.ctp:42
-#: Template/Visits/edit.ctp:22 Template/Visits/view.ctp:24
+#: src/Template/ClubsUsers/view.ctp:28 src/Template/Visits/add.ctp:42
+#: src/Template/Visits/edit.ctp:22 src/Template/Visits/view.ctp:24
 msgid "Club"
 msgstr ""
 
-#: Template/Element/header.ctp:4
+#: src/Template/Element/header.ctp:4
 msgid "Menu"
 msgstr ""
 
-#: Template/Element/header.ctp:30
+#: src/Template/Element/header.ctp:30
 msgid "Main data"
 msgstr ""
 
-#: Template/Element/header.ctp:36 Template/Services/index.ctp:16
+#: src/Template/Element/header.ctp:36 src/Template/Services/index.ctp:16
+#: src/Template/Visits/add.ctp:102
 msgid "Services"
-msgstr ""
+msgstr "Szolgáltatások"
 
-#: Template/Element/header.ctp:41
+#: src/Template/Element/header.ctp:41
 msgid "Service days"
 msgstr ""
 
-#: Template/Element/header.ctp:59
+#: src/Template/Element/header.ctp:59
 msgid "Logout"
-msgstr ""
+msgstr "Kilépek"
 
-#: Template/Layout/error.ctp:35 Template/Visits/add.ctp:14
+#: src/Template/Layout/error.ctp:35
 msgid "Error"
 msgstr ""
 
-#: Template/Layout/error.ctp:43
+#: src/Template/Layout/error.ctp:43
 msgid "Back"
 msgstr ""
 
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:13
+#: src/Template/Plugin/CakeDC/Users/Users/login.ctp:13
 msgid "Login"
-msgstr ""
+msgstr "Belépek"
 
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:17
+#: src/Template/Plugin/CakeDC/Users/Users/register.ctp:17
 msgid "Register"
-msgstr ""
+msgstr "Regisztrálok"
 
-#: Template/Services/add.ctp:10 Template/Services/edit.ctp:16
-#: Template/Services/view.ctp:12 Template/ServicesVisits/add.ctp:11
-#: Template/ServicesVisits/edit.ctp:17 Template/ServicesVisits/index.ctp:11
-#: Template/ServicesVisits/view.ctp:14 Template/Visits/index.ctp:13
-#: Template/Visits/view.ctp:16
+#: src/Template/Services/add.ctp:10 src/Template/Services/edit.ctp:16
+#: src/Template/Services/view.ctp:12 src/Template/ServicesVisits/add.ctp:11
+#: src/Template/ServicesVisits/edit.ctp:17
+#: src/Template/ServicesVisits/index.ctp:11
+#: src/Template/ServicesVisits/view.ctp:14 src/Template/Visits/index.ctp:13
+#: src/Template/Visits/view.ctp:16
 msgid "List Services"
 msgstr ""
 
-#: Template/Services/add.ctp:18
+#: src/Template/Services/add.ctp:18
 msgid "Add Service"
 msgstr ""
 
-#: Template/Services/edit.ctp:24 Template/Services/view.ctp:10
+#: src/Template/Services/edit.ctp:24 src/Template/Services/view.ctp:10
 msgid "Edit Service"
 msgstr ""
 
-#: Template/Services/index.ctp:10 Template/Services/view.ctp:13
-#: Template/ServicesVisits/add.ctp:12 Template/ServicesVisits/edit.ctp:18
-#: Template/ServicesVisits/index.ctp:12 Template/ServicesVisits/view.ctp:15
-#: Template/Visits/index.ctp:14 Template/Visits/view.ctp:17
+#: src/Template/Services/index.ctp:10 src/Template/Services/view.ctp:13
+#: src/Template/ServicesVisits/add.ctp:12
+#: src/Template/ServicesVisits/edit.ctp:18
+#: src/Template/ServicesVisits/index.ctp:12
+#: src/Template/ServicesVisits/view.ctp:15 src/Template/Visits/index.ctp:14
+#: src/Template/Visits/view.ctp:17
 msgid "New Service"
 msgstr ""
 
-#: Template/Services/view.ctp:11
+#: src/Template/Services/view.ctp:11
 msgid "Delete Service"
 msgstr ""
 
-#: Template/Services/view.ctp:22 Template/ServicesVisits/view.ctp:24
-#: Template/Visits/view.ctp:49
+#: src/Template/Services/view.ctp:22 src/Template/ServicesVisits/view.ctp:24
+#: src/Template/Visits/view.ctp:49
 msgid "Service"
 msgstr ""
 
-#: Template/Services/view.ctp:30 Template/Visits/view.ctp:51
+#: src/Template/Services/view.ctp:30 src/Template/Visits/view.ctp:51
 msgid "Minutes"
 msgstr "Perc"
 
-#: Template/Services/view.ctp:34 Template/Visits/view.ctp:52
+#: src/Template/Services/view.ctp:34 src/Template/Visits/view.ctp:52
 msgid "Full Price"
 msgstr "Felnőtt"
 
-#: Template/Services/view.ctp:38 Template/Visits/view.ctp:54
+#: src/Template/Services/view.ctp:38 src/Template/Visits/view.ctp:54
 msgid "Discount Price"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
-#: Template/ServicesDays/add.ctp:10 Template/ServicesDays/edit.ctp:16
-#: Template/ServicesDays/view.ctp:12
+#: src/Template/Services/view.ctp:47
+msgid "Long Description"
+msgstr ""
+
+#: src/Template/ServicesDays/add.ctp:10 src/Template/ServicesDays/edit.ctp:16
+#: src/Template/ServicesDays/view.ctp:12
 msgid "List Services Days"
 msgstr ""
 
-#: Template/ServicesDays/add.ctp:16
+#: src/Template/ServicesDays/add.ctp:16
 msgid "Add Services Day"
 msgstr ""
 
-#: Template/ServicesDays/edit.ctp:22 Template/ServicesDays/view.ctp:10
+#: src/Template/ServicesDays/edit.ctp:22 src/Template/ServicesDays/view.ctp:10
 msgid "Edit Services Day"
 msgstr ""
 
-#: Template/ServicesDays/index.ctp:10 Template/ServicesDays/view.ctp:13
+#: src/Template/ServicesDays/index.ctp:10 src/Template/ServicesDays/view.ctp:13
 msgid "New Services Day"
 msgstr ""
 
-#: Template/ServicesDays/index.ctp:14
+#: src/Template/ServicesDays/index.ctp:14
 msgid "Services Days"
 msgstr ""
 
-#: Template/ServicesDays/view.ctp:11
+#: src/Template/ServicesDays/view.ctp:11
 msgid "Delete Services Day"
 msgstr ""
 
-#: Template/ServicesVisits/add.ctp:10 Template/ServicesVisits/edit.ctp:16
-#: Template/ServicesVisits/view.ctp:12
+#: src/Template/ServicesVisits/add.ctp:10
+#: src/Template/ServicesVisits/edit.ctp:16
+#: src/Template/ServicesVisits/view.ctp:12
 msgid "List Services Visits"
 msgstr ""
 
-#: Template/ServicesVisits/add.ctp:20
+#: src/Template/ServicesVisits/add.ctp:20
 msgid "Add Services Visit"
 msgstr ""
 
-#: Template/ServicesVisits/edit.ctp:26 Template/ServicesVisits/view.ctp:10
+#: src/Template/ServicesVisits/edit.ctp:26
+#: src/Template/ServicesVisits/view.ctp:10
 msgid "Edit Services Visit"
 msgstr ""
 
-#: Template/ServicesVisits/index.ctp:10 Template/ServicesVisits/view.ctp:13
+#: src/Template/ServicesVisits/index.ctp:10
+#: src/Template/ServicesVisits/view.ctp:13
 msgid "New Services Visit"
 msgstr ""
 
-#: Template/ServicesVisits/index.ctp:18
+#: src/Template/ServicesVisits/index.ctp:18
 msgid "Services Visits"
 msgstr ""
 
-#: Template/ServicesVisits/view.ctp:11
+#: src/Template/ServicesVisits/view.ctp:11
 msgid "Delete Services Visit"
 msgstr ""
 
-#: Template/ServicesVisits/view.ctp:28
+#: src/Template/ServicesVisits/view.ctp:28
 msgid "Visit"
 msgstr ""
 
-#: Template/ServicesVisits/view.ctp:36 Template/Visits/view.ctp:53
+#: src/Template/ServicesVisits/view.ctp:36 src/Template/Visits/view.ctp:53
 msgid "Full Price Members"
 msgstr "Felnőtt"
 
-#: Template/ServicesVisits/view.ctp:40 Template/Visits/view.ctp:55
+#: src/Template/ServicesVisits/view.ctp:40 src/Template/Visits/view.ctp:55
 msgid "Discount Price Members"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
-#: Template/Visits/add.ctp:1
+#: src/Template/Visits/add.ctp:1
 msgid "Book visit"
 msgstr "Csoport bejelentkezés"
 
-#: Template/Visits/add.ctp:14
+#: src/Template/Visits/add.ctp:14
 msgid "Order"
 msgstr "Megrendelem"
 
-#: Template/Visits/add.ctp:47
+#: src/Template/Visits/add.ctp:17
+msgid "Clik to order"
+msgstr "Kattints ide a megrendeléshez"
+
+#: src/Template/Visits/add.ctp:27
+msgid "Visit summary"
+msgstr "Látogatás összesítés"
+
+#: src/Template/Visits/add.ctp:29
+msgid "Total"
+msgstr "Összesen"
+
+#: src/Template/Visits/add.ctp:47
 msgid "Date of visit"
 msgstr "Látogatás dátuma"
 
-#: Template/Visits/add.ctp:56;122;166;209 Template/Visits/edit.ctp:47;65
+#: src/Template/Visits/add.ctp:56 src/Template/Visits/add.ctp:122
+#: src/Template/Visits/add.ctp:166 src/Template/Visits/add.ctp:209
+#: src/Template/Visits/edit.ctp:47 src/Template/Visits/edit.ctp:65
 msgid "Full price"
 msgstr "Felnőtt"
 
-#: Template/Visits/add.ctp:60;79 Template/Visits/edit.ctp:48;57
+#: src/Template/Visits/add.ctp:60 src/Template/Visits/add.ctp:79
+#: src/Template/Visits/edit.ctp:48 src/Template/Visits/edit.ctp:57
 msgid "person"
 msgstr "fő"
 
-#: Template/Visits/add.ctp:75;125;169;212 Template/Visits/edit.ctp:56;77
+#: src/Template/Visits/add.ctp:75 src/Template/Visits/add.ctp:125
+#: src/Template/Visits/add.ctp:169 src/Template/Visits/add.ctp:212
+#: src/Template/Visits/edit.ctp:56 src/Template/Visits/edit.ctp:77
 msgid "Discount price"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
-#: Template/Visits/add.ctp:96;110;153;197
+#: src/Template/Visits/add.ctp:96 src/Template/Visits/add.ctp:110
+#: src/Template/Visits/add.ctp:153 src/Template/Visits/add.ctp:197
 msgid "min"
 msgstr "perc"
 
-#: Template/Visits/add.ctp:134;179;221
+#: src/Template/Visits/add.ctp:134 src/Template/Visits/add.ctp:179
+#: src/Template/Visits/add.ctp:221
 msgid "Add to cart"
 msgstr "Kérem"
 
-#: Template/Visits/edit.ctp:20 Template/Visits/view.ctp:10
+#: src/Template/Visits/add.ctp:145
+msgid "Special programs"
+msgstr "Különleges programok"
+
+#: src/Template/Visits/add.ctp:189
+msgid "Food"
+msgstr "Étkezés"
+
+#: src/Template/Visits/edit.ctp:20 src/Template/Visits/view.ctp:10
 msgid "Edit Visit"
 msgstr ""
 
-#: Template/Visits/edit.ctp:42
+#: src/Template/Visits/edit.ctp:42
 msgid "minutes"
 msgstr "perc"
 
-#: Template/Visits/edit.ctp:92
+#: src/Template/Visits/edit.ctp:92
 msgid "Select"
 msgstr ""
 
-#: Template/Visits/index.ctp:18
+#: src/Template/Visits/index.ctp:18
 msgid "Visits"
 msgstr ""
 
-#: Template/Visits/view.ctp:11
+#: src/Template/Visits/view.ctp:11
 msgid "Delete Visit"
 msgstr ""
 
-#: Template/Visits/view.ctp:41
+#: src/Template/Visits/view.ctp:41
 msgid "Yes"
 msgstr ""
 
-#: Template/Visits/view.ctp:41
+#: src/Template/Visits/view.ctp:41
 msgid "No"
 msgstr ""
 
-#: Template/Visits/view.ctp:45
+#: src/Template/Visits/view.ctp:45
 msgid "Related Services"
 msgstr ""
 
-#: Template/Visits/view.ctp:73
+#: src/Template/Visits/view.ctp:73
 msgid "Sum: "
-msgstr ""
+msgstr "Összesen:"

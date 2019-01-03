@@ -207,6 +207,9 @@ td input[type="text"], td input[type="number"], td select {
     filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.04));
 }
 
+.extra {
+    display: none;
+}
 
 .visits button {
     width: 100%;
@@ -255,4 +258,11 @@ button.success {
 #summary dt {
     text-align: right;
     margin: 0 1em 0 0;
+}
+
+.info i:before {
+    font-size: 200%;
+    position: relative;
+    top: .3rem;
+    margin-right: .3rem;
 }

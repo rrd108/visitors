@@ -6,6 +6,7 @@
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
 <?= $this->Html->script('vendor/jquery-ui-timepicker-addon.min', ['block' => true]) ?>
+<?= $this->Html->script('vendor/notify.min', ['block' => true]) ?>
 <?= $this->Html->script('visitors.add', ['block' => true]) ?>
 
 <div class="visits form large-12 columns content">

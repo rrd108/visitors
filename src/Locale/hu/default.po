@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
 "POT-Creation-Date: 2019-01-03 14:48+0100\n"
-"PO-Revision-Date: 2019-01-03 14:51+0100\n"
+"PO-Revision-Date: 2019-01-03 17:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hu_HU\n"
@@ -562,7 +562,7 @@ msgstr "Felnőtt"
 
 #: src/Template/Services/view.ctp:38 src/Template/Visits/view.ctp:54
 msgid "Discount Price"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
 #: src/Template/Services/view.ctp:47
 msgid "Long Description"
@@ -631,7 +631,7 @@ msgstr "Felnőtt"
 
 #: src/Template/ServicesVisits/view.ctp:40 src/Template/Visits/view.ctp:55
 msgid "Discount Price Members"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
 #: src/Template/Visits/add.ctp:1
 msgid "Book visit"
@@ -672,7 +672,7 @@ msgstr "fő"
 #: src/Template/Visits/add.ctp:169 src/Template/Visits/add.ctp:212
 #: src/Template/Visits/edit.ctp:56 src/Template/Visits/edit.ctp:77
 msgid "Discount price"
-msgstr "Diák"
+msgstr "Diák, nyugdíjas"
 
 #: src/Template/Visits/add.ctp:96 src/Template/Visits/add.ctp:110
 #: src/Template/Visits/add.ctp:153 src/Template/Visits/add.ctp:197

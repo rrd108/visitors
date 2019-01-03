@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-01-01 14:23+0000\n"
+"POT-Creation-Date: 2019-01-03 13:01+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -120,7 +120,6 @@ msgid "The visit could not be deleted. Please, try again."
 msgstr ""
 
 #: Controller/VisitsController.php:172
-#: Controller/Component/AuthComponent.php:500
 msgid "You are not authorized to access that location."
 msgstr ""
 
@@ -231,9 +230,6 @@ msgstr ""
 #: Template/ServicesVisits/add.ctp:28
 #: Template/ServicesVisits/edit.ctp:34
 #: Template/Visits/edit.ctp:103
-#: View/Helper/FormHelper.php:2028
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:38
-#: Template/Plugin/CakeDC/Users/Users/request_reset_password.ctp:8
 msgid "Submit"
 msgstr ""
 
@@ -302,7 +298,6 @@ msgstr ""
 #: Template/ServicesDays/index.ctp:29
 #: Template/ServicesVisits/index.ctp:39
 #: Template/Visits/index.ctp:41
-#: View/Helper/PaginatorHelper.php:1258
 msgid "View"
 msgstr ""
 
@@ -380,8 +375,6 @@ msgid "Phone"
 msgstr ""
 
 #: Template/Clubs/view.ctp:36;55
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:23
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:20
 msgid "Email"
 msgstr ""
 
@@ -408,8 +401,6 @@ msgid "Username"
 msgstr ""
 
 #: Template/Clubs/view.ctp:56
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:24
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:21
 msgid "Password"
 msgstr ""
 
@@ -558,8 +549,7 @@ msgid "Logout"
 msgstr ""
 
 #: Template/Layout/error.ctp:35
-#: Template/Error/error400.ctp:36
-#: Template/Error/error500.ctp:41
+#: Template/Visits/add.ctp:14
 msgid "Error"
 msgstr ""
 
@@ -568,12 +558,10 @@ msgid "Back"
 msgstr ""
 
 #: Template/Plugin/CakeDC/Users/Users/login.ctp:13
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:51
 msgid "Login"
 msgstr ""
 
 #: Template/Plugin/CakeDC/Users/Users/register.ctp:17
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:40
 msgid "Register"
 msgstr ""
 
@@ -708,6 +696,10 @@ msgstr ""
 msgid "Book visit"
 msgstr ""
 
+#: Template/Visits/add.ctp:14
+msgid "Order"
+msgstr ""
+
 #: Template/Visits/add.ctp:47
 msgid "Date of visit"
 msgstr ""
@@ -729,6 +721,10 @@ msgstr ""
 
 #: Template/Visits/add.ctp:96;110;153;197
 msgid "min"
+msgstr ""
+
+#: Template/Visits/add.ctp:134;179;221
+msgid "Add to cart"
 msgstr ""
 
 #: Template/Visits/edit.ctp:20
@@ -766,312 +762,5 @@ msgstr ""
 
 #: Template/Visits/view.ctp:73
 msgid "Sum: "
-msgstr ""
-
-#: Template/Error/error400.ctp:37
-msgid "The requested address {0} was not found on this server."
-msgstr ""
-
-#: Template/Error/error500.ctp:39
-msgid "An Internal Error Has Occurred"
-msgstr ""
-
-#: Controller/Component/CsrfComponent.php:182
-#: Http/Middleware/CsrfProtectionMiddleware.php:196
-msgid "Missing CSRF token cookie"
-msgstr ""
-
-#: Controller/Component/CsrfComponent.php:186
-#: Http/Middleware/CsrfProtectionMiddleware.php:200
-msgid "CSRF token mismatch."
-msgstr ""
-
-#: Error/ExceptionRenderer.php:292
-msgid "Not Found"
-msgstr ""
-
-#: Error/ExceptionRenderer.php:294
-msgid "An Internal Error Has Occurred."
-msgstr ""
-
-#: Http/Response.php:2630
-msgid "The requested file contains `..` and will not be read."
-msgstr ""
-
-#: Http/Response.php:2651
-msgid "The requested file was not found"
-msgstr ""
-
-#: I18n/Number.php:90
-msgid "{0,number,#,###.##} KB"
-msgstr ""
-
-#: I18n/Number.php:92
-msgid "{0,number,#,###.##} MB"
-msgstr ""
-
-#: I18n/Number.php:94
-msgid "{0,number,#,###.##} GB"
-msgstr ""
-
-#: I18n/Number.php:96
-msgid "{0,number,#,###.##} TB"
-msgstr ""
-
-#: I18n/Number.php:88
-msgid "{0,number,integer} Byte"
-msgid_plural "{0,number,integer} Bytes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:80
-msgid "{0} from now"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:80
-msgid "{0} ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:83
-msgid "{0} after"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:83
-msgid "{0} before"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:114
-msgid "just now"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:151
-msgid "about a second ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:152
-msgid "about a minute ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:153
-msgid "about an hour ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:154;332
-msgid "about a day ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:155;333
-msgid "about a week ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:156;334
-msgid "about a month ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:157;335
-msgid "about a year ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:168
-msgid "in about a second"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:169
-msgid "in about a minute"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:170
-msgid "in about an hour"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:171;346
-msgid "in about a day"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:172;347
-msgid "in about a week"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:173;348
-msgid "in about a month"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:174;349
-msgid "in about a year"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:304
-msgid "today"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:370
-msgid "%s ago"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:371
-msgid "on %s"
-msgstr ""
-
-#: I18n/RelativeTimeFormatter.php:47;126;316
-msgid "{0} year"
-msgid_plural "{0} years"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:51;129;319
-msgid "{0} month"
-msgid_plural "{0} months"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:57;132;322
-msgid "{0} week"
-msgid_plural "{0} weeks"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:59;135;325
-msgid "{0} day"
-msgid_plural "{0} days"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:64;138
-msgid "{0} hour"
-msgid_plural "{0} hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:68;141
-msgid "{0} minute"
-msgid_plural "{0} minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: I18n/RelativeTimeFormatter.php:72;144
-msgid "{0} second"
-msgid_plural "{0} seconds"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ORM/RulesChecker.php:57
-msgid "This value is already in use"
-msgstr ""
-
-#: ORM/RulesChecker.php:104
-msgid "This value does not exist"
-msgstr ""
-
-#: ORM/RulesChecker.php:128
-msgid "The count does not match {0}{1}"
-msgstr ""
-
-#: Utility/Text.php:924
-msgid "and"
-msgstr ""
-
-#: Validation/Validator.php:2223
-#: View/Form/ArrayContext.php:226
-msgid "This field is required"
-msgstr ""
-
-#: Validation/Validator.php:2245
-msgid "This field cannot be left empty"
-msgstr ""
-
-#: Validation/Validator.php:2394
-msgid "The provided value is invalid"
-msgstr ""
-
-#: View/Helper/FormHelper.php:1107
-msgid "Edit {0}"
-msgstr ""
-
-#: View/Helper/FormHelper.php:1109
-msgid "New {0}"
-msgstr ""
-
-#: View/Helper/HtmlHelper.php:819
-msgid "Home"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:540
-msgid "January"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:541
-msgid "February"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:542
-msgid "March"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:543
-msgid "April"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:544
-msgid "May"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:545
-msgid "June"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:546
-msgid "July"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:547
-msgid "August"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:548
-msgid "September"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:549
-msgid "October"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:550
-msgid "November"
-msgstr ""
-
-#: View/Widget/DateTimeWidget.php:551
-msgid "December"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:22
-msgid "Please enter your username and password"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:32
-msgid "Remember me"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/login.ctp:46
-msgid "Reset Password"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:24
-msgid "Confirm password"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:26
-msgid "First name"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:27
-msgid "Last name"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/register.ctp:31
-msgid "Accept TOS conditions?"
-msgstr ""
-
-#: Template/Plugin/CakeDC/Users/Users/request_reset_password.ctp:5
-msgid "Please enter your email to reset your password"
 msgstr ""
 

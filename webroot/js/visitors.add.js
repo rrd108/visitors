@@ -145,7 +145,7 @@ $(function () {
         if (totalAmount || $('#order button[type="submit"]').text().length != 11) {
             $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
                 + '(' + number_format(totalMinutes / 60, 1) + ' óra)');
-            if ($('#main-service').is(":hidden")) { //show up only we are after the first step of order
+            if ($('#main-service').is(":hidden")) { //show up only if we are after the first step of order
                 $('#order button[type="submit"]').hide().fadeIn();
             }
         }

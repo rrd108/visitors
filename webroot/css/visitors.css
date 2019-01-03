@@ -53,6 +53,7 @@ a.active {
 
 main.row {
     max-width: max-content;
+    width: -moz-max-content;
 }
 
 fieldset {

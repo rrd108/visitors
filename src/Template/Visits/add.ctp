@@ -98,7 +98,7 @@
                                 <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p><?= $service->description ?></p>
-                            <button type="button" class="button warning"><?= __('Continue') ?></button>
+                            <button id="main-service" type="button" class="button warning"><?= __('Continue') ?></button>
                         </div>
                     </div>
                 </div>

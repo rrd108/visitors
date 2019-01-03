@@ -56,8 +56,25 @@ $(function () {
         $('#cart').slideUp();
     }
 
-    // on selecting a service gray out all others with the same type
     $('button').click(function () {
+        // step 1 on order
+        if ($(this).attr('id') == 'main-service') {
+            if (!$('#datepicker').val()) {
+                $('#datepicker').effect('shake').notify('Kérem válasszon dátumot a látogatáshoz', 'error');
+                return;
+            }
+
+            if (!($('#services-1-joindata-full-price-members').val() + $('#services-1-joindata-discount-price-members').val())) {
+                $('#services-1-joindata-full-price-members').effect('shake').notify('Kérem adja meg hányan vannak a csoportban', 'error');
+                return;
+            }
+
+            $('.extra').fadeIn(1250);
+            $(this).hide();
+            return;
+        }
+
+        // on selecting a service gray out all others with the same type
         if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
             $(this).toggleClass('success');
             $(this).closest('.service').toggleClass('selected');
@@ -127,7 +144,10 @@ $(function () {
 
         if (totalAmount || $('#order button[type="submit"]').text().length != 11) {
             $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
-                + '(' + number_format(totalMinutes / 60, 1) + ' óra)').hide().fadeIn();
+                + '(' + number_format(totalMinutes / 60, 1) + ' óra)');
+            if ($('#main-service').is(":hidden")) { //show up only we are after the first step of order
+                $('#order button[type="submit"]').hide().fadeIn();
+            }
         }
     };
     $('input[data-service]').on('blur', calculatePriceAndTime);

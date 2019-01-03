@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2019-01-03 14:48+0100\n"
-"PO-Revision-Date: 2019-01-03 17:34+0100\n"
+"POT-Creation-Date: 2019-01-03 18:33+0100\n"
+"PO-Revision-Date: 2019-01-03 18:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hu_HU\n"
@@ -475,8 +475,8 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: src/Template/ClubsUsers/view.ctp:28 src/Template/Visits/add.ctp:42
-#: src/Template/Visits/edit.ctp:22 src/Template/Visits/view.ctp:24
+#: src/Template/ClubsUsers/view.ctp:28 src/Template/Visits/edit.ctp:22
+#: src/Template/Visits/view.ctp:24
 msgid "Club"
 msgstr ""
 
@@ -489,7 +489,7 @@ msgid "Main data"
 msgstr ""
 
 #: src/Template/Element/header.ctp:36 src/Template/Services/index.ctp:16
-#: src/Template/Visits/add.ctp:102
+#: src/Template/Visits/add.ctp:108
 msgid "Services"
 msgstr "Szolgáltatások"
 
@@ -637,58 +637,64 @@ msgstr "Diák, nyugdíjas"
 msgid "Book visit"
 msgstr "Csoport bejelentkezés"
 
-#: src/Template/Visits/add.ctp:14
+#: src/Template/Visits/add.ctp:15
 msgid "Order"
 msgstr "Megrendelem"
 
-#: src/Template/Visits/add.ctp:17
+#: src/Template/Visits/add.ctp:18
 msgid "Clik to order"
 msgstr "Kattints ide a megrendeléshez"
 
-#: src/Template/Visits/add.ctp:27
+#: src/Template/Visits/add.ctp:28
 msgid "Visit summary"
 msgstr "Látogatás összesítés"
 
-#: src/Template/Visits/add.ctp:29
+#: src/Template/Visits/add.ctp:30
 msgid "Total"
 msgstr "Összesen"
 
-#: src/Template/Visits/add.ctp:47
+#: src/Template/Visits/add.ctp:48
 msgid "Date of visit"
 msgstr "Látogatás dátuma"
 
-#: src/Template/Visits/add.ctp:56 src/Template/Visits/add.ctp:122
-#: src/Template/Visits/add.ctp:166 src/Template/Visits/add.ctp:209
-#: src/Template/Visits/edit.ctp:47 src/Template/Visits/edit.ctp:65
+#: src/Template/Visits/add.ctp:57 src/Template/Visits/add.ctp:62
+#: src/Template/Visits/add.ctp:129 src/Template/Visits/add.ctp:175
+#: src/Template/Visits/add.ctp:221 src/Template/Visits/edit.ctp:47
+#: src/Template/Visits/edit.ctp:65
 msgid "Full price"
 msgstr "Felnőtt"
 
-#: src/Template/Visits/add.ctp:60 src/Template/Visits/add.ctp:79
+#: src/Template/Visits/add.ctp:62 src/Template/Visits/add.ctp:82
 #: src/Template/Visits/edit.ctp:48 src/Template/Visits/edit.ctp:57
 msgid "person"
 msgstr "fő"
 
-#: src/Template/Visits/add.ctp:75 src/Template/Visits/add.ctp:125
-#: src/Template/Visits/add.ctp:169 src/Template/Visits/add.ctp:212
-#: src/Template/Visits/edit.ctp:56 src/Template/Visits/edit.ctp:77
+#: src/Template/Visits/add.ctp:77 src/Template/Visits/add.ctp:82
+#: src/Template/Visits/add.ctp:132 src/Template/Visits/add.ctp:178
+#: src/Template/Visits/add.ctp:224 src/Template/Visits/edit.ctp:56
+#: src/Template/Visits/edit.ctp:77
 msgid "Discount price"
 msgstr "Diák, nyugdíjas"
 
-#: src/Template/Visits/add.ctp:96 src/Template/Visits/add.ctp:110
-#: src/Template/Visits/add.ctp:153 src/Template/Visits/add.ctp:197
+#: src/Template/Visits/add.ctp:96 src/Template/Visits/add.ctp:116
+#: src/Template/Visits/add.ctp:162 src/Template/Visits/add.ctp:208
 msgid "min"
 msgstr "perc"
 
-#: src/Template/Visits/add.ctp:134 src/Template/Visits/add.ctp:179
-#: src/Template/Visits/add.ctp:221
+#: src/Template/Visits/add.ctp:101
+msgid "Continue"
+msgstr "Tovább"
+
+#: src/Template/Visits/add.ctp:142 src/Template/Visits/add.ctp:189
+#: src/Template/Visits/add.ctp:234
 msgid "Add to cart"
 msgstr "Kérem"
 
-#: src/Template/Visits/add.ctp:145
+#: src/Template/Visits/add.ctp:154
 msgid "Special programs"
 msgstr "Különleges programok"
 
-#: src/Template/Visits/add.ctp:189
+#: src/Template/Visits/add.ctp:200
 msgid "Food"
 msgstr "Étkezés"
 

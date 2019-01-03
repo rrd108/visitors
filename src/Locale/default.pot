@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-01-03 13:48+0000\n"
+"POT-Creation-Date: 2019-01-03 17:33+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -521,7 +521,6 @@ msgid "User"
 msgstr ""
 
 #: Template/ClubsUsers/view.ctp:28
-#: Template/Visits/add.ctp:42
 #: Template/Visits/edit.ctp:22
 #: Template/Visits/view.ctp:24
 msgid "Club"
@@ -537,7 +536,7 @@ msgstr ""
 
 #: Template/Element/header.ctp:36
 #: Template/Services/index.ctp:16
-#: Template/Visits/add.ctp:102
+#: Template/Visits/add.ctp:108
 msgid "Services"
 msgstr ""
 
@@ -700,54 +699,58 @@ msgstr ""
 msgid "Book visit"
 msgstr ""
 
-#: Template/Visits/add.ctp:14
+#: Template/Visits/add.ctp:15
 msgid "Order"
 msgstr ""
 
-#: Template/Visits/add.ctp:17
+#: Template/Visits/add.ctp:18
 msgid "Clik to order"
 msgstr ""
 
-#: Template/Visits/add.ctp:27
+#: Template/Visits/add.ctp:28
 msgid "Visit summary"
 msgstr ""
 
-#: Template/Visits/add.ctp:29
+#: Template/Visits/add.ctp:30
 msgid "Total"
 msgstr ""
 
-#: Template/Visits/add.ctp:47
+#: Template/Visits/add.ctp:48
 msgid "Date of visit"
 msgstr ""
 
-#: Template/Visits/add.ctp:56;122;166;209
+#: Template/Visits/add.ctp:57;62;129;175;221
 #: Template/Visits/edit.ctp:47;65
 msgid "Full price"
 msgstr ""
 
-#: Template/Visits/add.ctp:60;79
+#: Template/Visits/add.ctp:62;82
 #: Template/Visits/edit.ctp:48;57
 msgid "person"
 msgstr ""
 
-#: Template/Visits/add.ctp:75;125;169;212
+#: Template/Visits/add.ctp:77;82;132;178;224
 #: Template/Visits/edit.ctp:56;77
 msgid "Discount price"
 msgstr ""
 
-#: Template/Visits/add.ctp:96;110;153;197
+#: Template/Visits/add.ctp:96;116;162;208
 msgid "min"
 msgstr ""
 
-#: Template/Visits/add.ctp:134;179;221
+#: Template/Visits/add.ctp:101
+msgid "Continue"
+msgstr ""
+
+#: Template/Visits/add.ctp:142;189;234
 msgid "Add to cart"
 msgstr ""
 
-#: Template/Visits/add.ctp:145
+#: Template/Visits/add.ctp:154
 msgid "Special programs"
 msgstr ""
 
-#: Template/Visits/add.ctp:189
+#: Template/Visits/add.ctp:200
 msgid "Food"
 msgstr ""
 

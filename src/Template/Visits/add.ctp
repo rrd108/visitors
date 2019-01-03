@@ -34,7 +34,7 @@
                     <?php $service = $services[1][0]; ?>
                     <h2><?= $service->service ?></h2>
                     <div class="service-main">
-                        <div class="service-data">
+                        <div class="service-data info">
                             <?php
                             if($clubs->count()) {
                                 echo $this->Form->control('club_id', ['options' => $clubs]);
@@ -53,9 +53,10 @@
                                 [
                                     'label' =>
                                         [
-                                            'text' => __('Full price') . ' '
-                                                . $this->Number->format($service->full_price) . ' Ft/fő',
-                                            'class' => 'column large-8'
+                                            'text' => '<i class="fi-male" title="' . __('Full price') . '">'
+                                                . $this->Number->format($service->full_price) . ' Ft/fő</i>',
+                                            'class' => 'column large-8',
+                                            'escape' => false
                                         ],
                                     'placeholder' => __('person'),
                                     'required' => false,
@@ -72,9 +73,10 @@
                                 [
                                     'label' =>
                                         [
-                                            'text' => __('Discount price') . ' '
-                                                . $this->Number->format($service->discount_price) . ' Ft/fő',
-                                            'class' => 'column large-8'
+                                            'text' => '<i class="fi-universal-access" title="' . __('Discount price') . '">'
+                                                . $this->Number->format($service->discount_price) . ' Ft/fő</i>',
+                                            'class' => 'column large-8',
+                                            'escape' => false
                                         ],
                                     'placeholder' => __('person'),
                                     'required' => false,
@@ -117,22 +119,25 @@
                                 <div class="row align-center">
                                     <?= $this->Html->image($service->id . '.jpg') ?>
                                 </div>
-                                <p><?= $service->description ?></p>
-                                <p data-id="<?= $service->id ?>">
-                                    <?= __('Full price') . ' '
-                                        . $this->Number->format($service->full_price) . ' Ft' ?>
-                                    /
-                                    <?= __('Discount price') . ' '
-                                        . $this->Number->format($service->discount_price) . ' Ft' ?>
-                                </p>
-                                <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                        data-type-id="<?= $service->type ?>"
-                                        data-minutes="<?= $service->minutes ?>"
-                                        data-price-full="<?= $service->full_price ?>"
-                                        data-price-discount="<?= $service->discount_price ?>"
-                                        data-service="<?= $service->service ?>">
-                                    <?= __('Add to cart') ?>
-                                </button>
+                                <div class="info">
+                                    <p><?= $service->description ?></p>
+                                    <p data-id="<?= $service->id ?>" class="row text-center align-middle">
+                                        <i class="column fi-male" title="<?= __('Full price') ?>">
+                                            <?= $this->Number->format($service->full_price) . ' Ft' ?>
+                                        </i>
+                                        <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
+                                            <?= $this->Number->format($service->discount_price) . ' Ft' ?>
+                                        </i>
+                                    </p>
+                                    <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                            data-type-id="<?= $service->type ?>"
+                                            data-minutes="<?= $service->minutes ?>"
+                                            data-price-full="<?= $service->full_price ?>"
+                                            data-price-discount="<?= $service->discount_price ?>"
+                                            data-service="<?= $service->service ?>">
+                                        <?= __('Add to cart') ?>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -162,12 +167,13 @@
                             </div>
                             <div class="info">
                                 <p><?= $service->description ?></p>
-                                <p data-id="<?= $service->id ?>">
-                                    <?= __('Full price') . ' '
-                                        . $this->Number->format($service->full_price) . ' Ft' ?>
-                                    /
-                                    <?= __('Discount price') . ' '
-                                        . $this->Number->format($service->discount_price) . ' Ft' ?>
+                                <p data-id="<?= $service->id ?>" class="row text-center">
+                                    <i class="column fi-male" title="<?= __('Full price') ?>">
+                                        <?= $this->Number->format($service->full_price) . ' Ft' ?>
+                                    </i>
+                                    <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
+                                        <?= $this->Number->format($service->discount_price) . ' Ft' ?>
+                                    </i>
                                 </p>
                                 <button type="button" class="button select-service fi-check"
                                     data-id="<?= $service->id ?>"
@@ -204,22 +210,25 @@
                             <div class="row align-center">
                                 <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
-                            <p><?= $service->description ?></p>
-                            <p data-id="<?= $service->id ?>">
-                                <?= __('Full price') . ' '
-                                    . $this->Number->format($service->full_price) . ' Ft' ?>
-                                /
-                                <?= __('Discount price') . ' '
-                                    . $this->Number->format($service->discount_price) . ' Ft' ?>
-                            </p>
-                            <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                data-type-id="<?= $service->type ?>"
-                                data-minutes="<?= $service->minutes ?>"
-                                data-price-full="<?= $service->full_price ?>"
-                                data-price-discount="<?= $service->discount_price ?>"
-                                data-service="<?= $service->service ?>">
-                                <?= __('Add to cart') ?>
-                            </button>
+                            <div class="info">
+                                <p><?= $service->description ?></p>
+                                <p data-id="<?= $service->id ?>" class="row text-center">
+                                    <i class="column fi-male" title="<?= __('Full price') ?>">
+                                            <?= $this->Number->format($service->full_price) . ' Ft' ?>
+                                        </i>
+                                        <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
+                                            <?= $this->Number->format($service->discount_price) . ' Ft' ?>
+                                        </i>
+                                </p>
+                                <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                    data-type-id="<?= $service->type ?>"
+                                    data-minutes="<?= $service->minutes ?>"
+                                    data-price-full="<?= $service->full_price ?>"
+                                    data-price-discount="<?= $service->discount_price ?>"
+                                    data-service="<?= $service->service ?>">
+                                    <?= __('Add to cart') ?>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

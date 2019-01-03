@@ -256,3 +256,10 @@ button.success {
     text-align: right;
     margin: 0 1em 0 0;
 }
+
+.info i:before {
+    font-size: 200%;
+    position: relative;
+    top: .3rem;
+    margin-right: .3rem;
+}

@@ -207,6 +207,9 @@ td input[type="text"], td input[type="number"], td select {
     filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.04));
 }
 
+.extra {
+    display: none;
+}
 
 .visits button {
     width: 100%;

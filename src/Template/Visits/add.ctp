@@ -11,10 +11,10 @@
 <div class="visits form large-12 columns content">
     <?= $this->Form->create($visit, ['id' => 'order']) ?>
     <?= $this->Form->button(
-        'Megrendelem',
+        __('Order'),
         [
             'class' => 'button success cart',
-            'title' => 'Kattints a megrendeléshez'
+            'title' => __('Clik to order')
         ]
     ) ?>
     <div class="row">
@@ -24,9 +24,9 @@
                     <i class="fi-shopping-cart"></i>
                 </div>
                 <div id="cart" class="column small-12 cart">
-                    <h4>Látogatás összesítő</h4>
+                    <h4><?= __('Visit summary') ?></h4>
                     <dl class="column small-12" id="summary">
-                        <dt class="b">Összesen: 0 Ft</dt>
+                        <dt class="b"><?= __('Total') ?>: 0 Ft</dt>
                     </dl>
                 </div>
 
@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <h2>Szolgáltatások</h2>
+            <h2><?= __('Services') ?></h2>
             <div class="row">
                 <?php foreach ($services[4] as $i => $service): ?>
                     <div class="column small-12">
@@ -142,7 +142,7 @@
         </div>
 
         <div class="column large-6 bg small-12">
-            <h2>Különleges programok</h2>
+            <h2><?= __('Special programs') ?></h2>
             <div class="row">
             <?php foreach ($services[2] as $i => $service): ?>
                 <div class="column large-6 small-12">
@@ -186,7 +186,7 @@
             </div>
         </div>
         <div class="column large-3 small-12">
-            <h2>Étkezés</h2>
+            <h2><?= __('Food') ?></h2>
             <div class="row">
             <?php foreach ($services[3] as $i => $service): ?>
                 <div class="column small-12">

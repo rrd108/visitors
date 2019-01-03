@@ -54,7 +54,7 @@
                     <li>
                         <?= $this->User->logout(
                             '<span id="username">'
-                            . $this->request->session()->read('Auth.User.username') .
+                            . $this->request->getSession()->read('Auth.User.username') .
                             '</span>'
                             . ' ' . __('Logout'),
                             ['escape' => false]) ?>

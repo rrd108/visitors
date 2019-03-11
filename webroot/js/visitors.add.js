@@ -78,7 +78,7 @@ $(function () {
         if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
             $(this).toggleClass('success');
             $(this).closest('.service').toggleClass('selected');
-            $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
+            //$(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
             return;
         }
 
@@ -88,7 +88,7 @@ $(function () {
             $(this).addClass('success');
             services.addClass('faded').removeClass('selected');
             $(this).closest('.service').removeClass('faded').addClass('selected');
-            $(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
+            //$(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
         } else {
             typeButtons.removeClass('success');
             services.removeClass('faded');

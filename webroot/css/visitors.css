@@ -12,10 +12,12 @@ nav img {
 
 }
 @media screen and (max-width: 675px) {
+    body {
+        text-align: center;
+    }
     nav img {
         width: 200px;
         height: auto;
-
     }
     .button.success {
         display: none;

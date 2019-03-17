@@ -4,8 +4,37 @@
 
 body {
     color: #483a23;
+    background: #DECF9B;
 }
+nav img {
+    width: 200px;
+    height: auto;
 
+}
+@media screen and (max-width: 675px) {
+    nav img {
+        width: 200px;
+        height: auto;
+
+    }
+    .button.success {
+        display: none;
+    }
+    .button.warning {
+        display: none;
+    }
+    dl dt {
+        display: none;
+    }
+    label, h2, h4 {
+        display: none;
+    }
+    .fi-shopping-cart {
+        display: none;
+    }
+
+}
+/*
 .b {
     font-weight: bold;
 }
@@ -267,3 +296,4 @@ button.success {
     top: .3rem;
     margin-right: .3rem;
 }
+*/

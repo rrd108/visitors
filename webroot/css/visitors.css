@@ -34,7 +34,22 @@ nav img {
     .fi-shopping-cart {
         display: none;
     }
-
+    .small-12 {
+        position: relative;
+        top: 1em;
+    }
+    .fi-calendar {
+        position: relative;
+        right: 5px;
+        bottom: 20px;
+        font-size: 50px;
+    }
+    .fi-male {
+        position: relative;
+        right: 5px;
+        bottom: 20px;
+        font-size: 50px;
+    }
 }
 /*
 .b {

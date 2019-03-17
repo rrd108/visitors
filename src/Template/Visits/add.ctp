@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $this->assign('title', __('Book visit')); ?>
 
@@ -50,13 +50,16 @@ $this->assign('title', __('Book visit')); ?>
                                 echo $this->Form->control('club.name',['label' => __('Club')]);
                             } */
                             ?>
+                            <div class="input-group">
+                                <i class="fi-calendar"> </i>
                             <?= $this->Form->control('date',
                                 ['id' => 'datepicker', 'type' => 'text',
                                     'label' => __('Date of visit'),
                                     'placeholder' => __('Látogatás dátuma') ,
                                     'autocomplete' => 'off']) ?>
-
+                            </div>
                             <div class="input-group">
+                                <i class="fi-male"> </i>
                                 <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.full_price_members',
                                 [
@@ -77,6 +80,7 @@ $this->assign('title', __('Book visit')); ?>
                             ) ?>
                             </div>
                             <div class="input-group">
+                                <i class="fi-universal-access" style="font-size: 50px; position: relative; bottom:20px; right:5px;"> </i>
                                 <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.discount_price_members',
                                 [

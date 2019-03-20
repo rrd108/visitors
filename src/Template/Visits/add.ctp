@@ -55,7 +55,7 @@ $this->assign('title', __('Book visit')); ?>
                             <?= $this->Form->control('date',
                                 ['id' => 'datepicker', 'type' => 'text',
                                     'label' => __('Date of visit'),
-                                    'placeholder' => __('Látogatás dátuma') ,
+                                    'placeholder' => __('Date of visit') ,
                                     'autocomplete' => 'off']) ?>
                             </div>
                             <div class="input-group">
@@ -70,7 +70,7 @@ $this->assign('title', __('Book visit')); ?>
                                             'class' => 'column large-8',
                                             'escape' => false
                                         ],
-                                    'placeholder' => __('Felnőtt') . ' (' . __('fő') . ')',
+                                    'placeholder' => __('Full price') . ' (' . __('person') . ')',
                                     'required' => false,
                                     'templates' => ['inputContainer' => '{{content}}'],
                                     'data-minutes' => $service->minutes,
@@ -80,7 +80,7 @@ $this->assign('title', __('Book visit')); ?>
                             ) ?>
                             </div>
                             <div class="input-group">
-                                <i class="fi-universal-access" style="font-size: 50px; position: relative; bottom:20px; right:5px;"> </i>
+                                <i class="fi-universal-access"> </i>
                                 <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.discount_price_members',
                                 [
@@ -91,7 +91,7 @@ $this->assign('title', __('Book visit')); ?>
                                             'class' => 'column large-8',
                                             'escape' => false
                                         ],
-                                    'placeholder' => __('Diák, Nyugdíjas') . ' (' . __('fő') . ')',
+                                    'placeholder' => __('Discount price') . ' (' . __('person') . ')',
                                     'required' => false,
                                     'templates' => ['inputContainer' => '{{content}}'],
                                     'data-minutes' => $service->minutes,

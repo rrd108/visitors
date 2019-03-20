@@ -4,8 +4,68 @@
 
 body {
     color: #483a23;
+    background: #DECF9B;
 }
+nav img {
+    width: 200px;
+    height: auto;
 
+}
+@media screen and (max-width: 675px) {
+    body {
+        text-align: center;
+    }
+    nav img {
+        width: 200px;
+        height: auto;
+    }
+    .button.success {
+        display: none;
+    }
+    .button.warning {
+        display: none;
+    }
+    dl dt {
+        display: none;
+    }
+    label, h2, h4 {
+        display: none;
+    }
+    .fi-shopping-cart {
+        display: none;
+    }
+    .small-12 {
+        position: relative;
+        top: 1em;
+    }
+    .fi-calendar {
+        position: relative;
+        right: 5px;
+        bottom: 20px;
+        font-size: 50px;
+    }
+    .fi-male {
+        position: relative;
+        right: 5px;
+        bottom: 20px;
+        font-size: 50px;
+    }
+    .fi-universal-access{
+        font-size: 50px;
+        position: relative;
+        bottom:20px; 
+        right:5px;
+
+    }
+    .fi-arrow-down {
+        font-size: 35px;
+    }
+    .input {
+        width: 100%;
+    }
+
+}
+/*
 .b {
     font-weight: bold;
 }
@@ -267,3 +327,4 @@ button.success {
     top: .3rem;
     margin-right: .3rem;
 }
+*/

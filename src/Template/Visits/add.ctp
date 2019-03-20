@@ -1,4 +1,6 @@
-<?php $this->assign('title', __('Book visit')); ?>
+<?php
+
+$this->assign('title', __('Book visit')); ?>
 
 <?= $this->Html->css('jquery-ui') ?>
 <?= $this->Html->css('jquery-ui-timepicker-addon.min') ?>
@@ -48,12 +50,16 @@
                                 echo $this->Form->control('club.name',['label' => __('Club')]);
                             } */
                             ?>
+                            <div class="input-group">
+                                <i class="fi-calendar"> </i>
                             <?= $this->Form->control('date',
                                 ['id' => 'datepicker', 'type' => 'text',
                                     'label' => __('Date of visit'),
+                                    'placeholder' => __('Date of visit') ,
                                     'autocomplete' => 'off']) ?>
-
+                            </div>
                             <div class="input-group">
+                                <i class="fi-male"> </i>
                                 <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.full_price_members',
                                 [
@@ -74,6 +80,7 @@
                             ) ?>
                             </div>
                             <div class="input-group">
+                                <i class="fi-universal-access"> </i>
                                 <?= $this->Form->control(
                                 'services.'.$service->id.'._joinData.discount_price_members',
                                 [
@@ -105,8 +112,9 @@
                                 <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p>
-                                <?= $service->description ?>
+                                <?= $service->description ?>             
                             </p>
+                        <i class="fi-arrow-down"></i>
                             <button id="main-service" type="button" class="button warning">
                                 <?= __('Continue') ?></button>
                         </div>
@@ -114,7 +122,7 @@
                 </div>
             </div>
 
-            <div class="extra">
+            <div class="extra hide">
                 <h2>
                     <?= __('Services') ?>
                 </h2>
@@ -150,9 +158,9 @@
                                         </i>
                                     </p>
                                     <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                        data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
-                                        data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
-                                        data-service="<?= $service->service ?>">
+                                            data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
+                                            data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
+                                            data-service="<?= $service->service ?>">
                                         <?= __('Add to cart') ?>
                                     </button>
                                 </div>
@@ -164,7 +172,7 @@
             </div>
         </div>
 
-        <div class="column large-6 bg small-12 extra">
+        <div class="column large-6 bg small-12 extra hide">
             <h2>
                 <?= __('Special programs') ?>
             </h2>
@@ -200,9 +208,9 @@
                                     </i>
                                 </p>
                                 <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                    data-minutes="<?= $service->minutes ?>" data-type-id="<?= $service->type ?>"
-                                    data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
-                                    data-service="<?= $service->service ?>">
+                                        data-minutes="<?= $service->minutes ?>" data-type-id="<?= $service->type ?>"
+                                        data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
+                                        data-service="<?= $service->service ?>">
                                     <?= __('Add to cart') ?>
                                 </button>
                             </div>
@@ -213,7 +221,7 @@
             </div>
         </div>
 
-        <div class="column large-3 small-12 extra">
+        <div class="column large-3 small-12 extra hide">
             <h2>
                 <?= __('Food') ?>
             </h2>
@@ -249,9 +257,9 @@
                                     </i>
                                 </p>
                                 <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                    data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
-                                    data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
-                                    data-service="<?= $service->service ?>">
+                                        data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
+                                        data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
+                                        data-service="<?= $service->service ?>">
                                     <?= __('Add to cart') ?>
                                 </button>
                             </div>

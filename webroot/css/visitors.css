@@ -50,6 +50,20 @@ nav img {
         bottom: 20px;
         font-size: 50px;
     }
+    .fi-universal-access{
+        font-size: 50px;
+        position: relative;
+        bottom:20px; 
+        right:5px;
+
+    }
+    .fi-arrow-down {
+        font-size: 35px;
+    }
+    .input {
+        width: 100%;
+    }
+
 }
 /*
 .b {

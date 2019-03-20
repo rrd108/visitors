@@ -112,8 +112,9 @@ $this->assign('title', __('Book visit')); ?>
                                 <?= $this->Html->image($service->id . '.jpg') ?>
                             </div>
                             <p>
-                                <?= $service->description ?>
+                                <?= $service->description ?>             
                             </p>
+                        <i class="fi-arrow-down"></i>
                             <button id="main-service" type="button" class="button warning">
                                 <?= __('Continue') ?></button>
                         </div>

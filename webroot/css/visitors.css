@@ -11,6 +11,9 @@ nav img {
     height: auto;
 
 }
+.step_1 {
+    display: none;
+}
 @media screen and (max-width: 675px) {
     body {
         text-align: center;

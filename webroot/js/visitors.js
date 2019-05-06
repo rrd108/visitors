@@ -1,7 +1,7 @@
 $(document).foundation();
 
 $(document).ready(function () {
-	$('input').blur(function(){
+	$('#datepicker').blur(function(){
 		$('.fi-arrow-down').click(function() {
 			$('div.step_1').show();
 			$('html, body').animate({

@@ -128,7 +128,7 @@ $this->assign('title', __('Book visit')); ?>
                         </h2>
                         <div class="row">
                             <?php foreach ($services[4] as $i => $service): ?>
-                                <div class="column small-12">
+                                <div class="column small-6">
                                     <div class="service">
                                         <h3>
                                             <span class="row align-justify">

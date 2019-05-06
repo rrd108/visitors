@@ -11,12 +11,7 @@ nav img {
     height: auto;
 
 }
-.step_1 {
-    display: none;
-}
-.step_1 img {
-    width: 20px;
-}
+
 @media screen and (max-width: 675px) {
     body {
         text-align: center;
@@ -68,6 +63,18 @@ nav img {
     }
     .input {
         width: 100%;
+    }
+    .step_1 {
+        position: relative;
+        top: 3em;
+    }
+    .step_1 img {
+        width: 140px;
+        height: 120px;
+    }
+    .service {
+        position: relative;
+        text-align: center;
     }
 
 }

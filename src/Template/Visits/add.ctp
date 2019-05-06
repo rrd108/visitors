@@ -132,9 +132,9 @@ $this->assign('title', __('Book visit')); ?>
                                     <div class="service">
                                         <h3>
                                             <span class="row align-justify">
-                                                <span class="column large-10">
+                                                <span class="column large-10 small-12 kerekpar_span">
                                                     <?= $service->service ?></span>
-                                                    <span class="column large-2 min">
+                                                    <span class="column large-2 small-12 min">
                                                         <?= $service->minutes . ' ' . __('min') ?></span>
                                                     </span>
                                                 </h3>

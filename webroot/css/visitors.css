@@ -76,6 +76,15 @@ nav img {
         position: relative;
         text-align: center;
     }
+    .kerekpar_span {
+        font-size: 15px;
+    }
+    .step_1 i{
+        font-size: 15px;
+    }
+    .button {
+        display: none;
+    }
 
 }
 /*

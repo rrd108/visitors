@@ -22,6 +22,7 @@ $this->assign('title', __('Book visit')); ?>
     ) ?>
     <div class="row">
         <div class="column main">
+           <div class="elso_resz">
             <div class="row">
                 <div class="column small-12 cart text-center extra">
                     <i class="fi-shopping-cart"></i>
@@ -36,7 +37,7 @@ $this->assign('title', __('Book visit')); ?>
                         </dl>
                     </div>
 
-                    <div class="column small-12">
+                    <div class="column small-12 input_mezo">
                         <?php $service = $services[1][0]; ?>
                         <h2>
                             <?= $service->service ?>
@@ -51,15 +52,15 @@ $this->assign('title', __('Book visit')); ?>
                             } */
                             ?>
                             <div class="input-group">
-                                <i class="fi-calendar"> </i>
+                                <i class="fi-calendar small-2"> </i>
                                 <?= $this->Form->control('date',
                                     ['id' => 'datepicker', 'type' => 'text',
                                     'label' => __('Date of visit'),
                                     'placeholder' => __('Date of visit') ,
                                     'autocomplete' => 'off']) ?>
                                 </div>
-                                <div class="input-group">
-                                    <i class="fi-male"> </i>
+                                <div class="input-group align-top">
+                                    <i class="fi-male small-2 column text-center"> </i>
                                     <?= $this->Form->control(
                                         'services.'.$service->id.'._joinData.full_price_members',
                                         [
@@ -67,7 +68,7 @@ $this->assign('title', __('Book visit')); ?>
                                             [
                                                 'text' => '<i class="fi-male" title="' . __('Full price') . '">'
                                                 . $this->Number->format($service->full_price) . ' Ft/fő</i>',
-                                                'class' => 'column large-8',
+                                                'class' => 'column',
                                                 'escape' => false
                                             ],
                                             'placeholder' => __('Full price') . ' (' . __('person') . ')',
@@ -80,7 +81,7 @@ $this->assign('title', __('Book visit')); ?>
                                     ) ?>
                                 </div>
                                 <div class="input-group">
-                                    <i class="fi-universal-access"> </i>
+                                    <i class="fi-universal-access small-2 column text-center"> </i>
                                     <?= $this->Form->control(
                                         'services.'.$service->id.'._joinData.discount_price_members',
                                         [
@@ -88,7 +89,7 @@ $this->assign('title', __('Book visit')); ?>
                                             [
                                                 'text' => '<i class="fi-universal-access" title="' . __('Discount price') . '">'
                                                 . $this->Number->format($service->discount_price) . ' Ft/fő</i>',
-                                                'class' => 'column large-8',
+                                                'class' => 'column',
                                                 'escape' => false
                                             ],
                                             'placeholder' => __('Discount price') . ' (' . __('person') . ')',
@@ -108,7 +109,7 @@ $this->assign('title', __('Book visit')); ?>
                                 <p>
                                     <?= $service->minutes . ' ' . __('min') ?>
                                 </p>
-                                <div class="row align-center">
+                                <div class="row align-center elso_resz_kepe">
                                     <?= $this->Html->image($service->id . '.jpg') ?>
                                 </div>
                                 <p>
@@ -121,6 +122,7 @@ $this->assign('title', __('Book visit')); ?>
                             </div>
                         </div>
                     </div>
+                </div>
 
                     <div class="extra step_1">
                         <h2>
@@ -128,7 +130,7 @@ $this->assign('title', __('Book visit')); ?>
                         </h2>
                         <div class="row">
                             <?php foreach ($services[4] as $i => $service): ?>
-                                <div class="column small-6">
+                                <div class="column small-6 step_1_dobozok">
                                     <div class="service">
                                         <h3>
                                             <span class="row align-justify">
@@ -146,7 +148,7 @@ $this->assign('title', __('Book visit')); ?>
                                                         <?= $this->Html->image($service->id . '.jpg') ?>
                                                     </div>
                                                     <div class="info">
-                                                        <p>
+                                                        <p class="kepen_levo_szoveg">
                                                             <?= $service->description ?>
                                                         </p>
                                                         <p data-id="<?= $service->id ?>" class="row text-center align-middle">

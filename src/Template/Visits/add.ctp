@@ -32,9 +32,8 @@
                     </dl>
                 </div>
 
-                <div class="column small-12">
+                <div class="column small-12 ">
                     <?php $service = $services[1][0]; ?>
-                    <h2><?= $service->service ?></h2>
                     <div class="service-main">
                         <div class="service-data info">
                             <div class="input-group">
@@ -48,7 +47,7 @@
                                         'autocomplete' => 'off'
                                     ]) ?>
                             </div>
-                            <div class="input-group align-top">
+                            <div class="input-group">
                                 <i class="fi-male small-2 column text-center"> </i>
                                 <?= $this->Form->control(
                                     'services.'.$service->id.'._joinData.full_price_members',
@@ -92,15 +91,15 @@
                             </div>
 
                             <?= $this->Form->hidden(
-                                    'services.'.$service->id.'.id',
+                                'services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
 
-                            <p><?= $service->minutes . ' ' . __('min') ?></p>
-                            <div class="row align-center elso_resz_kepe">
-                                <?= $this->Html->image($service->id . '.jpg') ?>
+                            <div class="row align-center">
+                                <?= $this->Html->image($service->id . '.jpg', ['class' => 'service-image']) ?>
                             </div>
                             <p><?= $service->description ?></p>
+                            <p><?= $service->minutes . ' ' . __('min') ?></p>
                             <i class="fi-arrow-down"></i>
                             <button id="main-service" type="button" class="button warning">
                                 <?= __('Continue') ?></button>

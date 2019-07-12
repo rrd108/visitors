@@ -31,15 +31,9 @@ dl dt {
 label, h2, h4 {
     display: none;
 }
-.elso_resz img {
-    border: 5px solid white;
-}
+
 .fi-shopping-cart {
     display: none;
-}
-.elso_resz{
-    position: relative;
-    top: 1em;
 }
 .fi-calendar {
     font-size: 50px;

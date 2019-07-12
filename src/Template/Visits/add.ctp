@@ -53,11 +53,13 @@ $this->assign('title', __('Book visit')); ?>
                             ?>
                             <div class="input-group">
                                 <i class="fi-calendar small-2"> </i>
-                                <?= $this->Form->control('date',
+                                <?= $this->Form->control(
+                                'date',
                                     ['id' => 'datepicker', 'type' => 'text',
                                     'label' => __('Date of visit'),
                                     'placeholder' => __('Date of visit') ,
-                                    'autocomplete' => 'off']) ?>
+                                    'autocomplete' => 'off']
+                            ) ?>
                                 </div>
                                 <div class="input-group align-top">
                                     <i class="fi-male small-2 column text-center"> </i>
@@ -102,7 +104,8 @@ $this->assign('title', __('Book visit')); ?>
                                     ) ?>
                                 </div>
 
-                                <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                <?= $this->Form->hidden(
+                                        'services.'.$service->id.'.id',
                                     ['value' => $service->id, 'class' => 'service-id']
                                 ) ?>
 
@@ -113,7 +116,7 @@ $this->assign('title', __('Book visit')); ?>
                                     <?= $this->Html->image($service->id . '.jpg') ?>
                                 </div>
                                 <p>
-                                    <?= $service->description ?>             
+                                    <?= $service->description ?>
                                 </p>
                                 <i class="fi-arrow-down"></i>
                                 <button id="main-service" type="button" class="button warning">
@@ -124,7 +127,7 @@ $this->assign('title', __('Book visit')); ?>
                     </div>
                 </div>
 
-                    <div class="extra step_1">
+                    <div class="extra step_1 hide">
                         <h2>
                             <?= __('Services') ?>
                         </h2>
@@ -141,7 +144,8 @@ $this->assign('title', __('Book visit')); ?>
                                                     </span>
                                                 </h3>
                                                 <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                                                    <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                                    <?= $this->Form->hidden(
+                                    'services.'.$service->id.'.id',
                                                         ['value' => $service->id, 'class' => 'service-id']
                                                     ) ?>
                                                     <div class="row align-center">
@@ -191,7 +195,8 @@ $this->assign('title', __('Book visit')); ?>
                                                         </span>
                                                     </h3>
                                                     <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                                                        <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                                        <?= $this->Form->hidden(
+                                                        'services.'.$service->id.'.id',
                                                             ['value' => $service->id, 'class' => 'service-id']
                                                         ) ?>
                                                         <div class="row align-center">
@@ -240,7 +245,8 @@ $this->assign('title', __('Book visit')); ?>
                                                                 </span>
                                                             </h3>
                                                             <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                                                                <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                                                <?= $this->Form->hidden(
+                                                            'services.'.$service->id.'.id',
                                                                     ['value' => $service->id, 'class' => 'service-id']
                                                                 ) ?>
                                                                 <div class="row align-center">

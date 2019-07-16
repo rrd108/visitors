@@ -48,10 +48,9 @@ $(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('.fi-arrow-down').css("color", "#483a23");
 
-            // TODO change header
+            // TODO transition could be more smooth
             $('nav#open').hide();
             $('nav#steps').show();
-            // put icons into nav
 
             $('#step-1').show();
         }

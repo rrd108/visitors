@@ -43,7 +43,8 @@ label, #cart, button.cart {
 }
 
 #open > div:nth-child(3) i {
-    bottom: 6vh;
+    font-size: 7vh;
+    bottom: 4vh;
     color: #999;
 }
 #open input{

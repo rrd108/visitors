@@ -1,4 +1,6 @@
 $(function () {
+
+    //date picker
     // set days non-selectable when we are not open or full
     var eventDates = {};
     var host = $(location).attr('origin');
@@ -41,8 +43,28 @@ $(function () {
         }
     });
 
+    // open
+    $('#open input').blur(function () {
+        if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
+            $('.fi-arrow-down').css("color", "#483a23");
+
+            // TODO change header
+
+            $('#step-1').show();
+        }
+    });
+    $('.fi-arrow-down').click(function () {
+        if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
+            $('html, body').animate({
+                scrollTop: $("#step-1").offset().top
+            }, 1000);
+        }
+    });
+
+
     //show cart
-    var time;
+    // TODO do we need this on mobile? desktop? or having a changable header is better?
+    /*var time;
     $('.cart')
         .mouseenter(function () {
             clearTimeout(time);
@@ -54,8 +76,9 @@ $(function () {
         });
     showCart = function () {
         $('#cart').slideUp();
-    }
+    }*/
 
+    /*
     $('button').click(function () {
         // step 1 on order
         if ($(this).attr('id') == 'main-service') {
@@ -95,7 +118,9 @@ $(function () {
             $(this).closest('.service').removeClass('selected');
         }
     });
+    */
 
+    /*
     // price and time calculation
     var calculatePriceAndTime = function () {
         var summary = '';
@@ -156,8 +181,10 @@ $(function () {
     $("#order").submit(function (event) {
         event.preventDefault();
     });
+    */
 });
 
+// just a simple helper
 function number_format( number, decimals, dec_point, thousands_sep ) {
     var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
     var d = dec_point == undefined ? "," : dec_point;

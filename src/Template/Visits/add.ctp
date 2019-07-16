@@ -100,6 +100,14 @@
             </div>
         </div>
     </div>
+
+    <div id="step-1">
+        <div class="row">
+            <div class="column small-12">
+                <h2><?= __('Services') ?></h2>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -121,9 +129,7 @@
 
 
                 <div class="extra step_1 hide">
-                        <h2>
-                            <?= __('Services') ?>
-                        </h2>
+
                         <div class="row">
                             <?php foreach ($services[4] as $i => $service): ?>
                                 <div class="column small-6 step_1_dobozok">

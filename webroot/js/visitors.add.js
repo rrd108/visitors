@@ -49,6 +49,9 @@ $(function () {
             $('.fi-arrow-down').css("color", "#483a23");
 
             // TODO change header
+            $('nav#open').hide();
+            $('nav#steps').show();
+            // put icons into nav
 
             $('#step-1').show();
         }

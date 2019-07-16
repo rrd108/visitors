@@ -116,7 +116,7 @@
 
 
 <div class="column small-12 cart text-center extra">
-                    <i class="fi-shopping-cart"></i>
+                    
                 </div>
 
                 <div id="cart" class="column small-12 cart">

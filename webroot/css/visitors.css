@@ -13,8 +13,26 @@ body {
 header {
     height: 10vh;
 }
-nav img {
+header ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+header li {
+    padding: 0 1rem 0 0;
+    font-size: 4vw;
+}
+header li:last-child {
+    padding: 0;
+}
+header i {
+    font-weight: bold;
+}
+nav#open img {
     height: 10vh;
+}
+nav#steps {
+    display: none;
 }
 /*header end*/
 

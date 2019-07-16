@@ -8,7 +8,7 @@
 <?= $this->Html->script('vendor/notify.min', ['block' => true]) ?>
 <?= $this->Html->script('visitors.add', ['block' => true]) ?>
 
-<div class="visits form large-12 columns content">
+<div class="small-12 columns">
     <?= $this->Form->create($visit, ['id' => 'order']) ?>
     <?= $this->Form->button(
         __('Order'),
@@ -17,11 +17,97 @@
             'title' => __('Clik to order')
         ]
     ) ?>
-    <div class="row">
-        <div class="column main">
-            <div class="row">
+    <div id="open">
+        <div class="row">
+            <div class="column small-12">
+                <?php $service = $services[1][0]; ?>
+                <div class="input-group">
+                    <i class="fi-calendar small-2"> </i>
+                    <?= $this->Form->control(
+                        'date',
+                        [
+                            'id' => 'datepicker', 'type' => 'text',
+                            'label' => __('Date of visit'),
+                            'placeholder' => __('Date of visit') ,
+                            'autocomplete' => 'off'
+                        ]) ?>
+                </div>
 
-                <div class="column small-12 cart text-center extra">
+                <div class="input-group">
+                    <i class="fi-male small-2 column text-center"> </i>
+                    <?= $this->Form->control(
+                        'services.'.$service->id.'._joinData.full_price_members',
+                        [
+                            'label' =>
+                            [
+                                'text' => '<i class="fi-male" title="' . __('Full price') . '">'
+                                . $this->Number->format($service->full_price) . ' Ft/fő</i>',
+                                'class' => 'column',
+                                'escape' => false
+                            ],
+                            'placeholder' => __('Full price') . ' (' . __('person') . ')',
+                            'required' => false,
+                            'templates' => ['inputContainer' => '{{content}}'],
+                            'data-minutes' => $service->minutes,
+                            'data-price-full' => $service->full_price,
+                            'data-service' => $service->service
+                        ]
+                    ) ?>
+                </div>
+
+                <div class="input-group">
+                    <i class="fi-universal-access small-2 column text-center"> </i>
+                    <?= $this->Form->control(
+                        'services.'.$service->id.'._joinData.discount_price_members',
+                        [
+                            'label' =>
+                            [
+                                'text' => '<i class="fi-universal-access" title="' . __('Discount price') . '">'
+                                . $this->Number->format($service->discount_price) . ' Ft/fő</i>',
+                                'class' => 'column',
+                                'escape' => false
+                            ],
+                            'placeholder' => __('Discount price') . ' (' . __('person') . ')',
+                            'required' => false,
+                            'templates' => ['inputContainer' => '{{content}}'],
+                            'data-minutes' => $service->minutes,
+                            'data-price-discount' => $service->discount_price,
+                            'data-service' => $service->service
+                        ]
+                    ) ?>
+                </div>
+
+                <?= $this->Form->hidden(
+                    'services.'.$service->id.'.id',
+                    ['value' => $service->id, 'class' => 'service-id']
+                ) ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column small-12">
+                <div class="row align-center">
+                    <?= $this->Html->image($service->id . '.jpg', ['class' => 'service-image']) ?>
+                </div>
+                <p><?= $service->description ?></p>
+                <p><?= $service->minutes . ' ' . __('min') ?></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column small-12">
+                <i class="fi-arrow-down"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<?php
+/*
+
+
+<div class="column small-12 cart text-center extra">
                     <i class="fi-shopping-cart"></i>
                 </div>
 
@@ -32,88 +118,8 @@
                     </dl>
                 </div>
 
-                <div class="column small-12 ">
-                    <?php $service = $services[1][0]; ?>
-                    <div class="service-main">
-                        <div class="service-data info">
-                            <div class="input-group">
-                                <i class="fi-calendar small-2"> </i>
-                                <?= $this->Form->control(
-                                    'date',
-                                    [
-                                        'id' => 'datepicker', 'type' => 'text',
-                                        'label' => __('Date of visit'),
-                                        'placeholder' => __('Date of visit') ,
-                                        'autocomplete' => 'off'
-                                    ]) ?>
-                            </div>
-                            <div class="input-group">
-                                <i class="fi-male small-2 column text-center"> </i>
-                                <?= $this->Form->control(
-                                    'services.'.$service->id.'._joinData.full_price_members',
-                                    [
-                                        'label' =>
-                                        [
-                                            'text' => '<i class="fi-male" title="' . __('Full price') . '">'
-                                            . $this->Number->format($service->full_price) . ' Ft/fő</i>',
-                                            'class' => 'column',
-                                            'escape' => false
-                                        ],
-                                        'placeholder' => __('Full price') . ' (' . __('person') . ')',
-                                        'required' => false,
-                                        'templates' => ['inputContainer' => '{{content}}'],
-                                        'data-minutes' => $service->minutes,
-                                        'data-price-full' => $service->full_price,
-                                        'data-service' => $service->service
-                                    ]
-                                ) ?>
-                            </div>
-                            <div class="input-group">
-                                <i class="fi-universal-access small-2 column text-center"> </i>
-                                <?= $this->Form->control(
-                                    'services.'.$service->id.'._joinData.discount_price_members',
-                                    [
-                                        'label' =>
-                                        [
-                                            'text' => '<i class="fi-universal-access" title="' . __('Discount price') . '">'
-                                            . $this->Number->format($service->discount_price) . ' Ft/fő</i>',
-                                            'class' => 'column',
-                                            'escape' => false
-                                        ],
-                                        'placeholder' => __('Discount price') . ' (' . __('person') . ')',
-                                        'required' => false,
-                                        'templates' => ['inputContainer' => '{{content}}'],
-                                        'data-minutes' => $service->minutes,
-                                        'data-price-discount' => $service->discount_price,
-                                        'data-service' => $service->service
-                                    ]
-                                ) ?>
-                            </div>
-
-                            <?= $this->Form->hidden(
-                                'services.'.$service->id.'.id',
-                                ['value' => $service->id, 'class' => 'service-id']
-                            ) ?>
-
-                            <div class="row align-center">
-                                <?= $this->Html->image($service->id . '.jpg', ['class' => 'service-image']) ?>
-                            </div>
-                            <p><?= $service->description ?></p>
-                            <p><?= $service->minutes . ' ' . __('min') ?></p>
-                            <i class="fi-arrow-down"></i>
-                            <button id="main-service" type="button" class="button warning">
-                                <?= __('Continue') ?></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<?php
-/*
                 <div class="extra step_1 hide">
                         <h2>
                             <?= __('Services') ?>

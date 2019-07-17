@@ -36,11 +36,17 @@ $(function () {
                 closeText: 'Ok',
                 hourMin: 10,
                 hourMax: 17,
+                timeFormat: 'HH',
+                showTime: false,
+                showMinute: false,
                 showSecond: false,
                 showMillisec: false,
                 showMicrosec: false
             });
         }
+    });
+    $('#datepicker').on('blur', function () {
+        $('#vDate').text($('#datepicker').val().replace(' ', '/'));
     });
 
     // open

@@ -38,6 +38,10 @@ nav#open img {
 nav#steps {
     display: none;
 }
+#icons span {
+    margin-left: 0.2rem;
+    font-size: 4vw;
+}
 /*header end*/
 
 /*main*/

@@ -120,8 +120,7 @@
                                 </span>
                             </h3>
                             <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                                <?= $this->Form->hidden(
-                'services.'.$service->id.'.id',
+                                <?= $this->Form->hidden('services.'.$service->id.'.id',
                                     ['value' => $service->id, 'class' => 'service-id']
                                 ) ?>
                                 <div class="row align-center">
@@ -158,8 +157,6 @@
 
 <?php
 /*
-
-
 <div class="column small-12 cart text-center extra">
 
                 </div>
@@ -170,8 +167,6 @@
                         <dt class="b"><?= __('Total') ?>: 0 Ft</dt>
                     </dl>
                 </div>
-
-
 
                 <div class="extra step_1 hide">
 

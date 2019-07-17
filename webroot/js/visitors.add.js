@@ -49,6 +49,10 @@ $(function () {
         $('#vDate').text($('#datepicker').val().replace(' ', '/'));
     });
 
+    $('#services-1-joindata-full-price-members').on('blur', function () {
+        $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
+    });
+
     // open
     $('#open input').blur(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
@@ -56,6 +60,8 @@ $(function () {
 
             // TODO transition could be more smooth
             $('nav#open').hide();
+
+            calculatePriceAndTime();
             $('nav#steps').show();
 
             $('#step-1').show();
@@ -128,7 +134,6 @@ $(function () {
     });
     */
 
-    /*
     // price and time calculation
     var calculatePriceAndTime = function () {
         var summary = '';
@@ -189,7 +194,6 @@ $(function () {
     $("#order").submit(function (event) {
         event.preventDefault();
     });
-    */
 });
 
 // just a simple helper

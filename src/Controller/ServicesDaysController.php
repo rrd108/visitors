@@ -13,6 +13,12 @@ use App\Controller\AppController;
 class ServicesDaysController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow('listNonServicesDays');
+    }
+
     /**
      * Index method
      *

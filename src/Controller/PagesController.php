@@ -29,7 +29,7 @@ use Cake\View\Exception\MissingTemplateException;
 class PagesController extends AppController
 {
 
-    /**
+        /**
      * Displays a view
      *
      * @param array ...$path Path segments.

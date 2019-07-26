@@ -14,6 +14,11 @@ use Cake\Mailer\Email;
 class VisitsController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow('add');
+    }
 
     /**
      * Index method

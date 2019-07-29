@@ -75,6 +75,7 @@ label, #cart, button.cart {
 #open > div:nth-child(3) i {
     font-size: 7vh;
     bottom: 4vh;
+}#open > div:nth-child(3) i:not(.active) {
     color: #999;
 }
 #open input{
@@ -96,6 +97,20 @@ label, #cart, button.cart {
 /*open end*/
 
 /*step-1*/
+i.active {
+    color: #483a23;
+}
+.fi-arrow-down.active::before {
+    animation: drop 2000ms ease-out infinite;
+}
+@keyframes drop {
+    0%, 100% {
+        margin-top: 0;
+    }
+    35% {
+        margin-top: 1.3rem;
+    }
+}
 /*step-1 end*/
 
 /*main end*/

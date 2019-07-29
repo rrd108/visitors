@@ -62,7 +62,7 @@ $(function () {
 
     $('#open input').blur(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
-            $('.fi-arrow-down').css("color", "#483a23");
+            $('.fi-arrow-down').addClass('active');
 
             // TODO transition could be more smooth
             $('nav#open').hide();

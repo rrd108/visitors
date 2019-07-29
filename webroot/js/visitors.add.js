@@ -53,6 +53,10 @@ $(function () {
         $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
     });
 
+    $('#services-1-joindata-discount-price-members').on('blur', function () {
+        $('#vDiscountPerson').text($('#services-1-joindata-discount-price-members').val());
+    });
+
     // open
     $('#open input').blur(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {

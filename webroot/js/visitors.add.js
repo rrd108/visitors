@@ -1,5 +1,16 @@
 $(function () {
 
+    // header
+    $('#services-1-joindata-full-price-members').on('blur', function () {
+        $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
+    });
+
+    $('#services-1-joindata-discount-price-members').on('blur', function () {
+        $('#vDiscountPerson').text($('#services-1-joindata-discount-price-members').val());
+    });
+    $('input[data-service]').on('blur', calculatePriceAndTime);
+
+    // open
     //date picker
     // set days non-selectable when we are not open or full
     var eventDates = {};
@@ -49,15 +60,6 @@ $(function () {
         $('#vDate').text($('#datepicker').val().replace(' ', '/'));
     });
 
-    $('#services-1-joindata-full-price-members').on('blur', function () {
-        $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
-    });
-
-    $('#services-1-joindata-discount-price-members').on('blur', function () {
-        $('#vDiscountPerson').text($('#services-1-joindata-discount-price-members').val());
-    });
-
-    // open
     $('#open input').blur(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('.fi-arrow-down').css("color", "#483a23");
@@ -138,7 +140,7 @@ $(function () {
     });
     */
 
-    // price and time calculation
+    // price and time calculation helper
     var calculatePriceAndTime = function () {
         var summary = '';
         var totalAmount = 0;
@@ -192,12 +194,12 @@ $(function () {
             }
         }
     };
-    $('input[data-service]').on('blur', calculatePriceAndTime);
-    $('button[data-service]').on('click', calculatePriceAndTime);
 
-    $("#order").submit(function (event) {
+    //$('button[data-service]').on('click', calculatePriceAndTime);
+
+    /*$("#order").submit(function (event) {
         event.preventDefault();
-    });
+    });*/
 });
 
 // just a simple helper

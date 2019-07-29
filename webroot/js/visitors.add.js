@@ -150,9 +150,7 @@ $(function () {
                 var itemPrice = $(this).data('price-full') ? $(this).data('price-full') : $(this).data('price-discount');
                 var itemValue = $(this).val() * itemPrice;
                 totalAmount += itemValue;
-                // here the time does not doubled if we have full AND discount members together
                 totalMinutes = totalMinutes ? totalMinutes : totalMinutes + $(this).data('minutes');
-                //$('.service-main').addClass('selected');
             }
 
             // handling buttons
@@ -177,6 +175,7 @@ $(function () {
             }*/
         });
         $('#vAmount').text(number_format(totalAmount, 0));
+        $('#vMinutes').text(totalMinutes);
     };
 
     //$('button[data-service]').on('click', calculatePriceAndTime);

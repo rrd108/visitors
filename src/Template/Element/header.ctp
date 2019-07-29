@@ -4,9 +4,9 @@
         <!-- TODO change data via JS -->
         <li><i class="fi-calendar"></i><span id="vDate"></span></li>
         <li><i class="fi-male"></i><span id="vFullPerson"></span></li>
-        <li><i class="fi-universal-access"></i><span id="vDiscountPerson"></li>
-        <li><i class="fi-clock"></i><span id="vMinutes"> perc</li>
-        <li><i class="fi-shopping-cart"></i><span id="vAmount"> Ft</li>
+        <li><i class="fi-universal-access"></i><span id="vDiscountPerson"></span></li>
+        <li><i class="fi-clock"></i><span id="vMinutes"></span> perc</li>
+        <li><i class="fi-shopping-cart"></i><span id="vAmount"></span> Ft</li>
     </ul>
     <ul id="breadcumbs" class="align-center">
         <!-- TODO change data via JS -->

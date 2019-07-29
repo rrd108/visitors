@@ -106,7 +106,7 @@
         <div class="row">
             <div class="column small-12">
                 <h2><?= __('Services') ?></h2>
-                <?php foreach ($services[4] as $i => $service): ?>
+                <?php foreach ($services[2] as $i => $service): ?>
                     <div class="column small-6">
                         <div class="service">
                             <h3>
@@ -161,18 +161,11 @@
 
                 </div>
 
-                <div id="cart" class="column small-12 cart">
-                    <h4><?= __('Visit summary') ?></h4>
-                    <dl class="column small-12" id="summary">
-                        <dt class="b"><?= __('Total') ?>: 0 Ft</dt>
-                    </dl>
-                </div>
+
 
                 <div class="extra step_1 hide">
 
-                        <div class="row">
 
-                                </div>
                             </div>
                         </div>
 

@@ -66,7 +66,7 @@ $(function () {
 
             $('nav#openlogo').hide(300);
             calculatePriceAndTime();
-            $('nav#steps').delay(300).show();
+            $('nav#summary').delay(300).show();
 
             $('#step-1').show();
         }

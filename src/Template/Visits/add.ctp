@@ -106,50 +106,48 @@
         <div class="row">
             <div class="column small-12">
                 <h2><?= __('Services') ?></h2>
-                <?php foreach ($services[2] as $i => $service): ?>
-                    <div class="column small-6">
-                        <div class="service">
-                            <h3>
-                                <span class="row align-justify">
-                                    <span class="column large-10 small-12 kerekpar_span">
-                                        <?= $service->service ?>
-                                    </span>
-                                    <span class="column large-2 small-12 min">
-                                        <?= $service->minutes . ' ' . __('min') ?>
-                                    </span>
+            </div>
+            <?php foreach ($services[2] as $i => $service): ?>
+                <div class="column small-6">
+                    <div class="service">
+                        <h3>
+                            <span class="row align-justify">
+                                <span class="column large-10 small-12 kerekpar_span">
+                                    <?= $service->service ?>
                                 </span>
-                            </h3>
-                            <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                                <?= $this->Form->hidden('services.'.$service->id.'.id',
-                                    ['value' => $service->id, 'class' => 'service-id']
-                                ) ?>
-                                <div class="row align-center">
-                                    <?= $this->Html->image($service->id . '.jpg') ?>
-                                </div>
-                                <div class="info">
-                                    <p class="kepen_levo_szoveg">
-                                        <?= $service->description ?>
-                                    </p>
-                                    <p data-id="<?= $service->id ?>" class="row text-center align-middle">
-                                        <i class="column fi-male" title="<?= __('Full price') ?>">
-                                            <?= $this->Number->format($service->full_price) . ' Ft' ?>
-                                        </i>
-                                        <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
-                                            <?= $this->Number->format($service->discount_price) . ' Ft' ?>
-                                        </i>
-                                    </p>
-                                    <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
-                                        data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
-                                        data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
-                                        data-service="<?= $service->service ?>">
-                                        <?= __('Add to cart') ?>
-                                    </button>
-                                </div>
+                                <span class="column large-2 small-12 min">
+                                    <?= $service->minutes . ' ' . __('min') ?>
+                                </span>
+                            </span>
+                        </h3>
+                        <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <?= $this->Html->image($service->id . '.jpg') ?>
+                            <div class="info">
+                                <p class="kepen_levo_szoveg">
+                                    <?= $service->description ?>
+                                </p>
+                                <p data-id="<?= $service->id ?>" class="row text-center align-middle">
+                                    <i class="column fi-male" title="<?= __('Full price') ?>">
+                                        <?= $this->Number->format($service->full_price) . ' Ft' ?>
+                                    </i>
+                                    <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
+                                        <?= $this->Number->format($service->discount_price) . ' Ft' ?>
+                                    </i>
+                                </p>
+                                <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                    data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
+                                    data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
+                                    data-service="<?= $service->service ?>">
+                                    <?= __('Add to cart') ?>
+                                </button>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

@@ -111,6 +111,19 @@ i.active {
         margin-top: 1.3rem;
     }
 }
+
+
+h2 {
+    font-size: 7vw;
+    font-weight: bold;
+}
+.service {
+    text-align: center;
+    background: #483a23;
+    padding: 0 .5rem;
+    margin-bottom: .5rem;
+    color: #decf9b;
+}
 /*step-1 end*/
 
 /*main end*/
@@ -123,18 +136,11 @@ i.active {
     font-size: 35px;
     color: grey;
 }
-.service {
-    text-align: center;
-}
 .button {
     display: none;
 }
 
-.service {
-    background: #483a23;
-    padding: 0 20px;
-    color: #decf9b;
-}
+
 
 .min {
     position: relative;

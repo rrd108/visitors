@@ -77,8 +77,8 @@ $(function () {
             $('html, body').animate({
                 scrollTop: $("#step-1").offset().top - $('header').height()
             }, 1000);
+            $('.fi-arrow-down').hide();
         }
-        $('.fi-arrow-down').hide();
     });
 
 

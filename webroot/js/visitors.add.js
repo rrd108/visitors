@@ -64,11 +64,9 @@ $(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('.fi-arrow-down').addClass('active');
 
-            // TODO transition could be more smooth
-            $('nav#open').hide();
-
+            $('nav#openlogo').hide(300);
             calculatePriceAndTime();
-            $('nav#steps').show();
+            $('nav#steps').delay(300).show();
 
             $('#step-1').show();
         }
@@ -76,7 +74,7 @@ $(function () {
     $('.fi-arrow-down').click(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('html, body').animate({
-                scrollTop: $("#step-1").offset().top
+                scrollTop: $("#step-1").offset().top - $('header').height()
             }, 1000);
         }
     });

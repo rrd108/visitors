@@ -1,4 +1,4 @@
-<nav id="open"><?= $this->Html->image('logo.png') ?></nav>
+<nav id="openlogo"><?= $this->Html->image('logo.png') ?></nav>
 <nav id="steps">
     <ul id="icons" class="align-center">
         <!-- TODO change data via JS -->

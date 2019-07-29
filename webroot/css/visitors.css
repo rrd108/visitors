@@ -32,7 +32,7 @@ header li:last-child {
 header i {
     font-weight: bold;
 }
-nav#open img {
+nav#openlogo img {
     height: 10vh;
 }
 nav#steps {

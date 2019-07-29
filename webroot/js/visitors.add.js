@@ -71,12 +71,14 @@ $(function () {
             $('#step-1').show();
         }
     });
+
     $('.fi-arrow-down').click(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('html, body').animate({
                 scrollTop: $("#step-1").offset().top - $('header').height()
             }, 1000);
         }
+        $('.fi-arrow-down').hide();
     });
 
 

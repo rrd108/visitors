@@ -142,7 +142,6 @@ $(function () {
 
     // price and time calculation helper
     var calculatePriceAndTime = function () {
-        var summary = '';
         var totalAmount = 0;
         var totalMinutes = 0;
         $('*[data-service]').each(function () {
@@ -151,16 +150,13 @@ $(function () {
                 var itemPrice = $(this).data('price-full') ? $(this).data('price-full') : $(this).data('price-discount');
                 var itemValue = $(this).val() * itemPrice;
                 totalAmount += itemValue;
-                summary += '<dd>' + $(this).data('service') + ': ' + $(this).val() + ' fő * '
-                    + number_format(itemPrice, 0) + ' Ft</dd>'
-                    + '<dt>' + number_format(itemValue, 0) + ' Ft</dt>';
                 // here the time does not doubled if we have full AND discount members together
                 totalMinutes = totalMinutes ? totalMinutes : totalMinutes + $(this).data('minutes');
-                $('.service-main').addClass('selected');
+                //$('.service-main').addClass('selected');
             }
 
             // handling buttons
-            if ($(this).hasClass('success')) {
+            /*if ($(this).hasClass('success')) {
                 var priceFull = $(this).data('price-full');
                 var priceDiscount = $(this).data('price-discount');
                 var membersFull = $('#services-1-joindata-full-price-members').val();
@@ -178,21 +174,9 @@ $(function () {
                         + '<dt>' + number_format(priceDiscount * membersDiscount, 0) + ' Ft</dt>';
                 }
                 totalMinutes += $(this).data('minutes');
-            }
+            }*/
         });
-
-        summary += '<dt class="b">Összesen: ' + number_format(totalAmount, 0) + ' Ft</dt>';
-        summary += '<dd>A programhoz szükséges idő</dd><dt>' + number_format(totalMinutes/60, 1) + ' óra</dt>';
-
-        $('#summary').html(summary);
-
-        if (totalAmount || $('#order button[type="submit"]').text().length != 11) {
-            $('#order button[type="submit"]').text('Megrendelem ' + number_format(totalAmount, 0) + ' Ft '
-                + '(' + number_format(totalMinutes / 60, 1) + ' óra)');
-            if ($('#main-service').is(":hidden")) { //show up only if we are after the first step of order
-                $('#order button[type="submit"]').hide().fadeIn();
-            }
-        }
+        $('#vAmount').text(number_format(totalAmount, 0));
     };
 
     //$('button[data-service]').on('click', calculatePriceAndTime);

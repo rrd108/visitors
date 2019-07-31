@@ -97,7 +97,7 @@ label, #cart, button.cart {
 /*open end*/
 
 /*step-1*/
-i.active {
+button.active {
     color: #483a23;
 }
 .fi-arrow-down.active::before {

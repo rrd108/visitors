@@ -97,7 +97,7 @@
 
         <div class="row">
             <div class="column small-12">
-                <i class="fi-arrow-down"></i>
+                <i class="fi-arrow-down"><button></button></i>
             </div>
         </div>
     </div>

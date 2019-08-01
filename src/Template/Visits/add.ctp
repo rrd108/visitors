@@ -105,7 +105,10 @@
     <div id="step-1">
         <div class="row">
             <div class="column small-12">
-                <h2><?= __('Services') ?></h2>
+                <div class="row align-center align-middle">
+                    <?= file_get_contents($this->Url->image('theatre.svg', ['fullBase' => true])) ?>
+                    <h2><?= __('Services') ?></h2>
+                </div>
             </div>
             <?php foreach ($services[2] as $i => $service): ?>
                 <div class="column small-6">

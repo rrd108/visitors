@@ -112,10 +112,14 @@ button.active {
     }
 }
 
-
 h2 {
     font-size: 7vw;
     font-weight: bold;
+}
+svg {
+    fill: #483a23;
+    width: 25vw;
+    height: 6rem;
 }
 .service {
     text-align: center;

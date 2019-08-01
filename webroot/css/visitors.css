@@ -28,13 +28,6 @@ header ul {
     display: flex;
     margin: 0;
 }
-header li {
-    padding: 0 1rem 0 0;
-    font-size: 4vw;
-}
-header li:last-child {
-    padding: 0;
-}
 header i {
     font-weight: bold;
 }
@@ -44,9 +37,32 @@ nav#openlogo img {
 nav#summary {
     display: none;
 }
+#icons li {
+    padding: 0 1rem 0 0;
+    font-size: 4vw;
+}
+#icons li:last-child {
+    padding: 0;
+}
 #icons span {
     margin-left: 0.2rem;
     font-size: 4vw;
+}
+#breadcumbs li {
+    background: #8c8e5e;
+    color: #decf9b;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#breadcumbs li:not(:last-child):after {
+  position: absolute;
+  content: ' ';
+  width: 33%;
+  border-bottom: .3rem solid #8c8e5e;
+  height: 1rem;
 }
 /*header end*/
 

@@ -7,9 +7,10 @@
         <li><i class="fi-clock"></i><span id="vMinutes">0</span> perc</li>
         <li><i class="fi-shopping-cart"></i><span id="vAmount">0</span> Ft</li>
     </ul>
-    <ul id="breadcumbs" class="align-center">
+    <ul id="breadcumbs" class="align-spaced">
         <!-- TODO change data via JS -->
-        <li>A</li>
-        <li>B</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
     </ul>
 </nav>

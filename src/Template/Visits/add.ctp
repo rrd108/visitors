@@ -31,7 +31,7 @@
                             'placeholder' => __('Date of visit') ,
                             'autocomplete' => 'off'
                         ]
-    ) ?>
+                    ) ?>
                 </div>
 
                 <div class="input-group">
@@ -110,27 +110,23 @@
                     <h2><?= __('Services') ?></h2>
                 </div>
             </div>
+
             <?php foreach ($services[2] as $i => $service): ?>
                 <div class="column small-6">
                     <div class="service">
-                        <h3>
-                            <span class="row align-justify">
-                                <span class="column large-10 small-12 kerekpar_span">
-                                    <?= $service->service ?>
-                                </span>
-                                <span class="column large-2 small-12 min">
-                                    <?= $service->minutes . ' ' . __('min') ?>
-                                </span>
-                            </span>
-                        </h3>
+                        <h3><?= $service->service ?></h3>
                         <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
-                            <?= $this->Form->hidden('services.'.$service->id.'.id',
+                            <?= $this->Form->hidden(
+                                'services.'.$service->id.'.id',
                                 ['value' => $service->id, 'class' => 'service-id']
                             ) ?>
                             <?= $this->Html->image($service->id . '.jpg') ?>
                             <div class="info">
-                                <p class="kepen_levo_szoveg">
+                                <p class="description">
                                     <?= $service->description ?>
+                                    <span class="column large-2 small-12 min">
+                                        <?= $service->minutes . ' ' . __('min') ?>
+                                    </span>
                                 </p>
                                 <p data-id="<?= $service->id ?>" class="row text-center align-middle">
                                     <i class="column fi-male" title="<?= __('Full price') ?>">
@@ -140,7 +136,7 @@
                                         <?= $this->Number->format($service->discount_price) . ' Ft' ?>
                                     </i>
                                 </p>
-                                <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                <button type="button" class="button fi-check" data-id="<?= $service->id ?>"
                                     data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
                                     data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
                                     data-service="<?= $service->service ?>">
@@ -175,7 +171,7 @@
                                 <?= __('Special programs') ?>
                             </h2>
                             <div class="row">
-                                <?php foreach ($services[2] as $i => $service): ?>
+                                <?php foreach ($services[4] as $i => $service): ?>
                                     <div class="column large-6 small-12">
                                         <div class="service">
                                             <h3>
@@ -206,7 +202,7 @@
                                                                     <?= $this->Number->format($service->discount_price) . ' Ft' ?>
                                                                 </i>
                                                             </p>
-                                                            <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                                            <button type="button" class="button  fi-check" data-id="<?= $service->id ?>"
                                                                 data-minutes="<?= $service->minutes ?>" data-type-id="<?= $service->type ?>"
                                                                 data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
                                                                 data-service="<?= $service->service ?>">
@@ -256,7 +252,7 @@
                                                                             <?= $this->Number->format($service->discount_price) . ' Ft' ?>
                                                                         </i>
                                                                     </p>
-                                                                    <button type="button" class="button select-service fi-check" data-id="<?= $service->id ?>"
+                                                                    <button type="button" class="button  fi-check" data-id="<?= $service->id ?>"
                                                                         data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
                                                                         data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
                                                                         data-service="<?= $service->service ?>">

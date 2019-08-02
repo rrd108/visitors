@@ -91,7 +91,7 @@
                     <?= $this->Html->image($service->id . '.jpg', ['class' => 'service-image']) ?>
                 </div>
                 <p><?= $service->description ?></p>
-                <p><?= $service->minutes . ' ' . __('min') ?></p>
+                <p><i class="fi-clock"> <?= $service->minutes . ' ' . __('min') ?></i></p>
             </div>
         </div>
 

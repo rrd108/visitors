@@ -83,6 +83,10 @@ label, #cart, button.cart {
 .input {
     width: 100%;
 }
+#open i.fi-clock {
+    font-size: 4.5vw;
+    position: initial;
+}
 
 /*open*/
 #open > div:nth-child(1) {

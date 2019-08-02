@@ -84,6 +84,26 @@ $(function () {
     });
 
 
+    $('button').click(function () {
+        // on selecting a service gray out all others with the same type
+        if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
+            $(this).toggleClass('success');
+            $(this).closest('.service').toggleClass('selected');
+            return;
+        }
+        var typeButtons = $('button[data-type-id="' + $(this).data('type-id') + '"]');
+        var services = typeButtons.closest('.service');
+        if (!$(this).hasClass('success')) {
+            $(this).addClass('success');
+            services.addClass('faded').removeClass('selected');
+            $(this).closest('.service').removeClass('faded').addClass('selected');
+        } else {
+            typeButtons.removeClass('success');
+            services.removeClass('faded');
+            $(this).closest('.service').removeClass('selected');
+        }
+    });
+
     /*
     $('button').click(function () {
         // step 1 on order
@@ -103,26 +123,6 @@ $(function () {
             return;
         }
 
-        // on selecting a service gray out all others with the same type
-        if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
-            $(this).toggleClass('success');
-            $(this).closest('.service').toggleClass('selected');
-            //$(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
-            return;
-        }
-
-        var typeButtons = $('button[data-type-id="' + $(this).data('type-id') + '"]');
-        var services = typeButtons.closest('.service');
-        if (!$(this).hasClass('success')) {
-            $(this).addClass('success');
-            services.addClass('faded').removeClass('selected');
-            $(this).closest('.service').removeClass('faded').addClass('selected');
-            //$(this).closest('.row').hide().prepend($(this).closest('.column')).fadeIn(1000);
-        } else {
-            typeButtons.removeClass('success');
-            services.removeClass('faded');
-            $(this).closest('.service').removeClass('selected');
-        }
     });
     */
 

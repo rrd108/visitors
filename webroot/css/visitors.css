@@ -184,6 +184,17 @@ svg {
 .service-data i {
     font-size: .9rem;
 }
+
+.faded {
+    background-color: #bababa;
+}
+.faded h3, .faded .button {
+    background-color: #ababab;
+    color: #fff;
+}
+.faded img {
+    filter: grayscale(100%);
+}
 /*step-1 end*/
 
 /*main end*/

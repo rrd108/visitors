@@ -70,6 +70,7 @@ $(function () {
             $('nav#summary').delay(300).show();
 
             $('#step-1').show();
+            $('#breadcumbs li:nth-child(1)').addClass('active');
         }
     });
 

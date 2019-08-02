@@ -57,12 +57,19 @@ nav#summary {
     font-size: 1rem;
     font-weight: bold;
 }
+#breadcumbs li.active {
+    background: #483a23;
+}
 #breadcumbs li:not(:last-child):after {
-  position: absolute;
-  content: ' ';
-  width: 33%;
-  border-bottom: .3rem solid #8c8e5e;
-  height: 1rem;
+    position: absolute;
+    content: ' ';
+    width: 33%;
+    border-bottom: .3rem solid #8c8e5e;
+    height: 1rem;
+    z-index: -2;
+}
+#breadcumbs li.active:after {
+    border-bottom: .3rem solid #483a23;
 }
 /*header end*/
 

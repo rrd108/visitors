@@ -35,7 +35,7 @@ $(function () {
                         return [true, '', ''];
                     }
                 },
-                minDate: new Date(new Date().getTime() + 24*60*60*1000),    // tomorrow
+                minDate: new Date(new Date().setHours(11) + 24*60*60*1000),    // tomorrow at 11
                 controlType: 'select',
                 timeFormat: "HH:mm",
                 dateFormat: "yy-mm-dd",
@@ -45,6 +45,7 @@ $(function () {
                 secondText: 'Másodperc',
                 currentText: 'Ma',
                 closeText: 'Ok',
+                hour: 11,
                 hourMin: 10,
                 hourMax: 17,
                 timeFormat: 'HH',

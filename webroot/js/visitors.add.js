@@ -35,7 +35,7 @@ $(function () {
                         return [true, '', ''];
                     }
                 },
-                minDate: new Date(),
+                minDate: new Date(new Date().getTime() + 24*60*60*1000),    // tomorrow
                 controlType: 'select',
                 timeFormat: "HH:mm",
                 dateFormat: "yy-mm-dd",

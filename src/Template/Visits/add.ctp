@@ -94,12 +94,6 @@
                 <p><i class="fi-clock"> <?= $service->minutes . ' ' . __('min') ?></i></p>
             </div>
         </div>
-
-        <div class="row">
-            <div class="column small-12">
-                <i class="fi-arrow-down"><button></button></i>
-            </div>
-        </div>
     </div>
 
     <div id="step-1">
@@ -148,7 +142,6 @@
         </div>
     </div>
 </div>
-
 
 <?php
 /*

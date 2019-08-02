@@ -18,14 +18,22 @@ p {
     margin-bottom: .3rem;
 }
 
-/*header*/
-header {
+/*layout*/
+header, footer {
     height: 8vh;
     width: 100vw;
     position: fixed;
-    background: #DECF9B;
     z-index: 5;
+    background: #decf9b;
 }
+footer {
+    height: 5vh;
+    bottom: 0;
+    background: #decf9b;
+}
+/*layout end*/
+
+/*header*/
 header ul {
     list-style-type: none;
     display: flex;
@@ -78,7 +86,7 @@ nav#summary {
 
 /*main*/
 main {
-    padding-top: 8vh;
+    padding: 8vh 0 5vh 0;
 }
 label, #cart, button.cart {
     display: none;
@@ -91,6 +99,26 @@ label, #cart, button.cart {
     position: initial;
 }
 
+/*pager*/
+#pager {
+    font-size: 4vh;
+}
+#pager:not(.active) {
+    color: #999;
+}
+#pager.active:before {
+    animation: drop 2000ms ease-out infinite;
+}
+@keyframes drop {
+    0% {
+        margin-top: 0;
+    }
+    35% {
+        margin-top: .7rem;
+    }
+}
+/*pager end*/
+
 /*open*/
 #open > div:nth-child(1) {
     height: 35vh;
@@ -98,21 +126,11 @@ label, #cart, button.cart {
 #open > div:nth-child(2) {
     height: 52vh;
 }
-#open > div:nth-child(3) {
-    height: 5vh;;
-}
-#open i {
+.input-group i {
     font-size: 9vh;
     padding:0;
     position: relative;
     bottom: 4vh;
-}
-
-#open > div:nth-child(3) i {
-    font-size: 7vh;
-    bottom: 4vh;
-}#open > div:nth-child(3) i:not(.active) {
-    color: #999;
 }
 #open input{
     height: 7vh;
@@ -129,6 +147,7 @@ label, #cart, button.cart {
 }
 #step-1 {
     display: none;
+    margin-top: 1.6rem;
 }
 /*open end*/
 
@@ -136,18 +155,6 @@ label, #cart, button.cart {
 button.active {
     color: #483a23;
 }
-.fi-arrow-down.active::before {
-    animation: drop 2000ms ease-out infinite;
-}
-@keyframes drop {
-    0%, 100% {
-        margin-top: 0;
-    }
-    35% {
-        margin-top: 1.3rem;
-    }
-}
-
 h2 {
     font-size: 7vw;
 }
@@ -198,31 +205,3 @@ svg {
 /*step-1 end*/
 
 /*main end*/
-
-/*
-.fi-shopping-cart {
-    display: none;
-}
-.fi-arrow-down {
-    font-size: 35px;
-    color: grey;
-}
-.button {
-    display: none;
-}
-
-
-
-.min {
-    position: relative;
-    top: 6em;
-}
-
-.description {
-    position: relative;
-    bottom: 100px;
-    font-size: 13px;
-    width: 110px;
-    margin: auto;
-}
-*/

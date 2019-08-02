@@ -10,6 +10,9 @@ $(function () {
     });
     $('input[data-service]').on('blur', calculatePriceAndTime);
 
+    // insert pager
+    $('footer').html('<i class="fi-arrow-down" id="pager"><button></button></i>');
+
     // open
     //date picker
     // set days non-selectable when we are not open or full
@@ -63,7 +66,7 @@ $(function () {
 
     $('#open input').blur(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
-            $('.fi-arrow-down').addClass('active');
+            $('#pager').addClass('active');
 
             $('nav#openlogo').hide(300);
             calculatePriceAndTime();
@@ -74,12 +77,12 @@ $(function () {
         }
     });
 
-    $('.fi-arrow-down').click(function () {
+    $('#pager').click(function () {
         if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
             $('html, body').animate({
                 scrollTop: $("#step-1").offset().top - $('header').height()
             }, 1000);
-            $('.fi-arrow-down').hide();
+            $('#pager').hide();
         }
     });
 
@@ -102,6 +105,7 @@ $(function () {
             services.removeClass('faded');
             $(this).closest('.service').removeClass('selected');
         }
+        $('#pager').show();
     });
 
     /*

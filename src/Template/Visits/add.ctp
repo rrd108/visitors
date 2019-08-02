@@ -124,10 +124,8 @@
                             <div class="info">
                                 <p class="description">
                                     <?= $service->description ?>
-                                    <span class="column large-2 small-12 min">
-                                        <?= $service->minutes . ' ' . __('min') ?>
-                                    </span>
                                 </p>
+                                <i class="column fi-clock"> <?= $service->minutes . ' ' . __('min') ?></i>
                                 <p data-id="<?= $service->id ?>" class="row text-center align-middle">
                                     <i class="column fi-male" title="<?= __('Full price') ?>">
                                         <?= $this->Number->format($service->full_price) . ' Ft' ?>

@@ -84,22 +84,6 @@ $(function () {
     });
 
 
-    //show cart
-    // TODO do we need this on mobile? desktop? or having a changable header is better?
-    /*var time;
-    $('.cart')
-        .mouseenter(function () {
-            clearTimeout(time);
-            $('#cart').slideDown()
-        })
-        .mouseleave(function () {
-            clearTimeout(time);
-            time = setTimeout('showCart()', 2250);
-        });
-    showCart = function () {
-        $('#cart').slideUp();
-    }*/
-
     /*
     $('button').click(function () {
         // step 1 on order

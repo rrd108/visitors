@@ -14,6 +14,9 @@ h3 {
     margin: 0;
     padding: .5rem;
 }
+p {
+    margin-bottom: .3rem;
+}
 
 /*header*/
 header {
@@ -160,16 +163,19 @@ svg {
     margin-bottom: .5rem;
     color: #decf9b;
 }
+.service p {
+    font-size: .9rem;
+}
 .description {
-    display: none;
+    /*display: none;*/
 }
 .service button {
     color: #483a23;
     background: #decf9b;
     width: 100%;
     font-weight: bold;
-    font-size: 1.25rem;
-    padding: .5rem;
+    font-size: 1rem;
+    padding: .25rem;
 }
 .service-data img {
     border: .2rem solid #fff;

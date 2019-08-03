@@ -143,6 +143,53 @@
             <?php endforeach; ?>
         </div>
     </div>
+
+    <div id="step-2">
+        <div class="row">
+            <div class="column small-12">
+                <div class="row align-center align-middle">
+                    <?= file_get_contents($this->Url->image('cow.svg', ['fullBase' => true])) ?>
+                    <h2><?= __('Special programs') ?></h2>
+                </div>
+            </div>
+
+            <?php foreach ($services[4] as $i => $service): ?>
+                <div class="column small-6">
+                    <div class="service">
+                        <h3><?= $service->service ?></h3>
+                        <div class="service-data" data-id="<?= $service->id ?>" data-type-id="<?= $service->type ?>">
+                            <?= $this->Form->hidden(
+                                'services.'.$service->id.'.id',
+                                ['value' => $service->id, 'class' => 'service-id']
+                            ) ?>
+                            <?= $this->Html->image($service->id . '.jpg') ?>
+                            <div class="info">
+                                <p class="description">
+                                    <?= $service->description ?>
+                                </p>
+                                <i class="column fi-clock"> <?= $service->minutes . ' ' . __('min') ?></i>
+                                <p data-id="<?= $service->id ?>" class="row text-center align-middle">
+                                    <i class="column fi-male" title="<?= __('Full price') ?>">
+                                        <?= $this->Number->format($service->full_price) . ' Ft' ?>
+                                    </i>
+                                    <i class="column fi-universal-access" title="<?= __('Discount price') ?>">
+                                        <?= $this->Number->format($service->discount_price) . ' Ft' ?>
+                                    </i>
+                                </p>
+                                <button type="button" class="button fi-check" data-id="<?= $service->id ?>"
+                                    data-type-id="<?= $service->type ?>" data-minutes="<?= $service->minutes ?>"
+                                    data-price-full="<?= $service->full_price ?>" data-price-discount="<?= $service->discount_price ?>"
+                                    data-service="<?= $service->service ?>">
+                                    <?= __('Add to cart') ?>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
 </div>
 
 <?php

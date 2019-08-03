@@ -1,5 +1,7 @@
 $(function () {
 
+    var page = 0;
+
     // header
     $('#services-1-joindata-full-price-members').on('blur', function () {
         $('#services-1-joindata-full-price-members').val(Math.abs($('#services-1-joindata-full-price-members').val()));
@@ -79,13 +81,12 @@ $(function () {
         }
     });
 
-    $('#pager').click(function () {
-        if ($('#datepicker').val() && ($('#services-1-joindata-full-price-members').val() || $('#services-1-joindata-discount-price-members').val())) {
-            $('html, body').animate({
-                scrollTop: $("#step-1").offset().top - $('header').height()
-            }, 1000);
-            $('#pager').hide();
-        }
+    $('body').on('click', '#pager.active', function () {
+        page++;
+        $('html, body').animate({
+            scrollTop: $('#step-' + page).offset().top - $('header').height()
+        }, 1000);
+        $('#pager').hide();
     });
 
 
@@ -109,6 +110,7 @@ $(function () {
             $(this).closest('.service').removeClass('selected');
             $('#pager').hide();
         }
+        $('#step-2').show();
         calculatePriceAndTime();
     });
 

@@ -145,7 +145,7 @@ label, #cart, button.cart {
     margin: 1rem;
     height: 30vh;
 }
-#step-1 {
+#step-1, #step-2 {
     display: none;
     margin-top: 1.6rem;
 }

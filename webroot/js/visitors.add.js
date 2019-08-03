@@ -102,12 +102,14 @@ $(function () {
             $(this).addClass('success');
             services.addClass('faded').removeClass('selected');
             $(this).closest('.service').removeClass('faded').addClass('selected');
+            $('#pager').show();
         } else {
             typeButtons.removeClass('success');
             services.removeClass('faded');
             $(this).closest('.service').removeClass('selected');
+            $('#pager').hide();
         }
-        $('#pager').show();
+        calculatePriceAndTime();
     });
 
     /*
@@ -146,25 +148,15 @@ $(function () {
             }
 
             // handling buttons
-            /*if ($(this).hasClass('success')) {
+            if ($(this).hasClass('success')) {
                 var priceFull = $(this).data('price-full');
                 var priceDiscount = $(this).data('price-discount');
                 var membersFull = $('#services-1-joindata-full-price-members').val();
-                if (membersFull) {
-                    totalAmount += priceFull * membersFull;
-                    summary += '<dd>' + $(this).data('service') + ': ' + membersFull + ' fő * '
-                        + number_format(priceFull, 0) + ' Ft</dd>'
-                        + '<dt>' + number_format(priceFull * membersFull, 0) + ' Ft</dt>';
-                }
+                totalAmount += priceFull * membersFull;
                 var membersDiscount = $('#services-1-joindata-discount-price-members').val();
-                if (membersDiscount) {
-                    totalAmount += priceDiscount * membersDiscount;
-                    summary += '<dd>' + $(this).data('service') + ': ' + membersDiscount + ' fő * '
-                        + number_format(priceDiscount, 0) + ' Ft</dd>'
-                        + '<dt>' + number_format(priceDiscount * membersDiscount, 0) + ' Ft</dt>';
-                }
+                totalAmount += priceDiscount * membersDiscount;
                 totalMinutes += $(this).data('minutes');
-            }*/
+            }
         });
         $('#vAmount').text(number_format(totalAmount, 0));
         $('#vMinutes').text(totalMinutes);

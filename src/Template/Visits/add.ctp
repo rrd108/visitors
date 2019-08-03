@@ -46,6 +46,7 @@
                                 'class' => 'column',
                                 'escape' => false
                             ],
+                            'min' => 0,
                             'placeholder' => __('Full price') . ' (' . __('person') . ')',
                             'required' => false,
                             'templates' => ['inputContainer' => '{{content}}'],
@@ -68,6 +69,7 @@
                                 'class' => 'column',
                                 'escape' => false
                             ],
+                            'min' => 0,
                             'placeholder' => __('Discount price') . ' (' . __('person') . ')',
                             'required' => false,
                             'templates' => ['inputContainer' => '{{content}}'],

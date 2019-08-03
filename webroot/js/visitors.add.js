@@ -2,10 +2,12 @@ $(function () {
 
     // header
     $('#services-1-joindata-full-price-members').on('blur', function () {
+        $('#services-1-joindata-full-price-members').val(Math.abs($('#services-1-joindata-full-price-members').val()));
         $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
     });
 
     $('#services-1-joindata-discount-price-members').on('blur', function () {
+        $('#services-1-joindata-discount-price-members').val(Math.abs($('#services-1-joindata-discount-price-members').val()));
         $('#vDiscountPerson').text($('#services-1-joindata-discount-price-members').val());
     });
     $('input[data-service]').on('blur', calculatePriceAndTime);

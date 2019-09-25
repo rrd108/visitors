@@ -204,4 +204,17 @@ svg {
 }
 /*step-1 end*/
 
+/*step-4 start*/
+#step-4 ul {
+    list-style-type: none;
+    text-align: left;
+}
+#step-4 li, #step-4 i, #step-4 span {
+    font-size: 8vw;
+}
+#step-4 span {
+    margin-left: 1rem;
+}
+/*step-4 end*/
+
 /*main end*/

@@ -1,6 +1,6 @@
 <?php $this->assign('title', __('Book visit')); ?>
-<?= $this->Html->css('jquery-ui') ?>
-<?= $this->Html->css('jquery-ui-timepicker-addon.min') ?>
+<?= $this->Html->css('jquery-ui', ['block' => true]) ?>
+<?= $this->Html->css('jquery-ui-timepicker-addon.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/jquery.browser.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/jquery-ui.min', ['block' => true]) ?>
 <?= $this->Html->script('vendor/datepicker-hu', ['block' => true]) ?>
@@ -10,13 +10,6 @@
 
 <div class="small-12 columns">
     <?= $this->Form->create($visit, ['id' => 'order']) ?>
-    <?= $this->Form->button(
-        __('Order'),
-        [
-            'class' => 'button success cart extra',
-            'title' => __('Clik to order')
-        ]
-    ) ?>
     <div id="open">
         <div class="row">
             <div class="column small-12">
@@ -153,7 +146,7 @@
                 </div>
             </div>
 
-            <?php foreach ($services[4] as $i => $service): ?>
+            <?php foreach ($services[3] as $i => $service): ?>
                 <div class="column small-6">
                     <div class="service">
                         <h3><?= $service->service ?></h3>
@@ -199,7 +192,7 @@
                 </div>
             </div>
 
-            <?php foreach ($services[3] as $i => $service): ?>
+            <?php foreach ($services[4] as $i => $service): ?>
                 <div class="column small-6">
                     <div class="service">
                         <h3><?= $service->service ?></h3>
@@ -236,5 +229,40 @@
         </div>
     </div>
 
+    <div id="step-4">
+        <div class="row">
+            <div class="column small-12">
+                <div class="row align-center align-middle">
+                    <h2><?= __('Total') ?></h2>
+                </div>
+
+                <div class="row">
+                    <ul>
+                        <li><i class="fi-calendar"></i><span id="vTotalDate">0</span></li>
+                        <li><i class="fi-male"></i><span id="vTotalFullPerson">0</span></li>
+                        <li><i class="fi-universal-access"></i><span id="vTotalDiscountPerson">0</span></li>
+                        <li><i class="fi-clock"></i><span id="vTotalMinutes">0</span> perc</li>
+                        <li><i class="fi-shopping-cart"></i><span id="vTotalAmount">0</span> Ft</li>
+                        <li>
+                            <i><?= file_get_contents($this->Url->image('theatre.svg', ['fullBase' => true])) ?></i>
+                            <span id="vService1">Service-1</span>
+                        </li>
+                    </ul>
+                    service1,2,3
+                    név,telefon,email
+                </div>
+
+                <div class="row">
+                    <?= $this->Form->button(
+                        __('Order'),
+                        [
+                            'class' => 'button success cart extra',
+                            'title' => __('Clik to order')
+                        ]
+                    ) ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

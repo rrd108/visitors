@@ -6,11 +6,13 @@ $(function () {
     $('#services-1-joindata-full-price-members').on('blur', function () {
         $('#services-1-joindata-full-price-members').val(Math.abs($('#services-1-joindata-full-price-members').val()));
         $('#vFullPerson').text($('#services-1-joindata-full-price-members').val());
+        $('#vTotalFullPerson').text($('#services-1-joindata-full-price-members').val() + ' felnőtt');
     });
 
     $('#services-1-joindata-discount-price-members').on('blur', function () {
         $('#services-1-joindata-discount-price-members').val(Math.abs($('#services-1-joindata-discount-price-members').val()));
         $('#vDiscountPerson').text($('#services-1-joindata-discount-price-members').val());
+        $('#vTotalDiscountPerson').text($('#services-1-joindata-discount-price-members').val() + ' gyerek / nyugdíjas');
     });
     $('input[data-service]').on('blur', calculatePriceAndTime);
 
@@ -66,6 +68,7 @@ $(function () {
     });
     $('#datepicker').on('blur', function () {
         $('#vDate').text($('#datepicker').val().replace(' ', '/'));
+        $('#vTotalDate').text($('#datepicker').val().replace(' ', '/'));
     });
 
     $('#open input').blur(function () {
@@ -91,12 +94,15 @@ $(function () {
 
 
     $('button').click(function () {
+
+        $('#step-' + $(this).data('type-id')).show();
+        calculatePriceAndTime();
+
         // on selecting a service gray out all others with the same type
-        if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
+        if ($(this).data('type-id') == 3) {     //type 3 is allowing have more than one
             $(this).toggleClass('success');
             $(this).closest('.service').toggleClass('selected');
-            $('#step-3').show();
-            calculatePriceAndTime();
+            $('#pager').show();
             return;
         }
 
@@ -113,31 +119,7 @@ $(function () {
             $(this).closest('.service').removeClass('selected');
             $('#pager').hide();
         }
-        $('#step-2').show();
-        calculatePriceAndTime();
     });
-
-    /*
-    $('button').click(function () {
-        // step 1 on order
-        if ($(this).attr('id') == 'main-service') {
-            if (!$('#datepicker').val()) {
-                $('#datepicker').effect('shake').notify('Kérem válasszon dátumot a látogatáshoz', 'error');
-                return;
-            }
-
-            if (!($('#services-1-joindata-full-price-members').val() + $('#services-1-joindata-discount-price-members').val())) {
-                $('#services-1-joindata-full-price-members').effect('shake').notify('Kérem adja meg hányan vannak a csoportban', 'error');
-                return;
-            }
-
-            $('.extra').fadeIn(1250);
-            $(this).hide();
-            return;
-        }
-
-    });
-    */
 
     // price and time calculation helper
     var calculatePriceAndTime = function () {
@@ -165,6 +147,10 @@ $(function () {
         });
         $('#vAmount').text(number_format(totalAmount, 0));
         $('#vMinutes').text(totalMinutes);
+
+        //update step-4
+        $('#vTotalAmount').text(number_format(totalAmount, 0));
+        $('#vTotalMinutes').text(totalMinutes);
     };
 
     //$('button[data-service]').on('click', calculatePriceAndTime);

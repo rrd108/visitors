@@ -88,7 +88,7 @@ nav#summary {
 main {
     padding: 8vh 0 5vh 0;
 }
-label, #cart, button.cart {
+label {
     display: none;
 }
 .input {
@@ -97,6 +97,10 @@ label, #cart, button.cart {
 #open i.fi-clock {
     font-size: 4.5vw;
     position: initial;
+}
+
+h2 i {
+    font-size: 7vw;
 }
 
 /*pager*/
@@ -214,6 +218,9 @@ svg {
 }
 #step-4 span {
     margin-left: 1rem;
+}
+#step-4 label {
+    display: inline-block;
 }
 /*step-4 end*/
 

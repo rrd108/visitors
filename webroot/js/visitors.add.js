@@ -97,6 +97,7 @@ $(function () {
 
         $('#step-' + $(this).data('type-id')).show();
         calculatePriceAndTime();
+        updateTotalPage($(this));
 
         // on selecting a service gray out all others with the same type
         if ($(this).data('type-id') == 3) {     //type 3 is allowing have more than one
@@ -153,7 +154,9 @@ $(function () {
         $('#vTotalMinutes').text(totalMinutes);
     };
 
-    //$('button[data-service]').on('click', calculatePriceAndTime);
+    var updateTotalPage = function (button) {
+        $('#vTotalService' + (button.data('type-id') - 1)).text(button.data('service'));
+    }
 
     /*$("#order").submit(function (event) {
         event.preventDefault();

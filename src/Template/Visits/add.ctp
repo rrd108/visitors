@@ -95,8 +95,7 @@
         <div class="row">
             <div class="column small-12">
                 <div class="row align-center align-middle">
-                    <?= file_get_contents($this->Url->image('theatre.svg', ['fullBase' => true])) ?>
-                    <h2><?= __('Services') ?></h2>
+                    <h2><i class="fi-megaphone"></i> <?= __('Services') ?></h2>
                 </div>
             </div>
 
@@ -141,8 +140,7 @@
         <div class="row">
             <div class="column small-12">
                 <div class="row align-center align-middle">
-                    <?= file_get_contents($this->Url->image('cow.svg', ['fullBase' => true])) ?>
-                    <h2><?= __('Special programs') ?></h2>
+                    <h2><i class="fi-paw"></i> <?= __('Special programs') ?></h2>
                 </div>
             </div>
 
@@ -187,8 +185,7 @@
         <div class="row">
             <div class="column small-12">
                 <div class="row align-center align-middle">
-                    <?= file_get_contents($this->Url->image('food.svg', ['fullBase' => true])) ?>
-                    <h2><?= __('Food') ?></h2>
+                    <h2><i class="fi-ticket"></i> <?= __('Food') ?></h2>
                 </div>
             </div>
 
@@ -242,17 +239,50 @@
                         <li><i class="fi-male"></i><span id="vTotalFullPerson">0</span></li>
                         <li><i class="fi-universal-access"></i><span id="vTotalDiscountPerson">0</span></li>
                         <li><i class="fi-clock"></i><span id="vTotalMinutes">0</span> perc</li>
+                        <li><i class="fi-megaphone"></i><span id="vTotalService1">-</span></li>
+                        <li><i class="fi-paw"></i><span id="vTotalService2">-</span></li>
+                        <li><i class="fi-ticket"></i><span id="vTotalService3">-</span></li>
                         <li><i class="fi-shopping-cart"></i><span id="vTotalAmount">0</span> Ft</li>
-                        <li>
-                            <i><?= file_get_contents($this->Url->image('theatre.svg', ['fullBase' => true])) ?></i>
-                            <span id="vService1">Service-1</span>
-                        </li>
                     </ul>
-                    service1,2,3
-                    név,telefon,email
                 </div>
 
-                <div class="row">
+                <div class="input-group">
+                    <?= $this->Form->control(
+                        'name',
+                        [
+                            'id' => 'name', 'type' => 'text',
+                            'label' => __('Name'),
+                            'placeholder' => __('Name') ,
+                            'autocomplete' => 'off'
+                        ]
+                    ) ?>
+                </div>
+
+                <div class="input-group">
+                    <?= $this->Form->control(
+                        'phone',
+                        [
+                            'id' => 'phone', 'type' => 'text',
+                            'label' => __('Phone'),
+                            'placeholder' => __('Phone') ,
+                            'autocomplete' => 'off'
+                        ]
+                    ) ?>
+                </div>
+
+                <div class="input-group">
+                    <?= $this->Form->control(
+                        'email',
+                        [
+                            'id' => 'email', 'type' => 'text',
+                            'label' => __('Email'),
+                            'placeholder' => __('Email') ,
+                            'autocomplete' => 'off'
+                        ]
+                    ) ?>
+                </div>
+
+                <div class="input-group">
                     <?= $this->Form->button(
                         __('Order'),
                         [

@@ -95,8 +95,11 @@ $(function () {
         if ($(this).data('type-id') == 4) {     //type 4 is allowing have more than one
             $(this).toggleClass('success');
             $(this).closest('.service').toggleClass('selected');
+            $('#step-3').show();
+            calculatePriceAndTime();
             return;
         }
+
         var typeButtons = $('button[data-type-id="' + $(this).data('type-id') + '"]');
         var services = typeButtons.closest('.service');
         if (!$(this).hasClass('success')) {

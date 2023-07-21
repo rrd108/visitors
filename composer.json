@@ -7,7 +7,7 @@
     "require": {
         "php": ">=7.0",
         "cakedc/users": "^8.0",
-        "cakephp/cakephp": "3.8.*",
+        "cakephp/cakephp": "3.10.*",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
         "josegonzalez/dotenv": "3.*",
